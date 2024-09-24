@@ -10265,6 +10265,8 @@ function Load_Folder_Callback(hObject, eventdata, handles)
     if folder_name==0
         return;  
     end
+
+    set(handles.uipanel16,'Visible','off')
     
     % reading folder and subfolders
     allSubFolders = genpath(folder_name);
@@ -10418,7 +10420,10 @@ function Load_Folder_Callback(hObject, eventdata, handles)
         
         
         % loading structure data
-        h = msgbox({'Please wait ...','Loading structure data ...'});
+        wb = waitbar(0, 'Loading structure data...');
+        wbch = allchild(wb);
+        jp = wbch(1).JavaPeer;
+        jp.setIndeterminate(1)
         
         fullFileName = files_names_mat{1};
         load(fullFileName);
@@ -10435,7 +10440,7 @@ function Load_Folder_Callback(hObject, eventdata, handles)
         handles.MR_PCA_FH = data.MR_PCA_FH;
         handles.MR_PCA_AP = data.MR_PCA_AP;
         handles.MR_PCA_RL = data.MR_PCA_RL;
-        close(h)
+        close(wb)
         
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         % load data offset error JSOTELO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -15256,6 +15261,7 @@ function Load_Project_Callback(hObject, eventdata, handles)
         case 'Yes'
             [file,path] = uigetfile(pwd,'Select File Project');
             if file~=0
+                set(handles.uipanel16,'Visible','off')
                 waitfor(msgbox('This process can take a few seconds ...'));
                 load([path,file])
                 closereq
@@ -15284,6 +15290,7 @@ function Load_SEG_Callback(hObject, eventdata, handles)
     [file,path] = uigetfile('*.mat','Select Segmentation File');
     
     if file~=0
+        set(handles.uipanel16,'Visible','off')
         load([path,file])
         name_file = file(1:end-4);        
         [as,bs,cs] = size(eval(name_file));
@@ -20021,3 +20028,21 @@ end
 
 handles.output = hObject;
 guidata(hObject, handles);
+
+
+% --- Executes when user attempts to close figure1.
+function figure1_CloseRequestFcn(hObject, eventdata, handles)
+% hObject    handle to figure1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+answer = questdlg(...
+    'Unsaved changes will be lost.', ...
+    'Close 4D Flow Matlab Toolbox?', 'Close','Cancel','Cancel' ...
+);
+
+switch answer
+    case 'Close'
+        delete(hObject);
+    case 'Cancel'
+end
