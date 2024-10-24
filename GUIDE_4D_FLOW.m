@@ -447,9 +447,12 @@ function pushbutton9_Callback(hObject, eventdata, handles)
     slider_step(2) = 0.1;
     set(handles.slider3,'Value', round(a/2)/a,'sliderstep',slider_step,'max',1,'min',0)
     set(handles.slider3,'visible','on')
+
+    % Set image texts
     set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,1)),' Im: ',num2str(round(c/2)),' / ',num2str(c),' Type: ',handles.type])
     set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,3)),' x ',num2str(size(handles.IPCMRA,1)),' Im: ',num2str(round(b/2)),' / ',num2str(b),' Type: ',handles.type])
     set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,3)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(a/2)),' / ',num2str(a),' Type: ',handles.type])
+
     handles.id_resizing = 0;
     if handles.slider_axes1 ==1, handles.slider_axes1_voxel = 0; else handles.slider_axes1_voxel = (handles.slider_axes1*handles.voxel_MR(3))-handles.voxel_MR(3); end
     if handles.slider_axes2 ==1, handles.slider_axes2_voxel = 0; else handles.slider_axes2_voxel = (handles.slider_axes2*handles.voxel_MR(1))-handles.voxel_MR(1); end
@@ -692,9 +695,12 @@ function pushbutton10_Callback(hObject, eventdata, handles)
     slider_step(2) = 0.1;
     set(handles.slider3,'Value', round(a/2)/a,'sliderstep',slider_step,'max',1,'min',0)
     set(handles.slider3,'visible','on')
+
+    % Set image texts
     set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,1)),' Im: ',num2str(round(c/2)),' / ',num2str(c),' Type: ',handles.type])
     set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,3)),' x ',num2str(size(handles.IPCMRA,1)),' Im: ',num2str(round(b/2)),' / ',num2str(b),' Type: ',handles.type])
     set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,3)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(a/2)),' / ',num2str(a),' Type: ',handles.type])
+
     handles.id_resizing = 0;
     if handles.slider_axes1 ==1, handles.slider_axes1_voxel = 0; else handles.slider_axes1_voxel = (handles.slider_axes1*handles.voxel_MR(3))-handles.voxel_MR(3); end
     if handles.slider_axes2 ==1, handles.slider_axes2_voxel = 0; else handles.slider_axes2_voxel = (handles.slider_axes2*handles.voxel_MR(1))-handles.voxel_MR(1); end
@@ -936,9 +942,12 @@ function pushbutton11_Callback(hObject, eventdata, handles)
     slider_step(2) = 0.1;
     set(handles.slider3,'Value', round(a/2)/a,'sliderstep',slider_step,'max',1,'min',0)
     set(handles.slider3,'visible','on')
+
+    % Set image texts
     set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,1)),' Im: ',num2str(round(c/2)),' / ',num2str(c),' Type: ',handles.type])
     set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,3)),' x ',num2str(size(handles.IPCMRA,1)),' Im: ',num2str(round(b/2)),' / ',num2str(b),' Type: ',handles.type])
     set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,3)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(a/2)),' / ',num2str(a),' Type: ',handles.type])
+    
     handles.id_resizing = 0;
     if handles.slider_axes1 ==1, handles.slider_axes1_voxel = 0; else, handles.slider_axes1_voxel = (handles.slider_axes1*handles.voxel_MR(3))-handles.voxel_MR(3); end
     if handles.slider_axes2 ==1, handles.slider_axes2_voxel = 0; else, handles.slider_axes2_voxel = (handles.slider_axes2*handles.voxel_MR(2))-handles.voxel_MR(2); end
@@ -1366,6 +1375,8 @@ function slider1_Callback(hObject, eventdata, handles)
         colormap(handles.axes3,'gray')
         axis off
         daspect([1 1 1])
+
+        % Set image texts
         set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(handles.slider_axes1)),' / ',num2str(handles.c),' Type: ',handles.type])
         set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(handles.slider_axes2)),' / ',num2str(handles.b),' Type: ',handles.type])
         set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(handles.slider_axes3)),' / ',num2str(handles.a),' Type: ',handles.type])
@@ -1657,6 +1668,8 @@ function slider1_Callback(hObject, eventdata, handles)
         colormap(handles.axes3,'gray')
         axis off
         daspect([1 1 1])
+
+        % Set image texts
         set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(handles.slider_axes1)),' / ',num2str(handles.c),' Type: ',handles.type])
         set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(handles.slider_axes2)),' / ',num2str(handles.b),' Type: ',handles.type])
         set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(handles.slider_axes3)),' / ',num2str(handles.a),' Type: ',handles.type])
@@ -1964,6 +1977,8 @@ function slider2_Callback(hObject, eventdata, handles)
         colormap(handles.axes3,'gray')
         axis off
         daspect([1 1 1])
+
+        % Set image texts
         set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(handles.slider_axes1)),' / ',num2str(handles.c),' Type: ',handles.type])
         set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(handles.slider_axes2)),' / ',num2str(handles.b),' Type: ',handles.type])
         set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(handles.slider_axes3)),' / ',num2str(handles.a),' Type: ',handles.type])
@@ -2255,6 +2270,8 @@ function slider2_Callback(hObject, eventdata, handles)
         colormap(handles.axes3,'gray')
         axis off
         daspect([1 1 1])
+
+        % Set image texts
         set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(handles.slider_axes1)),' / ',num2str(handles.c),' Type: ',handles.type])
         set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(handles.slider_axes2)),' / ',num2str(handles.b),' Type: ',handles.type])
         set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(handles.slider_axes3)),' / ',num2str(handles.a),' Type: ',handles.type])
@@ -2563,6 +2580,8 @@ function slider3_Callback(hObject, eventdata, handles)
         colormap(handles.axes3,'gray')
         axis off
         daspect([1 1 1])
+
+        % Set image texts
         set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(handles.slider_axes1)),' / ',num2str(handles.c),' Type: ',handles.type])
         set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(handles.slider_axes2)),' / ',num2str(handles.b),' Type: ',handles.type])
         set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(handles.slider_axes3)),' / ',num2str(handles.a),' Type: ',handles.type])
@@ -2854,6 +2873,8 @@ function slider3_Callback(hObject, eventdata, handles)
         colormap(handles.axes3,'gray')
         axis off
         daspect([1 1 1])
+
+        % Set image texts
         set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(handles.slider_axes1)),' / ',num2str(handles.c),' Type: ',handles.type])
         set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(handles.slider_axes2)),' / ',num2str(handles.b),' Type: ',handles.type])
         set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(handles.slider_axes3)),' / ',num2str(handles.a),' Type: ',handles.type])
@@ -4108,6 +4129,8 @@ function slider4_Callback(hObject, eventdata, handles)
     colormap(handles.axes3,'gray')
     axis off
     daspect([1 1 1])
+
+    % Set image texts
     set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(handles.slider_axes1)),' / ',num2str(handles.c),' Type: ',handles.type])
     set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(handles.slider_axes2)),' / ',num2str(handles.b),' Type: ',handles.type])
     set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(handles.slider_axes3)),' / ',num2str(handles.a),' Type: ',handles.type])
@@ -11417,6 +11440,13 @@ function Load_Folder_Callback(hObject, eventdata, handles)
         handles.IPCMRA = (handles.IPCMRA/max(handles.IPCMRA(:)))*255;
 
     end
+    
+    cancelled = getappdata(0,'cancelled');
+    if cancelled == 1
+        setappdata(0,'cancelled',0);
+        return
+    end
+
     [X,Y,Z] = meshgrid(0:size(handles.IPCMRA,1)-1,0:size(handles.IPCMRA,2)-1,0:size(handles.IPCMRA,3)-1);
     handles.xd = X*handles.voxel_MR(1);
     handles.yd = Y*handles.voxel_MR(2);
@@ -11469,6 +11499,8 @@ function Load_Folder_Callback(hObject, eventdata, handles)
     slider_step(2) = 0.1;
     set(handles.slider3,'Value', round(a/2)/a,'sliderstep',slider_step,'max',1,'min',0)
     set(handles.slider3,'visible','on')
+
+    % Set image texts
     set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(c/2)),' / ',num2str(c),' Type: ',handles.type])
     set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(b/2)),' / ',num2str(b),' Type: ',handles.type])
     set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(a/2)),' / ',num2str(a),' Type: ',handles.type])
@@ -13406,14 +13438,6 @@ set(handles.pushbutton18,'FontUnits','Normalized','FontSize',0.29)
 set(handles.pushbutton19,'FontUnits','Normalized','FontSize',0.29)
 set(handles.pushbutton20,'FontUnits','Normalized','FontSize',0.29)
 set(handles.pushbutton21,'FontUnits','Normalized','FontSize',0.29)
-set(handles.text5,'FontUnits','Normalized','FontSize',0.64)
-set(handles.text6,'FontUnits','Normalized','FontSize',0.64)
-set(handles.text7,'FontUnits','Normalized','FontSize',0.59)
-set(handles.text8,'FontUnits','Normalized','FontSize',0.59)
-set(handles.text9,'FontUnits','Normalized','FontSize',0.59)
-set(handles.text10,'FontUnits','Normalized','FontSize',0.59)
-set(handles.text11,'FontUnits','Normalized','FontSize',0.59)
-set(handles.text12,'FontUnits','Normalized','FontSize',0.59)
 set(handles.edit1,'FontUnits','Normalized','FontSize',0.59)
 set(handles.edit2,'FontUnits','Normalized','FontSize',0.59)
 set(handles.popupmenu2,'FontUnits','Normalized','FontSize',0.53)
@@ -13640,9 +13664,12 @@ if handles.id_seg == 1
             handles.pos2 = [handles.c3 handles.c1 handles.c6 handles.c4];
             handles.pos3 = [handles.c3 handles.c2 handles.c6 handles.c5];
             [a,b,c,d] = size(handles.IPCMRA);
+
+            % Set image texts
             set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,1)),' Im: ',num2str(round(c/2)),' / ',num2str(c),' Type: ',handles.type])
             set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,3)),' x ',num2str(size(handles.IPCMRA,1)),' Im: ',num2str(round(b/2)),' / ',num2str(b),' Type: ',handles.type])
             set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,3)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(a/2)),' / ',num2str(a),' Type: ',handles.type])
+
             if handles.slider_axes1 ==1, handles.slider_axes1_voxel = 0; else, handles.slider_axes1_voxel = (handles.slider_axes1*handles.voxel_MR(3))-handles.voxel_MR(3); end
             if handles.slider_axes2 ==1, handles.slider_axes2_voxel = 0; else, handles.slider_axes2_voxel = (handles.slider_axes2*handles.voxel_MR(2))-handles.voxel_MR(2); end
             if handles.slider_axes3 ==1, handles.slider_axes3_voxel = 0; else, handles.slider_axes3_voxel = (handles.slider_axes3*handles.voxel_MR(1))-handles.voxel_MR(1); end
@@ -13731,9 +13758,12 @@ else
     handles.pos2 = [handles.c3 handles.c1 handles.c6 handles.c4];
     handles.pos3 = [handles.c3 handles.c2 handles.c6 handles.c5];
     [a,b,c,d] = size(handles.IPCMRA);
+
+    % Set image texts
     set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,1)),' Im: ',num2str(round(c/2)),' / ',num2str(c),' Type: ',handles.type])
     set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,3)),' x ',num2str(size(handles.IPCMRA,1)),' Im: ',num2str(round(b/2)),' / ',num2str(b),' Type: ',handles.type])
     set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,3)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(a/2)),' / ',num2str(a),' Type: ',handles.type])
+
     if handles.slider_axes1 ==1, handles.slider_axes1_voxel = 0; else, handles.slider_axes1_voxel = (handles.slider_axes1*handles.voxel_MR(3))-handles.voxel_MR(3); end
     if handles.slider_axes2 ==1, handles.slider_axes2_voxel = 0; else, handles.slider_axes2_voxel = (handles.slider_axes2*handles.voxel_MR(2))-handles.voxel_MR(2); end
     if handles.slider_axes3 ==1, handles.slider_axes3_voxel = 0; else, handles.slider_axes3_voxel = (handles.slider_axes3*handles.voxel_MR(1))-handles.voxel_MR(1); end
@@ -13888,9 +13918,12 @@ function uipushtool3_ClickedCallback(hObject, eventdata, handles)
         colormap(handles.axes3,'gray')
         axis off
         daspect([1 1 1])
+
+        % Set image texts
         set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(handles.slider_axes1)),' / ',num2str(handles.c),' Type: ',handles.type])
         set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(handles.slider_axes2)),' / ',num2str(handles.b),' Type: ',handles.type])
         set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(handles.slider_axes3)),' / ',num2str(handles.a),' Type: ',handles.type])
+
         list_string = {'...','Surface','Voxel'};
         set(handles.popupmenu1,'visible','on','String',list_string);
         popupmnenu1_pos = get(handles.popupmenu1,'Value');
@@ -15488,9 +15521,12 @@ function Load_SEG_Callback(hObject, eventdata, handles)
             colormap(handles.axes3,'gray')
             axis off
             daspect([1 1 1])
+
+            % Set image texts
             set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(handles.slider_axes1)),' / ',num2str(handles.c),' Type: ',handles.type])
             set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(handles.slider_axes2)),' / ',num2str(handles.b),' Type: ',handles.type])
             set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(handles.slider_axes3)),' / ',num2str(handles.a),' Type: ',handles.type])
+
             list_string = {'...','Surface','Voxel'};
             set(handles.popupmenu1,'visible','on','String',list_string);
             
@@ -15570,9 +15606,12 @@ function Load_SEG_Callback(hObject, eventdata, handles)
             colormap(handles.axes3,'gray')
             axis off
             daspect([1 1 1])
+
+            % Set image texts
             set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(handles.slider_axes1)),' / ',num2str(handles.c),' Type: ',handles.type])
             set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(handles.slider_axes2)),' / ',num2str(handles.b),' Type: ',handles.type])
             set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(handles.slider_axes3)),' / ',num2str(handles.a),' Type: ',handles.type])
+
             list_string = {'...','Surface','Voxel'};
             set(handles.popupmenu1,'visible','on','String',list_string);
 
@@ -15653,9 +15692,12 @@ function Load_SEG_Callback(hObject, eventdata, handles)
             colormap(handles.axes3,'gray')
             axis off
             daspect([1 1 1])
+
+            % Set image texts
             set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(handles.slider_axes1)),' / ',num2str(handles.c),' Type: ',handles.type])
             set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(handles.slider_axes2)),' / ',num2str(handles.b),' Type: ',handles.type])
             set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(handles.slider_axes3)),' / ',num2str(handles.a),' Type: ',handles.type])
+
             list_string = {'...','Surface','Voxel'};
             set(handles.popupmenu1,'visible','on','String',list_string);
             
@@ -15744,9 +15786,12 @@ function Load_SEG_Callback(hObject, eventdata, handles)
             colormap(handles.axes3,'gray')
             axis off
             daspect([1 1 1])
+
+            % Set image texts
             set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(handles.slider_axes1)),' / ',num2str(handles.c),' Type: ',handles.type])
             set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(handles.slider_axes2)),' / ',num2str(handles.b),' Type: ',handles.type])
             set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(handles.slider_axes3)),' / ',num2str(handles.a),' Type: ',handles.type])
+
             list_string = {'...','Surface','Voxel'};
             set(handles.popupmenu1,'visible','on','String',list_string);
 
@@ -15959,6 +16004,8 @@ function uipushtool7_ClickedCallback(hObject, eventdata, handles)
     colormap(handles.axes3,'gray')
     axis off
     daspect([1 1 1])
+
+    % Set image texts
     set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(handles.slider_axes1)),' / ',num2str(handles.c),' Type: ',handles.type])
     set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(handles.slider_axes2)),' / ',num2str(handles.b),' Type: ',handles.type])
     set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(handles.slider_axes3)),' / ',num2str(handles.a),' Type: ',handles.type])
@@ -16167,6 +16214,8 @@ function uipushtool6_ClickedCallback(hObject, eventdata, handles)
     colormap(handles.axes3,'gray')
     axis off
     daspect([1 1 1])
+
+    % Set image texts
     set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(handles.slider_axes1)),' / ',num2str(handles.c),' Type: ',handles.type])
     set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(handles.slider_axes2)),' / ',num2str(handles.b),' Type: ',handles.type])
     set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(handles.slider_axes3)),' / ',num2str(handles.a),' Type: ',handles.type])
@@ -16726,6 +16775,8 @@ function pushbutton63_Callback(hObject, eventdata, handles)
     slider_step(2) = 0.1;
     set(handles.slider3,'Value', round(a/2)/a,'sliderstep',slider_step,'max',1,'min',0)
     set(handles.slider3,'visible','on')
+
+    % Set image texts
     set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(c/2)),' / ',num2str(c),' Type: ',handles.type])
     set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(b/2)),' / ',num2str(b),' Type: ',handles.type])
     set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(a/2)),' / ',num2str(a),' Type: ',handles.type])
@@ -16904,6 +16955,8 @@ function pushbutton64_Callback(hObject, eventdata, handles)
     slider_step(2) = 0.1;
     set(handles.slider3,'Value', round(a/2)/a,'sliderstep',slider_step,'max',1,'min',0)
     set(handles.slider3,'visible','on')
+
+    % Set image texts
     set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(c/2)),' / ',num2str(c),' Type: ',handles.type])
     set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(b/2)),' / ',num2str(b),' Type: ',handles.type])
     set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(a/2)),' / ',num2str(a),' Type: ',handles.type])
@@ -17084,6 +17137,8 @@ function pushbutton65_Callback(hObject, eventdata, handles)
     slider_step(2) = 0.1;
     set(handles.slider3,'Value', round(a/2)/a,'sliderstep',slider_step,'max',1,'min',0)
     set(handles.slider3,'visible','on')
+
+    % Set image texts
     set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(c/2)),' / ',num2str(c),' Type: ',handles.type])
     set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(b/2)),' / ',num2str(b),' Type: ',handles.type])
     set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(a/2)),' / ',num2str(a),' Type: ',handles.type])
@@ -17252,6 +17307,8 @@ function pushbutton66_Callback(hObject, eventdata, handles)
     slider_step(2) = 0.1;
     set(handles.slider3,'Value', round(a/2)/a,'sliderstep',slider_step,'max',1,'min',0)
     set(handles.slider3,'visible','on')
+
+    % Set image texts
     set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(c/2)),' / ',num2str(c),' Type: ',handles.type])
     set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(b/2)),' / ',num2str(b),' Type: ',handles.type])
     set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(a/2)),' / ',num2str(a),' Type: ',handles.type])
@@ -17429,6 +17486,8 @@ function pushbutton67_Callback(hObject, eventdata, handles)
     slider_step(2) = 0.1;
     set(handles.slider3,'Value', round(a/2)/a,'sliderstep',slider_step,'max',1,'min',0)
     set(handles.slider3,'visible','on')
+
+    % Set image texts
     set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(c/2)),' / ',num2str(c),' Type: ',handles.type])
     set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(b/2)),' / ',num2str(b),' Type: ',handles.type])
     set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(a/2)),' / ',num2str(a),' Type: ',handles.type])
@@ -17606,6 +17665,8 @@ function pushbutton68_Callback(hObject, eventdata, handles)
     slider_step(2) = 0.1;
     set(handles.slider3,'Value', round(a/2)/a,'sliderstep',slider_step,'max',1,'min',0)
     set(handles.slider3,'visible','on')
+
+    % Set image texts
     set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(c/2)),' / ',num2str(c),' Type: ',handles.type])
     set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(b/2)),' / ',num2str(b),' Type: ',handles.type])
     set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(a/2)),' / ',num2str(a),' Type: ',handles.type])
@@ -17901,6 +17962,8 @@ function pushbutton72_Callback(hObject, eventdata, handles)
     slider_step(2) = 0.1;
     set(handles.slider3,'Value', round(a/2)/a,'sliderstep',slider_step,'max',1,'min',0)
     set(handles.slider3,'visible','on')
+
+    % Set image texts
     set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(c/2)),' / ',num2str(c),' Type: ',handles.type])
     set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(b/2)),' / ',num2str(b),' Type: ',handles.type])
     set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(a/2)),' / ',num2str(a),' Type: ',handles.type])
@@ -18075,6 +18138,8 @@ function pushbutton73_Callback(hObject, eventdata, handles)
     slider_step(2) = 0.1;
     set(handles.slider3,'Value', round(a/2)/a,'sliderstep',slider_step,'max',1,'min',0)
     set(handles.slider3,'visible','on')
+
+    % Set image texts
     set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(c/2)),' / ',num2str(c),' Type: ',handles.type])
     set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(b/2)),' / ',num2str(b),' Type: ',handles.type])
     set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(a/2)),' / ',num2str(a),' Type: ',handles.type])
@@ -18249,6 +18314,8 @@ function pushbutton74_Callback(hObject, eventdata, handles)
     slider_step(2) = 0.1;
     set(handles.slider3,'Value', round(a/2)/a,'sliderstep',slider_step,'max',1,'min',0)
     set(handles.slider3,'visible','on')
+
+    % Set image texts
     set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(c/2)),' / ',num2str(c),' Type: ',handles.type])
     set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(b/2)),' / ',num2str(b),' Type: ',handles.type])
     set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(a/2)),' / ',num2str(a),' Type: ',handles.type])
@@ -18424,6 +18491,8 @@ function pushbutton75_Callback(hObject, eventdata, handles)
     slider_step(2) = 0.1;
     set(handles.slider3,'Value', round(a/2)/a,'sliderstep',slider_step,'max',1,'min',0)
     set(handles.slider3,'visible','on')
+
+    % Set image texts
     set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(c/2)),' / ',num2str(c),' Type: ',handles.type])
     set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(b/2)),' / ',num2str(b),' Type: ',handles.type])
     set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(a/2)),' / ',num2str(a),' Type: ',handles.type])
@@ -18599,6 +18668,8 @@ function pushbutton76_Callback(hObject, eventdata, handles)
     slider_step(2) = 0.1;
     set(handles.slider3,'Value', round(a/2)/a,'sliderstep',slider_step,'max',1,'min',0)
     set(handles.slider3,'visible','on')
+
+    % Set image texts
     set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(c/2)),' / ',num2str(c),' Type: ',handles.type])
     set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(b/2)),' / ',num2str(b),' Type: ',handles.type])
     set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(a/2)),' / ',num2str(a),' Type: ',handles.type])
@@ -18773,6 +18844,8 @@ function pushbutton77_Callback(hObject, eventdata, handles)
     slider_step(2) = 0.1;
     set(handles.slider3,'Value', round(a/2)/a,'sliderstep',slider_step,'max',1,'min',0)
     set(handles.slider3,'visible','on')
+
+    % Set image texts
     set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(c/2)),' / ',num2str(c),' Type: ',handles.type])
     set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(b/2)),' / ',num2str(b),' Type: ',handles.type])
     set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(a/2)),' / ',num2str(a),' Type: ',handles.type])
@@ -19823,6 +19896,8 @@ if exist('4DFlowNet-master', 'dir')==7
     slider_step(2) = 0.1;
     set(handles.slider3,'Value', round(a/2)/a,'sliderstep',slider_step,'max',1,'min',0)
     set(handles.slider3,'visible','on')
+
+    % Set image texts
     set(handles.text1,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,2)),' Im: ',num2str(round(c/2)),' / ',num2str(c),' Type: ',handles.type])
     set(handles.text2,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,1)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(b/2)),' / ',num2str(b),' Type: ',handles.type])
     set(handles.text3,'visible','on','String',['Image size: ',num2str(size(handles.IPCMRA,2)),' x ',num2str(size(handles.IPCMRA,3)),' Im: ',num2str(round(a/2)),' / ',num2str(a),' Type: ',handles.type])
