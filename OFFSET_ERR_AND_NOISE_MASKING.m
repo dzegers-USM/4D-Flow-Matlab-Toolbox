@@ -6155,16 +6155,19 @@ function figure1_CloseRequestFcn(hObject, ~, handles)
 % hObject    handle to figure1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
-% Hint: delete(hObject) closes the figure
-if isequal(get(hObject,'waitstatus'),'waiting')
-    handles.id_while = 1;
-    handles.output = hObject;
-    guidata(hObject, handles);
-    uiresume(hObject);
-else
-    delete(hObject);
-end
+    % Hint: delete(hObject) closes the figure
+    if isequal(get(hObject,'waitstatus'),'waiting')
+        handles.id_while = 1;
+        handles.output = hObject;
+        guidata(hObject, handles);
+        uiresume(hObject);
+    else
+        process_completed = getappdata(0,'process_completed');
+        if process_completed ~= 1
+            setappdata(0,'process_completed',0)
+        end
+        delete(hObject);
+    end
 
 
 % --- Executes on button press in pushbutton13.
@@ -6172,12 +6175,12 @@ function pushbutton13_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton13 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-close(handles.figure1)
+    setappdata(0,'process_completed',1);
+    close(handles.figure1)
 
 % --- Executes on button press in pushbutton14.
 function pushbutton14_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton14 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-setappdata(0,'cancelled',1);
-close(handles.figure1)
+    close(handles.figure1)
