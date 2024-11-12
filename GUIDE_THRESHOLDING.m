@@ -151,11 +151,9 @@ handles.output = hObject;
 guidata(hObject, handles);
 uiwait(handles.figure1);
 function varargout = GUIDE_THRESHOLDING_OutputFcn(hObject, eventdata, handles)
-    'Output called'
     process_completed = getappdata(0,'process_completed')
     if process_completed == 0
         if isappdata(0,'SEG') && isappdata(0,'NUM') && isappdata(0,'Lrgb')
-            'Data already set, marking process completed'
             % If appdata is set, we don't need to cancel in the main window
             setappdata(0,'process_completed',1);
         end
@@ -336,8 +334,7 @@ function figure1_CloseRequestFcn(hObject, eventdata, handles)
     if isequal(get(hObject,'waitstatus'),'waiting')
         uiresume(hObject);
     else
-        'Close request called'
-        process_completed = getappdata(0,'process_completed')
+        process_completed = getappdata(0,'process_completed');
         if process_completed ~= 1
             setappdata(0,'process_completed',0);
         end

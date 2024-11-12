@@ -13970,6 +13970,8 @@ function uipushtool3_ClickedCallback(hObject, eventdata, handles)
     end
     handles.save_id_SEG_mat = 1;
     handles.save_id_SEG_vti = 1;
+    set(handles.pushbutton12,'visible','on');
+    
     
 handles.output = hObject;
 guidata(hObject, handles);
@@ -14048,42 +14050,34 @@ function uipushtool4_ClickedCallback(hObject, eventdata, handles)
         
         SEG_Original = handles.SEG;
         id_while = 0;
-        while(1)
-            while(id_while == 0)
-                GUIDE_SEGMENTATION(input)
-                input.SEG = getappdata(0,'SEG');
-                input.idangmag = getappdata(0,'idangmag');
+        while(id_while == 0)
+            GUIDE_SEGMENTATION(input)
+            input.SEG = getappdata(0,'SEG');
+            input.idangmag = getappdata(0,'idangmag');
 %                 input.IPCMRA = getappdata(0,'IPCMRA');
-                input.L = getappdata(0,'L');
-                input.NUM = getappdata(0,'NUM');
-                input.Lrgb = getappdata(0,'Lrgb');
-                input.slider_axes1  = getappdata(0,'slider_axes1');
-                input.slider_axes2  = getappdata(0,'slider_axes2');
-                input.slider_axes3  = getappdata(0,'slider_axes3');
-                input.view_sac  = getappdata(0,'view_sac');
-                id_while = getappdata(0,'id_while');
-                pause(0.05)
-            end
-            handles.SEG = input.SEG;
-            handles.L = input.L;
-            handles.NUM = input.NUM;
-            handles.Lrgb = input.Lrgb;
-            segdif = handles.SEG-SEG_Original;
-            if sum(segdif(:))==0
-                answer = questdlg(  'Do you sure that the segmentation is OK ...','Warning','Yes','No','No');
-                switch answer
-                    case 'Yes'
-                        set(handles.pushbutton12,'visible','on');
-                        break
-                    case 'No'
-                        id_while = 0;
-                end
-            else
-                set(handles.pushbutton12,'visible','on');
-                break
-            end
+            input.L = getappdata(0,'L');
+            input.NUM = getappdata(0,'NUM');
+            input.Lrgb = getappdata(0,'Lrgb');
+            input.slider_axes1  = getappdata(0,'slider_axes1');
+            input.slider_axes2  = getappdata(0,'slider_axes2');
+            input.slider_axes3  = getappdata(0,'slider_axes3');
+            input.view_sac  = getappdata(0,'view_sac');
+            id_while = getappdata(0,'id_while');
             pause(0.05)
         end
+
+        process_completed = getappdata(0,'process_completed');
+        if process_completed == 0
+            return
+        elseif process_completed == 1
+            setappdata(0,'process_completed',0);
+        end
+
+        handles.SEG = input.SEG;
+        handles.L = input.L;
+        handles.NUM = input.NUM;
+        handles.Lrgb = input.Lrgb;
+        set(handles.pushbutton12,'visible','on');
         
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
