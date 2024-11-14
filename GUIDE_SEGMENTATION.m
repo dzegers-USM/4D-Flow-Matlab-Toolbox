@@ -2257,11 +2257,6 @@ function GUIDE_SEGMENTATION_OpeningFcn(hObject, eventdata, handles, varargin)
 guidata(hObject, handles);
 uiwait(handles.figure1);
 function varargout = GUIDE_SEGMENTATION_OutputFcn(hObject, eventdata, handles)
-process_completed = getappdata(0,'process_completed');
-if process_completed == 0
-    delete(handles.figure1);
-    return;
-end
 
 if handles.id_while == 0
     varargout{1} = handles.output;

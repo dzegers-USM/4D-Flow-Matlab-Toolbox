@@ -1078,7 +1078,7 @@ function pushbutton12_Callback(hObject, eventdata, handles)
         
         handles.exec_fe_mesh = 1;
     else
-        msgbox('The tetrahedral mesh has not been generated ...','Warning','warn')
+        msgbox('The tetrahedral mesh was not generated.','Warning','warn')
     end
     
     
