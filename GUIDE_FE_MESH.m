@@ -307,6 +307,11 @@ uiwait(handles.figure1);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function varargout = GUIDE_FE_MESH_OutputFcn(hObject, eventdata, handles)
+    process_completed = getappdata(0,'process_completed');
+    if process_completed == 0
+        delete(handles.figure1);
+        return;
+    end
 
     varargout{1} = handles.output;
     faces = handles.faces;
@@ -792,7 +797,7 @@ guidata(hObject, handles);
 function pushbutton4_Callback(hObject, eventdata, handles)
     
     % answer finite element mesh
-    handles.answer1 = questdlg(  '¿Do you want to smooth the velocities field before interpolating it to the mesh?','Question','Yes','No','No');
+    handles.answer1 = questdlg(  'Â¿Do you want to smooth the velocities field before interpolating it to the mesh?','Question','Yes','No','No');
     switch handles.answer1
         case 'Yes'
             
@@ -810,7 +815,7 @@ function pushbutton4_Callback(hObject, eventdata, handles)
     end
     
     % answer finite element mesh
-    handles.answer2 = questdlg(  '¿Which interpolation method you want to use to interpolate the data to the finite element mesh?','Question','linear','nearest','cubic','cubic');
+    handles.answer2 = questdlg(  'Â¿Which interpolation method you want to use to interpolate the data to the finite element mesh?','Question','linear','nearest','cubic','cubic');
     switch handles.answer2
         case 'linear'
             
@@ -947,8 +952,6 @@ function pushbutton4_Callback(hObject, eventdata, handles)
     set(handles.slider1,'visible','on')
     
     set(handles.text30,'visible','on')
-    set(handles.text31,'visible','on')
-    set(handles.text32,'visible','on')
     set(handles.pushbutton8,'visible','on')
     set(handles.pushbutton9,'visible','on')
     set(handles.pushbutton10,'visible','on')
@@ -980,8 +983,6 @@ function radiobutton1_Callback(hObject, eventdata, handles)
         
         set(handles.slider1,'Visible','off')
         set(handles.text30,'Visible','off')
-        set(handles.text31,'Visible','off')
-        set(handles.text32,'Visible','off')
         set(handles.pushbutton8,'Visible','off')
         set(handles.pushbutton9,'Visible','off')
         set(handles.pushbutton10,'Visible','off')
@@ -1023,8 +1024,6 @@ function radiobutton2_Callback(hObject, eventdata, handles)
         
         set(handles.slider1,'Visible','off')
         set(handles.text30,'Visible','off')
-        set(handles.text31,'Visible','off')
-        set(handles.text32,'Visible','off')
         set(handles.pushbutton8,'Visible','off')
         set(handles.pushbutton9,'Visible','off')
         set(handles.pushbutton10,'Visible','off')
@@ -1061,8 +1060,6 @@ function radiobutton3_Callback(hObject, eventdata, handles)
         
         set(handles.slider1,'Visible','off')
         set(handles.text30,'Visible','off')
-        set(handles.text31,'Visible','off')
-        set(handles.text32,'Visible','off')
         set(handles.pushbutton8,'Visible','off')
         set(handles.pushbutton9,'Visible','off')
         set(handles.pushbutton10,'Visible','off')
@@ -1086,6 +1083,10 @@ function figure1_CloseRequestFcn(hObject, eventdata, handles)
         guidata(hObject, handles);
         uiresume(hObject);
     else
+        process_completed = getappdata(0,'process_completed');
+        if process_completed ~= 1
+            setappdata(0,'process_completed',0);
+        end
         delete(hObject);
     end
 
@@ -1101,8 +1102,6 @@ function radiobutton4_Callback(hObject, eventdata, handles)
         
         set(handles.slider1,'Visible','on')
         set(handles.text30,'Visible','on')
-        set(handles.text31,'Visible','on')
-        set(handles.text32,'Visible','on')
         set(handles.pushbutton8,'Visible','on')
         set(handles.pushbutton9,'Visible','on')
         set(handles.pushbutton10,'Visible','on')
@@ -1272,8 +1271,6 @@ function figure1_SizeChangedFcn(hObject, eventdata, handles)
 
     set(handles.text01,'FontUnits','Normalized','FontSize',0.6)
     set(handles.text30,'FontUnits','Normalized','FontSize',0.6)
-    set(handles.text31,'FontUnits','Normalized','FontSize',0.6)
-    set(handles.text32,'FontUnits','Normalized','FontSize',0.6)
 
     set(handles.text1,'FontUnits','Normalized','FontSize',0.6)
     set(handles.text2,'FontUnits','Normalized','FontSize',0.55)
@@ -2014,7 +2011,7 @@ function pushbutton12_Callback(hObject, eventdata, handles)
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % answer finite element mesh        
-    prompt = {'¿How many voxels do you want to smooth at the wall thickness?','Kernel radius (radius of 1 mean that the kernel size is 3x3x3):'};
+    prompt = {'Â¿How many voxels do you want to smooth at the wall thickness?','Kernel radius (radius of 1 mean that the kernel size is 3x3x3):'};
     dlgtitle = 'Voxels thickness and kernel radius';
     definput = {'1','1'};
     dims = [1 80];
@@ -2172,8 +2169,6 @@ function pushbutton12_Callback(hObject, eventdata, handles)
     set(handles.slider1,'visible','on')
     
     set(handles.text30,'visible','on')
-    set(handles.text31,'visible','on')
-    set(handles.text32,'visible','on')
     set(handles.pushbutton8,'visible','on')
     set(handles.pushbutton9,'visible','on')
     set(handles.pushbutton10,'visible','on')
@@ -2182,7 +2177,7 @@ function pushbutton12_Callback(hObject, eventdata, handles)
     close(f)
 
     % answer finite element mesh
-    handles.answer1 = questdlg(  '¿Do you agree with the smoothing result?','Question','Yes','No','No');
+    handles.answer1 = questdlg(  'Â¿Do you agree with the smoothing result?','Question','Yes','No','No');
     switch handles.answer1
         case 'Yes'
             
@@ -2430,3 +2425,20 @@ function pushbutton13_Callback(hObject, eventdata, handles)
 
 handles.output = hObject;
 guidata(hObject, handles);
+
+
+% --- Executes on button press in pushbutton14.
+function pushbutton14_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton14 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+    setappdata(0,'process_completed',1);
+    close(handles.figure1);
+
+% --- Executes on button press in pushbutton15.
+function pushbutton15_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton15 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+    setappdata(0,'process_completed',0);
+    close(handles.figure1);

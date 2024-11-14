@@ -1020,6 +1020,13 @@ function pushbutton12_Callback(hObject, eventdata, handles)
     input.heart_rate    = handles.heart_rate;
         
     GUIDE_FE_MESH(input)
+
+    process_completed = getappdata(0,'process_completed');
+    if process_completed == 0
+        return
+    elseif process_completed == 1
+        setappdata(0,'process_completed',0);
+    end
     
     handles.faces = getappdata(0,'faces');
     handles.nodes = getappdata(0,'nodes');
