@@ -18996,10 +18996,14 @@ function pushbutton81_Callback(hObject, eventdata, handles)
         input.MR_PCA_RL_smooth = getappdata(0,'MR_PCA_RL_smooth');
         input.mean_velocity_2d = getappdata(0,'mean_velocity_2d');
         pause(0.05)
-
     end
     
-    
+    process_completed = getappdata(0,'process_completed');
+    if process_completed == 0
+        return
+    elseif process_completed == 1
+        setappdata(0,'process_completed',0);
+    end
     
     handles.MR_PCA_FH           = input.MR_PCA_FH;
     handles.MR_PCA_AP           = input.MR_PCA_AP;

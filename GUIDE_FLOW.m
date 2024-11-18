@@ -22,7 +22,7 @@ function varargout = GUIDE_FLOW(varargin)
 
 % Edit the above text to modify the response to help GUIDE_FLOW
 
-% Last Modified by GUIDE v2.5 07-Aug-2023 16:52:37
+% Last Modified by GUIDE v2.5 14-Nov-2024 21:05:13
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -53,10 +53,15 @@ function GUIDE_FLOW_OpeningFcn(hObject, eventdata, handles, varargin)
 % varargin   command line arguments to GUIDE_FLOW (see VARARGIN)
 
 % Choose default command line output for GUIDE_FLOW
-handles.output = hObject;
+    handles.output = hObject;
 
 
     path(path,'iso2mesh/')
+
+    % 1 if ROI draw operation was cancelled, 0 otherwise
+    setappdata(handles.figure1,'cancelROI',0);
+    % ROI being waited on, 0 otherwise
+    setappdata(handles.figure1,'waitROI',0);
 
     handles.SEG                 = varargin{1}.SEG;
     handles.IPCMRA              = varargin{1}.IPCMRA;
@@ -215,7 +220,7 @@ handles.output = hObject;
         
         set(handles.pushbutton1, 'FontUnits', 'points');
         FontS = get(handles.pushbutton1, 'FontSize');
-        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.26);
+        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.21);
         
         axes(handles.axes1);
         plot(0.0)
@@ -259,7 +264,7 @@ handles.output = hObject;
         
         set(handles.pushbutton1, 'FontUnits', 'points');
         FontS = get(handles.pushbutton1, 'FontSize');
-        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.26);
+        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.21);
         
         axes(handles.axes1);
         plot(0.0)
@@ -296,7 +301,7 @@ handles.output = hObject;
         
         set(handles.pushbutton1, 'FontUnits', 'points');
         FontS = get(handles.pushbutton1, 'FontSize');
-        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.26);
+        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.21);
         
         axes(handles.axes1);
         plot(0.0)
@@ -334,7 +339,7 @@ handles.output = hObject;
         
         set(handles.pushbutton1, 'FontUnits', 'points');
         FontS = get(handles.pushbutton1, 'FontSize');
-        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.26);
+        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.21);
         
         axes(handles.axes1);
         plot(0.0)
@@ -1336,7 +1341,7 @@ switch get(handles.popupmenu3,'Value')
 
         set(handles.pushbutton1, 'FontUnits', 'points');
         FontS = get(handles.pushbutton1, 'FontSize');
-        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.26);
+        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.21);
         
         axes(handles.axes1);
         plot(0.0)
@@ -1518,7 +1523,7 @@ switch get(handles.popupmenu3,'Value')
         
         set(handles.pushbutton1, 'FontUnits', 'points');
         FontS = get(handles.pushbutton1, 'FontSize');
-        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.26);
+        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.21);
         
         axes(handles.axes1);
         plot(0.0)
@@ -1562,7 +1567,7 @@ switch get(handles.popupmenu3,'Value')
         
         set(handles.pushbutton1, 'FontUnits', 'points');
         FontS = get(handles.pushbutton1, 'FontSize');
-        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.26);
+        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.21);
         
         axes(handles.axes1);
         plot(0.0)
@@ -1608,7 +1613,7 @@ switch get(handles.popupmenu3,'Value')
         
         set(handles.pushbutton1, 'FontUnits', 'points');
         FontS = get(handles.pushbutton1, 'FontSize');
-        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.26);
+        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.21);
         
         axes(handles.axes1);
         plot(0.0)
@@ -1690,7 +1695,7 @@ if handles.id_move_peak_flow == 1
 
         set(handles.pushbutton1, 'FontUnits', 'points');
         FontS = get(handles.pushbutton1, 'FontSize');
-        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.26,'string','SAVE PEAK FLOW');
+        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.21,'string','SAVE PEAK FLOW');
         set(handles.text1,'visible','on','string',['# Cardiac Phase: ',num2str(handles.peak_flow)])
         
         axes(handles.axes1);
@@ -2143,7 +2148,12 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
+    h = getappdata(handles.figure1,'waitROI');
+    if h ~= 0
+        setappdata(handles.figure1,'waitROI',0);
+        resume(h);
+        return;
+    end
 
 % if handles.id_move_peak_flow == 1
 %     
@@ -2359,7 +2369,13 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         h = imline(handles.axes1);
+        setappdata(handles.figure1,'waitROI',h);
         PUNTOS_C = wait(h);
+
+        cancelROI = getappdata(handles.figure1,'cancelROI');
+        if cancelROI == 1
+            return;
+        end
 
         if handles.id_image ==1
 
@@ -4240,7 +4256,7 @@ if val == 3
 
         set(handles.pushbutton1, 'FontUnits', 'points');
         FontS = get(handles.pushbutton1, 'FontSize');
-        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.26);
+        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.21);
         
         axes(handles.axes1);
         plot(0.0)
@@ -4276,7 +4292,7 @@ elseif val == 4
         
         set(handles.pushbutton1, 'FontUnits', 'points');
         FontS = get(handles.pushbutton1, 'FontSize');
-        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.26);
+        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.21);
         
         axes(handles.axes1);
         plot(0.0)
@@ -4305,7 +4321,7 @@ elseif val == 5
         
         set(handles.pushbutton1, 'FontUnits', 'points');
         FontS = get(handles.pushbutton1, 'FontSize');
-        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.26);
+        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.21);
         
         axes(handles.axes1);
         plot(0.0)
@@ -4334,7 +4350,7 @@ elseif val == 6
         
         set(handles.pushbutton1, 'FontUnits', 'points');
         FontS = get(handles.pushbutton1, 'FontSize');
-        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.26);
+        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.21);
         
         axes(handles.axes1);
         plot(0.0)
@@ -4364,7 +4380,7 @@ end
     set(handles.popupmenu2,'FontUnits','Normalized','FontSize',0.37)
     set(handles.popupmenu3,'FontUnits','Normalized','FontSize',0.37)
     set(handles.text1,'FontUnits','Normalized','FontSize',0.78)
-    set(handles.pushbutton1,'FontUnits','Normalized','FontSize',0.26)
+    set(handles.pushbutton1,'FontUnits','Normalized','FontSize',0.21)
 
 handles.output = hObject;
 guidata(hObject, handles);  
@@ -4419,3 +4435,35 @@ function figure1_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to figure1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
+
+
+% --- Executes on button press in pushbutton2.
+function pushbutton2_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton2 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+    h = getappdata(handles.figure1,'waitROI');
+    if h ~= 0
+        setappdata(handles.figure1,'waitROI',0);
+        setappdata(handles.figure1,'cancelROI',1);
+        resume(h);
+        return;
+    end
+    setappdata(0,'process_completed',0);
+    close(handles.figure1);
+
+
+% --- Executes on button press in pushbutton3.
+function pushbutton3_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton3 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+    h = getappdata(handles.figure1,'waitROI');
+    if h ~= 0
+        setappdata(handles.figure1,'waitROI',0);
+        setappdata(handles.figure1,'cancelROI',0);
+        resume(h);
+        return;
+    end
+    setappdata(0,'process_completed',1);
+    close(handles.figure1);
