@@ -13401,7 +13401,6 @@ set(handles.pushbutton9,'FontUnits','Normalized','FontSize',0.38)
 set(handles.pushbutton10,'FontUnits','Normalized','FontSize',0.38)
 set(handles.pushbutton11,'FontUnits','Normalized','FontSize',0.38)
 set(handles.pushbutton12,'FontUnits','Normalized','FontSize',0.22)
-set(handles.pushbutton13,'FontUnits','Normalized','FontSize',0.22)
 set(handles.pushbutton14,'FontUnits','Normalized','FontSize',0.51)
 set(handles.pushbutton62,'FontUnits','Normalized','FontSize',0.22)
 set(handles.pushbutton69,'FontUnits','Normalized','FontSize',0.38)
@@ -13618,7 +13617,6 @@ if handles.id_seg == 1
             set(handles.popupmenu1,'visible','off','String',list_string,'value',1);
             set(handles.pushbutton5, 'visible', 'off');
             set(handles.pushbutton12, 'visible', 'off');
-            set(handles.pushbutton13, 'visible', 'off');
             set(handles.pushbutton14, 'visible', 'off');
             set(handles.slider4, 'visible', 'off');
             handles.SEG = zeros(size(handles.SEG));
@@ -13710,7 +13708,6 @@ else
     set(handles.popupmenu1,'visible','off','String',list_string,'value',1);
     set(handles.pushbutton5, 'visible', 'off');
     set(handles.pushbutton12, 'visible', 'off');
-    set(handles.pushbutton13, 'visible', 'off');
     set(handles.pushbutton14, 'visible', 'off');
     set(handles.slider4, 'visible', 'off');
     handles.SEG = zeros(size(handles.SEG));
@@ -13805,7 +13802,6 @@ function uipushtool3_ClickedCallback(hObject, eventdata, handles)
     set(handles.popupmenu1,'visible','off','String',list_string,'value',1);
     set(handles.pushbutton5, 'visible', 'off');
     set(handles.pushbutton12, 'visible', 'off');
-    set(handles.pushbutton13, 'visible', 'off');
     set(handles.pushbutton14, 'visible', 'off');
     set(handles.slider4, 'visible', 'off');
     handles.id_unwrappping = 0;
@@ -19037,9 +19033,9 @@ function pushbutton81_Callback(hObject, eventdata, handles)
         handles.save_id_mav_csv     = 1; % Julio Sotelo 28-05-2019 max_velocity
         handles.save_id_miv_csv     = 1; % Julio Sotelo 28-05-2019 min_velocity
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        set(handles.pushbutton13,'visible','on');
-        
     end
+
+    pushbutton13_Callback(hObject, eventdata, handles);
 
 handles.output = hObject;
 guidata(hObject, handles);
