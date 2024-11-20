@@ -2373,6 +2373,8 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         PUNTOS_C = wait(h);
 
         cancelROI = getappdata(handles.figure1,'cancelROI');
+        setappdata(handles.figure1,'cancelROI',0);
+        setappdata(handles.figure1,'waitROI',0);
         if cancelROI == 1
             return;
         end
