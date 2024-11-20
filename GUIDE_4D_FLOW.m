@@ -1067,7 +1067,7 @@ function pushbutton12_Callback(hObject, eventdata, handles)
         handles.MR_PCA_AP = AP_ori(3:end-2,3:end-2,3:end-2,:);
         handles.MR_PCA_RL = RL_ori(3:end-2,3:end-2,3:end-2,:);
 
-        list_string = {'...','Surface','Voxel','Mesh','Velocity'};
+        list_string = {'Select visualization...','Surface','Voxel','Mesh','Velocity'};
         set(handles.popupmenu1,'visible','on','String',list_string);
         set(handles.pushbutton81,'visible','on');
         
@@ -3014,8 +3014,9 @@ function pushbutton13_Callback(hObject, eventdata, handles)
     handles.Lrgb_el = handles.Lrgb_el(3:end-2,3:end-2,3:end-2,:,:);
     handles.Lrgb_ke = handles.Lrgb_ke(3:end-2,3:end-2,3:end-2,:,:);
     
-    list_string = {'...','Surface','Voxel','Mesh','Velocity','WSS','OSI',...
-                   'Vorticity','Helicity Density','R. Helicity Density',...
+    list_string = {'Select visualization...','Surface','Voxel','Mesh',...
+                   'Velocity','WSS','OSI','Vorticity',...
+                   'Helicity Density','R. Helicity Density',...
                    'Viscous Dissipation','Energy Loss','Kinetic Energy'};
     set(handles.popupmenu1,'visible','on','String',list_string);
     handles.save_id_wss_mat = 1;
@@ -13909,7 +13910,7 @@ function uipushtool3_ClickedCallback(hObject, eventdata, handles)
         % Set image texts
         updateMainImageTexts(handles,round(handles.slider_axes1),handles.c,round(handles.slider_axes2),handles.b,round(handles.slider_axes3),handles.a,true);
 
-        list_string = {'...','Surface','Voxel'};
+        list_string = {'Select visualization...','Surface','Voxel'};
         set(handles.popupmenu1,'visible','on','String',list_string);
         popupmnenu1_pos = get(handles.popupmenu1,'Value');
         if popupmnenu1_pos == 2
@@ -15504,7 +15505,7 @@ function Load_SEG_Callback(hObject, eventdata, handles)
             % Set image texts
             updateMainImageTexts(handles,round(handles.slider_axes1),handles.c,round(handles.slider_axes2),handles.b,round(handles.slider_axes3),handles.a,true);
 
-            list_string = {'...','Surface','Voxel'};
+            list_string = {'Select visualization...','Surface','Voxel'};
             set(handles.popupmenu1,'visible','on','String',list_string);
             
         elseif handles.a-2 == as && handles.b-2 == bs && handles.c-2 == cs % load original without modification
@@ -15587,7 +15588,7 @@ function Load_SEG_Callback(hObject, eventdata, handles)
             % Set image texts
             updateMainImageTexts(handles,round(handles.slider_axes1),handles.c,round(handles.slider_axes2),handles.b,round(handles.slider_axes3),handles.a,true);
 
-            list_string = {'...','Surface','Voxel'};
+            list_string = {'Select visualization...','Surface','Voxel'};
             set(handles.popupmenu1,'visible','on','String',list_string);
 
         elseif handles.a-2 == (as-2)*2 && handles.b-2 == (bs-2)*2 && handles.c-2 == (cs-2)*2 % load Segmentation for SuperRes
@@ -15671,7 +15672,7 @@ function Load_SEG_Callback(hObject, eventdata, handles)
             % Set image texts
             updateMainImageTexts(handles,round(handles.slider_axes1),handles.c,round(handles.slider_axes2),handles.b,round(handles.slider_axes3),handles.a,true);
 
-            list_string = {'...','Surface','Voxel'};
+            list_string = {'Select visualization...','Surface','Voxel'};
             set(handles.popupmenu1,'visible','on','String',list_string);
             
         else
@@ -15763,7 +15764,7 @@ function Load_SEG_Callback(hObject, eventdata, handles)
             % Set image texts
             updateMainImageTexts(handles,round(handles.slider_axes1),handles.c,round(handles.slider_axes2),handles.b,round(handles.slider_axes3),handles.a,true);
 
-            list_string = {'...','Surface','Voxel'};
+            list_string = {'Select visualization...','Surface','Voxel'};
             set(handles.popupmenu1,'visible','on','String',list_string);
 
         end
@@ -16363,7 +16364,7 @@ function pushbutton62_Callback(hObject, eventdata, handles)
                 handles.Lrgb_bve = handles.Lrgb_bve(3:end-2,3:end-2,3:end-2,:,:);
                 handles.Lrgb_fov = handles.Lrgb_fov(3:end-2,3:end-2,3:end-2,:,:);
 
-                list_string = {'...','Surface','Voxel','Mesh','Velocity','WSS','OSI',...
+                list_string = {'Select visualization...','Surface','Voxel','Mesh','Velocity','WSS','OSI',...
                                'Vorticity','Helicity Density','R. Helicity Density',...
                                'Viscous Dissipation','Energy Loss','Kinetic Energy',...
                                'Laplace','Centerline','Diameter','Radius','Axial Unit Vectors',...
