@@ -1301,7 +1301,6 @@ function figure1_SizeChangedFcn(hObject, eventdata, handles)
     set(handles.pushbutton8,'FontUnits','Normalized','FontSize',0.57)
     set(handles.pushbutton9,'FontUnits','Normalized','FontSize',0.57)
     set(handles.pushbutton10,'FontUnits','Normalized','FontSize',0.57)
-    set(handles.pushbutton12,'FontUnits','Normalized','FontSize',0.24)
     set(handles.pushbutton2,'FontUnits','Normalized','FontSize',0.24)
     set(handles.pushbutton3,'FontUnits','Normalized','FontSize',0.24)
 
@@ -1312,7 +1311,6 @@ function figure1_SizeChangedFcn(hObject, eventdata, handles)
     set(handles.radiobutton5,'FontUnits','Normalized','FontSize',0.48)
     set(handles.radiobutton6,'FontUnits','Normalized','FontSize',0.48)
     set(handles.radiobutton7,'FontUnits','Normalized','FontSize',0.48)
-    set(handles.pushbutton13,'FontUnits','Normalized','FontSize',0.24)
 
 handles.output = hObject;
 guidata(hObject, handles);    
