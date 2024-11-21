@@ -19036,7 +19036,163 @@ function pushbutton81_Callback(hObject, eventdata, handles)
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     end
 
-    pushbutton13_Callback(hObject, eventdata, handles);
+    input.elem = handles.elem;
+    input.faces = handles.faces;
+    input.nodes = handles.nodes/1000;
+    input.veset = handles.veset;    
+    input.veset(unique(sort(handles.faces(:))),:,:) = handles.veset(unique(sort(handles.faces(:))),:,:).*0;    
+    input.heart_rate = handles.heart_rate;
+    input.mu = 4.5e-3;
+    input.density = 1060;
+    
+    [out] = FAST_FEM(input); % Change
+    
+    handles.GR = out.GR; % Derivative values of velocity
+    handles.Ten = out.Ten;
+    handles.normal = out.normal;
+    handles.IWSS = out.IWSS;
+    handles.WSS = out.WSS;
+    handles.mags_wss = out.mags_wss;
+    handles.OSI = out.OSI;
+    handles.mags_osi = out.mags_osi;
+    handles.VOR = out.VOR;
+    handles.mags_vor = out.mags_vor;
+    handles.HD = out.HD;    
+    handles.mags_hd = out.mags_hd;
+    handles.RHD = out.RHD;
+    handles.mags_rhd = out.mags_rhd;
+    handles.nodevol = out.nodevol;
+    handles.VD = out.VD;
+    handles.mags_vd = out.mags_vd;
+    handles.EL = out.EL;
+    handles.mags_el = out.mags_el;
+    handles.KE = out.KE;
+    handles.mags_ke = out.mags_ke;
+    h = out.h;
+
+   
+    handles.VORc = handles.VOR;
+    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % eliminate higher values of:
+    % vorticity, viscouss dissipation, EL. 
+    
+    
+    [conn,~,~] = meshconn(handles.elem,size(handles.nodes,1));
+    sid = unique(sort(handles.faces(:))); 
+    handles.list_n = [];
+    for n=1:length(sid)
+        handles.list_n = [handles.list_n,conn{sid(n)}];
+    end
+    handles.list_n = sort(unique(handles.list_n'));
+    
+    handles.VOR(handles.list_n,:,:) = handles.VOR(handles.list_n,:,:).*0;
+    handles.VD(handles.list_n,:) = handles.VD(handles.list_n,:).*0;
+    handles.EL(handles.list_n,:) = handles.EL(handles.list_n,:).*0;
+    
+    handles.mags_vor(handles.list_n,:) = handles.mags_vor(handles.list_n,:).*0;
+    handles.mags_vd(handles.list_n,:) = handles.mags_vd(handles.list_n,:).*0;
+    handles.mags_el(handles.list_n,:) = handles.mags_el(handles.list_n,:).*0;
+    
+    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+    handles.Lrgb_vor = ones(size(handles.MR_PCA_FH,1)+4,size(handles.MR_PCA_FH,2)+4,size(handles.MR_PCA_FH,3)+4,size(handles.MR_PCA_FH,4),3);
+    handles.Lrgb_hd  = ones(size(handles.MR_PCA_FH,1)+4,size(handles.MR_PCA_FH,2)+4,size(handles.MR_PCA_FH,3)+4,size(handles.MR_PCA_FH,4),3);
+    handles.Lrgb_rhd = ones(size(handles.MR_PCA_FH,1)+4,size(handles.MR_PCA_FH,2)+4,size(handles.MR_PCA_FH,3)+4,size(handles.MR_PCA_FH,4),3);
+    handles.Lrgb_vd  = ones(size(handles.MR_PCA_FH,1)+4,size(handles.MR_PCA_FH,2)+4,size(handles.MR_PCA_FH,3)+4,size(handles.MR_PCA_FH,4),3);
+    handles.Lrgb_el  = ones(size(handles.MR_PCA_FH,1)+4,size(handles.MR_PCA_FH,2)+4,size(handles.MR_PCA_FH,3)+4,size(handles.MR_PCA_FH,4),3);
+    handles.Lrgb_ke  = ones(size(handles.MR_PCA_FH,1)+4,size(handles.MR_PCA_FH,2)+4,size(handles.MR_PCA_FH,3)+4,size(handles.MR_PCA_FH,4),3);
+    
+    MASK = permute(double(abs(sum(handles.Lrgb,4)-3)>0),[2,1,3]);
+    MASK(1:2,:,:) = 0; MASK(:,1:2,:) = 0; MASK(:,:,1:2) = 0; MASK(end-1:end,:,:) = 0; MASK(:,end-1:end,:) = 0; MASK(:,:,end-1:end) = 0;
+    xd_seg = MASK.*handles.xd;
+    yd_seg = MASK.*handles.yd;
+    zd_seg = MASK.*handles.zd;
+    xd_seg(MASK==0) = [];
+    yd_seg(MASK==0) = [];
+    zd_seg(MASK==0) = [];
+    pos_voxel = [xd_seg(:),yd_seg(:),zd_seg(:)];
+    [X,Y,Z] = meshgrid(1:size(handles.IPCMRA,1),1:size(handles.IPCMRA,2),1:size(handles.IPCMRA,3));
+    X_seg = MASK.*X;
+    Y_seg = MASK.*Y;
+    Z_seg = MASK.*Z;
+    X_seg(MASK==0) = [];
+    Y_seg(MASK==0) = [];
+    Z_seg(MASK==0) = [];
+    
+    pos_v = [X_seg(:),Y_seg(:),Z_seg(:)];
+    [~, ~, ind] = histcounts(handles.mags_vor(:), size(cool(128), 1));
+    ind = reshape(ind,[size(handles.veset,1) size(handles.veset,3)]);
+    cmap_vol = uint8(ind2rgb(ind, cool(128)) * 255);
+    rgb_vor = cmap_vol/255;
+    [~, ~, ind] = histcounts(handles.mags_hd(:), size(cool(128), 1));
+    ind = reshape(ind,[size(handles.veset,1) size(handles.veset,3)]);
+    cmap_vol = uint8(ind2rgb(ind, cool(128)) * 255);
+    rgb_hd = cmap_vol/255;
+    [~, ~, ind] = histcounts(handles.mags_rhd(:), size(summer(128), 1));
+    ind = reshape(ind,[size(handles.veset,1) size(handles.veset,3)]);
+    cmap_vol = uint8(ind2rgb(ind, summer(128)) * 255);
+    rgb_rhd = cmap_vol/255;
+    [~, ~, ind] = histcounts(handles.mags_vd(:), size(winter(128), 1));
+    ind = reshape(ind,[size(handles.veset,1) size(handles.veset,3)]);
+    cmap_vol = uint8(ind2rgb(ind, winter(128)) * 255);
+    rgb_vd = cmap_vol/255;
+    [~, ~, ind] = histcounts(handles.mags_el(:), size(autumn(128), 1));
+    ind = reshape(ind,[size(handles.veset,1) size(handles.veset,3)]);
+    cmap_vol = uint8(ind2rgb(ind, autumn(128)) * 255);
+    rgb_el = cmap_vol/255;
+    [~, ~, ind] = histcounts(handles.mags_ke(:), size(spring(128), 1));
+    ind = reshape(ind,[size(handles.veset,1) size(handles.veset,3)]);
+    cmap_vol = uint8(ind2rgb(ind, spring(128)) * 255);
+    rgb_ke = cmap_vol/255;
+    
+    for n=1:length(pos_voxel(:,1))
+        d = sqrt(sum((handles.nodes-repmat(pos_voxel(n,:),[length(handles.nodes(:,1)), 1])).^2,2));
+        handles.Lrgb_vor(pos_v(n,1)+2,pos_v(n,2)+2,pos_v(n,3)+2,:,:) = mean(rgb_vor(d<mean(handles.voxel_MR)*2,:,:),1);
+        handles.Lrgb_hd(pos_v(n,1)+2,pos_v(n,2)+2,pos_v(n,3)+2,:,:) = mean(rgb_hd(d<mean(handles.voxel_MR)*2,:,:),1);
+        handles.Lrgb_rhd(pos_v(n,1)+2,pos_v(n,2)+2,pos_v(n,3)+2,:,:) = mean(rgb_rhd(d<mean(handles.voxel_MR)*2,:,:),1);
+        handles.Lrgb_vd(pos_v(n,1)+2,pos_v(n,2)+2,pos_v(n,3)+2,:,:) = mean(rgb_vd(d<mean(handles.voxel_MR)*2,:,:),1);
+        handles.Lrgb_el(pos_v(n,1)+2,pos_v(n,2)+2,pos_v(n,3)+2,:,:) = mean(rgb_el(d<mean(handles.voxel_MR)*2,:,:),1);
+        handles.Lrgb_ke(pos_v(n,1)+2,pos_v(n,2)+2,pos_v(n,3)+2,:,:) = mean(rgb_ke(d<mean(handles.voxel_MR)*2,:,:),1);
+    end
+    
+    handles.Lrgb_vor = handles.Lrgb_vor(3:end-2,3:end-2,3:end-2,:,:);
+    handles.Lrgb_hd = handles.Lrgb_hd(3:end-2,3:end-2,3:end-2,:,:);
+    handles.Lrgb_rhd = handles.Lrgb_rhd(3:end-2,3:end-2,3:end-2,:,:);
+    handles.Lrgb_vd = handles.Lrgb_vd(3:end-2,3:end-2,3:end-2,:,:);
+    handles.Lrgb_el = handles.Lrgb_el(3:end-2,3:end-2,3:end-2,:,:);
+    handles.Lrgb_ke = handles.Lrgb_ke(3:end-2,3:end-2,3:end-2,:,:);
+    
+    list_string = {'Select visualization...','Surface','Voxel','Mesh',...
+                   'Velocity','WSS','OSI','Vorticity',...
+                   'Helicity Density','R. Helicity Density',...
+                   'Viscous Dissipation','Energy Loss','Kinetic Energy'};
+    set(handles.popupmenu1,'visible','on','String',list_string);
+    handles.save_id_wss_mat = 1;
+    handles.save_id_osi_mat = 1;
+    handles.save_id_vor_mat = 1;
+    handles.save_id_hd_mat = 1;
+    handles.save_id_rhd_mat = 1;
+    handles.save_id_vd_mat = 1;
+    handles.save_id_el_mat = 1;
+    handles.save_id_ke_mat = 1;
+    handles.save_id_wss_vtu = 1;
+    handles.save_id_osi_vtu = 1;
+    handles.save_id_vor_vtu = 1;
+    handles.save_id_hd_vtu = 1;
+    handles.save_id_rhd_vtu = 1;
+    handles.save_id_vd_vtu = 1;
+    handles.save_id_el_vtu = 1;
+    handles.save_id_ke_vtu = 1;
+    close(h)
+    disp('The finite element quantification is finish ...')
+    
+    set(handles.pushbutton62,'visible','on');% include
 
 handles.output = hObject;
 guidata(hObject, handles);

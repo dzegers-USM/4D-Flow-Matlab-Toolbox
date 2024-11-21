@@ -117,6 +117,7 @@ function GUIDE_FLOW_OpeningFcn(hObject, eventdata, handles, varargin)
     handles.time                = varargin{1}.time;    
     handles.peak_flow           = varargin{1}.peak_flow;    
     handles.flow                = varargin{1}.flow;    
+    handles.mean_velocity_2d    = varargin{1}.mean_velocity_2d;
     handles.net_flow            = varargin{1}.net_flow;    
     handles.max_velocity        = varargin{1}.max_velocity;    
     handles.min_velocity        = varargin{1}.min_velocity; 
@@ -609,6 +610,8 @@ if handles.id_while == 0
     setappdata(0,'MR_PCA_AP_smooth',MR_PCA_AP_smooth);
     MR_PCA_RL_smooth = handles.MR_PCA_RL_smooth;
     setappdata(0,'MR_PCA_RL_smooth',MR_PCA_RL_smooth);
+    mean_velocity_2d = handles.mean_velocity_2d;
+    setappdata(0,'mean_velocity_2d',mean_velocity_2d);
 
 
 elseif handles.id_while == 1
@@ -667,6 +670,8 @@ elseif handles.id_while == 1
     setappdata(0,'MR_PCA_AP_smooth',MR_PCA_AP_smooth);
     MR_PCA_RL_smooth = handles.MR_PCA_RL_smooth;
     setappdata(0,'MR_PCA_RL_smooth',MR_PCA_RL_smooth);
+    mean_velocity_2d = handles.mean_velocity_2d;
+    setappdata(0,'mean_velocity_2d',mean_velocity_2d);
 
     delete(handles.figure1); % POSIBLE CAMBIO figure1 por GUIDE_FLOW JSOTELO
 end
@@ -2784,6 +2789,7 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         % flow quantification    
         nod_volume_selected = nodevol(r)/sum(nodevol(r));
         handles.mean_velocity = sum((handles.velocity_proj*100).*nod_volume_selected);
+        handles.mean_velocity_2d = handles.mean_velocity;
         handles.flow = squeeze(handles.mean_velocity*(area/100));
         handles.time = linspace(0,60/handles.heart_rate,size(handles.veset,3))';
         [~,I] = max(abs(handles.flow));
@@ -3498,6 +3504,7 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         % flow quantification
         nod_volume_selected = nodevol(r)/sum(nodevol(r));
         handles.mean_velocity = sum((handles.velocity_proj*100).*nod_volume_selected);
+        handles.mean_velocity_2d = handles.mean_velocity;
         handles.flow = squeeze(handles.mean_velocity*(area/100));
         handles.time = linspace(0,60/handles.heart_rate,size(handles.veset,3))';
         [~,I] = max(abs(handles.flow));
@@ -4110,6 +4117,7 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         
         nod_volume_selected = nodevol(r)/sum(nodevol(r));
         handles.mean_velocity = sum((handles.velocity_proj*100).*nod_volume_selected);
+        handles.mean_velocity_2d = handles.mean_velocity;
         handles.flow = squeeze(handles.mean_velocity*(area/100));
         handles.time = linspace(0,60/handles.heart_rate,size(handles.veset,3))';
         [~,I] = max(abs(handles.flow));
