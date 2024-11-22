@@ -1,1 +1,4 @@
 iso2mesh/*
+
+# MATLAB autosave files
+*.asv

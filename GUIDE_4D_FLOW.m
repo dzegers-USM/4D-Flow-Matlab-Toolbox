@@ -10435,7 +10435,7 @@ function Load_Folder_Callback(hObject, eventdata, handles)
         wb = waitbar(0, 'Loading structure data...');
         wbch = allchild(wb);
         jp = wbch(1).JavaPeer;
-        jp.setIndeterminate(1)
+        jp.setIndeterminate(1);
         
         fullFileName = files_names_mat{1};
         load(fullFileName);
@@ -16298,8 +16298,10 @@ function pushbutton62_Callback(hObject, eventdata, handles)
         if id_while ==1
             
             if isempty(handles.Laplace)==0
-                    
-                h = msgbox('Please wait, transferring data ...','Wait','none');
+                h = waitbar(0, 'Loading structure data...');
+                wbch = allchild(h);
+                jp = wbch(1).JavaPeer;
+                jp.setIndeterminate(1);
                 
                 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
