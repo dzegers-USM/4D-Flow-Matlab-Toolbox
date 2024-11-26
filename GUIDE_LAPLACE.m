@@ -52,11 +52,16 @@ function GUIDE_LAPLACE_OpeningFcn(hObject, eventdata, handles, varargin)
 % handles    structure with handles and user data (see GUIDATA)
 % varargin   command line arguments to GUIDE_LAPLACE (see VARARGIN)
 
-% Choose default command line output for GUIDE_LAPLACE
-handles.output = hObject;
+    % Choose default command line output for GUIDE_LAPLACE
+    handles.output = hObject;
 
     path(path,'iso2mesh/')
     path(path,'IO_CODES_MATLAB_CODES/') % cambiar
+
+    % 1 if ROI draw operation was cancelled, 0 otherwise
+    setappdata(handles.GUIDE_LAPLACE,'cancelROI',0);
+    % ROI being waited on, 0 otherwise
+    setappdata(handles.GUIDE_LAPLACE,'waitROI',0);
     
     handles.rot = 1;
     
@@ -2856,6 +2861,13 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
+h = getappdata(handles.GUIDE_LAPLACE,'waitROI');
+if h ~= 0
+    setappdata(handles.GUIDE_LAPLACE,'waitROI',0);
+    resume(h);
+    return;
+end
+
 if handles.id_vwerp  == 1
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2943,6 +2955,7 @@ if handles.id_vwerp  == 1
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         h = imline(handles.axes1);
+        setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
         PUNTOS_C = wait(h);
 
         if handles.id_image ==1
@@ -3629,6 +3642,7 @@ if handles.id_vwerp  == 1
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         h = imline(handles.axes1);
+        setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
         PUNTOS_C = wait(h);
 
         if handles.id_image ==1
@@ -4431,6 +4445,7 @@ if handles.id_vwerp  == 1
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         h = imline(handles.axes1);
+        setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
         PUNTOS_C = wait(h);
 
         if handles.id_image ==1
@@ -5139,6 +5154,7 @@ else
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         h = imline(handles.axes1);
+        setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
         PUNTOS_C = wait(h);
 
         if handles.id_image ==1
@@ -5806,6 +5822,7 @@ else
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         h = imline(handles.axes1);
+        setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
         PUNTOS_C = wait(h);
 
         if handles.id_image ==1
@@ -6591,6 +6608,7 @@ else
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         h = imline(handles.axes1);
+        setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
         PUNTOS_C = wait(h);
 
         if handles.id_image ==1
@@ -7195,6 +7213,13 @@ function pushbutton2_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
+h = getappdata(handles.GUIDE_LAPLACE,'waitROI');
+if h ~= 0
+    setappdata(handles.GUIDE_LAPLACE,'waitROI',0);
+    resume(h);
+    return;
+end
+
 if handles.id_vwerp == 1
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -7282,6 +7307,7 @@ if handles.id_vwerp == 1
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         h = imline(handles.axes1);
+        setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
         PUNTOS_C = wait(h);
 
         if handles.id_image ==1
@@ -7950,6 +7976,7 @@ if handles.id_vwerp == 1
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         h = imline(handles.axes1);
+        setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
         PUNTOS_C = wait(h);
 
         if handles.id_image ==1
@@ -8732,6 +8759,7 @@ if handles.id_vwerp == 1
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         h = imline(handles.axes1);
+        setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
         PUNTOS_C = wait(h);
 
         if handles.id_image ==1
@@ -9409,6 +9437,7 @@ else
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         h = imline(handles.axes1);
+        setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
         PUNTOS_C = wait(h);
 
         if handles.id_image ==1
@@ -10073,6 +10102,7 @@ else
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         h = imline(handles.axes1);
+        setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
         PUNTOS_C = wait(h);
 
         if handles.id_image ==1
@@ -10850,6 +10880,7 @@ else
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         h = imline(handles.axes1);
+        setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
         PUNTOS_C = wait(h);
 
         if handles.id_image ==1
@@ -16158,9 +16189,37 @@ switch answer
         end
 end
 
-
-            
-
-
 handles.output = hObject;
 guidata(hObject, handles);
+
+% --- Executes on button press in pushbutton15.
+function pushbutton15_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton12 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+    h = getappdata(handles.GUIDE_LAPLACE,'waitROI');
+    if h ~= 0
+        setappdata(handles.GUIDE_LAPLACE,'waitROI',0);
+        setappdata(handles.GUIDE_LAPLACE,'cancelROI',0);
+        resume(h);
+        return;
+    end
+    setappdata(0,'process_completed',1);
+    close(handles.GUIDE_LAPLACE);
+
+% --- Executes on button press in pushbutton16.
+function pushbutton16_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton3 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+    h = getappdata(handles.GUIDE_LAPLACE,'waitROI');
+    if h ~= 0
+        setappdata(handles.GUIDE_LAPLACE,'waitROI',0);
+        setappdata(handles.GUIDE_LAPLACE,'cancelROI',1);
+        resume(h);
+        return;
+    end
+    setappdata(0,'process_completed',0);
+    close(handles.GUIDE_LAPLACE);
+

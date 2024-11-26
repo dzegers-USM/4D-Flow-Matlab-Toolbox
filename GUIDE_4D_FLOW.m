@@ -16296,6 +16296,13 @@ function pushbutton62_Callback(hObject, eventdata, handles)
         handles.axial_circulation               = getappdata(0,'axial_circulation'); % Julio Sotelo 28-05-2019
        
         if id_while ==1
+
+            process_completed = getappdata(0,'process_completed')
+            if process_completed == 0
+                return
+            elseif process_completed == 1
+                setappdata(0,'process_completed',0);
+            end
             
             if isempty(handles.Laplace)==0
                 h = waitbar(0, 'Loading structure data...');
