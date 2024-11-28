@@ -55,7 +55,7 @@ function GUIDE_4D_FLOW_OpeningFcn(hObject, eventdata, handles, varargin)
     set(flogo,'Units', 'pixels');
     image(imlogo(:,:,1:3))
     set(gca,'Visible','off','Units','pixels','Position', [2 2 Sz(2) Sz(1)]);
-    pause(5)
+    pause(3)
     delete(flogo)
     clear imlogo
     warning off
@@ -11782,22 +11782,6 @@ function Load_Folder_Callback(hObject, eventdata, handles)
     handles.id_csv_save = 0;
     handles.SECTIONS_S = [];
     handles.SECTIONS_V = [];
-    
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % Showing the logo image %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    txt = 'Symbols/VIEWS.png';
-    imlogo = imread(txt);
-    [av,bv,~]=size(imlogo);
-    windows_screen_size = get(0,'ScreenSize');
-    imlogo = imresize(imlogo,[round(windows_screen_size(4)*av/(av+bv)) round(windows_screen_size(4)*bv/(av+bv))]);
-    Sz= size(imlogo);
-    flogo = figure('Position',[10000 10000 Sz(2) + 4 Sz(1) + 4],'name','VIEWS','numbertitle','off','menubar','none');
-    movegui(flogo,'center');
-    set(flogo,'Units', 'pixels');
-    image(imlogo(:,:,1:3))
-    set(gca,'Visible','off','Units','pixels','Position', [2 2 Sz(2) Sz(1)]);
-    waitfor(flogo)
         
     % Julio Sotelo 18092022
     handles.exec_fe_mesh = 0;
@@ -12024,6 +12008,13 @@ function Save_Data_Callback(hObject, eventdata, handles)
                     handles.ID_selected = input.ID_selected;
                     pause(0.05)
 
+                end
+
+                process_completed = getappdata(0,'process_completed');
+                if process_completed == 0
+                    return
+                elseif process_completed == 1
+                    setappdata(0,'process_completed',0);
                 end
                 
                 % SECTION OF VOLUME
@@ -13358,11 +13349,6 @@ guidata(hObject, handles);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function figure1_SizeChangedFcn(hObject, eventdata, handles)
 
-% change size windows
-set(handles.figure1, 'Units', 'pixels');
-FigPos = get(handles.figure1, 'Position');
-set(handles.figure1, 'Position', [FigPos(1:2),FigPos(4),FigPos(4) ]);
-set(handles.figure1, 'Units', 'normalized');
 
 % change size zoom buttons
 set(handles.pushbutton2, 'Units', 'pixels');
@@ -13379,10 +13365,6 @@ set(handles.pushbutton4,'CData',g,'visible','on')
 set(handles.pushbutton5,'CData',g)
 
 % 4D FLOW
-set(handles.text1,'FontUnits','Normalized','FontSize',0.59)
-set(handles.text2,'FontUnits','Normalized','FontSize',0.59)
-set(handles.text3,'FontUnits','Normalized','FontSize',0.59)
-set(handles.text4,'FontUnits','Normalized','FontSize',0.59)
 set(handles.text99,'FontUnits','Normalized','FontSize',0.58)
 set(handles.text101,'FontUnits','Normalized','FontSize',0.58)
 set(handles.text102,'FontUnits','Normalized','FontSize',0.58)

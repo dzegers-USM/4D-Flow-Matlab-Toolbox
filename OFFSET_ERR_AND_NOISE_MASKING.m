@@ -87,16 +87,19 @@ function OFFSET_ERR_AND_NOISE_MASKING_OpeningFcn(hObject, ~, handles, varargin)
         set(handles.popupmenu2,'String',handles.list_string2,'Value',1);
 
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        set(handles.text12,'Visible','off');
         set(handles.pushbutton1,'Visible','off'); % pushbutton ADD panel 1
         set(handles.pushbutton2,'Visible','off'); % pushbutton DEL panel 1
         set(handles.pushbutton10,'Visible','off'); % pushbutton ROI panel 1
         set(handles.pushbutton3,'Visible','off'); % pushbutton SAVE panel 1
 
+        set(handles.text13,'Visible','off');
         set(handles.pushbutton4,'Visible','off'); % pushbutton ADD panel 2
         set(handles.pushbutton5,'Visible','off'); % pushbutton DEL panel 2
         set(handles.pushbutton11,'Visible','off'); % pushbutton ROI panel 2
         set(handles.pushbutton6,'Visible','off'); % pushbutton SAVE panel 2
 
+        set(handles.text14,'Visible','off');
         set(handles.pushbutton7,'Visible','off'); % pushbutton ADD panel 3
         set(handles.pushbutton8,'Visible','off'); % pushbutton DEL panel 3
         set(handles.pushbutton12,'Visible','off'); % pushbutton ROI panel 3
@@ -1029,17 +1032,19 @@ function popupmenu2_Callback(hObject, ~, handles)
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     if handles.id_variable==1
-
+        set(handles.text12,'Visible','off');
         set(handles.pushbutton1,'Visible','off'); % pushbutton ADD panel 1
         set(handles.pushbutton2,'Visible','off'); % pushbutton DEL panel 1
         set(handles.pushbutton10,'Visible','off'); % pushbutton ROI panel 1
         set(handles.pushbutton3,'Visible','off'); % pushbutton SAVE panel 1
 
+        set(handles.text13,'Visible','off');
         set(handles.pushbutton4,'Visible','off'); % pushbutton ADD panel 2
         set(handles.pushbutton5,'Visible','off'); % pushbutton DEL panel 2
         set(handles.pushbutton11,'Visible','off'); % pushbutton ROI panel 2
         set(handles.pushbutton6,'Visible','off'); % pushbutton SAVE panel 2
 
+        set(handles.text14,'Visible','off');
         set(handles.pushbutton7,'Visible','off'); % pushbutton ADD panel 3
         set(handles.pushbutton8,'Visible','off'); % pushbutton DEL panel 3
         set(handles.pushbutton12,'Visible','off'); % pushbutton ROI panel 3
@@ -1050,17 +1055,19 @@ function popupmenu2_Callback(hObject, ~, handles)
 
 
     elseif handles.id_variable==2
-
+        set(handles.text12,'Visible','on');
         set(handles.pushbutton1,'Visible','on'); % pushbutton ADD panel 1
         set(handles.pushbutton2,'Visible','on'); % pushbutton DEL panel 1
         set(handles.pushbutton10,'Visible','off'); % pushbutton ROI panel 1
         set(handles.pushbutton3,'Visible','on'); % pushbutton SAVE panel 1
 
+        set(handles.text13,'Visible','on');
         set(handles.pushbutton4,'Visible','on'); % pushbutton ADD panel 2
         set(handles.pushbutton5,'Visible','on'); % pushbutton DEL panel 2
         set(handles.pushbutton11,'Visible','off'); % pushbutton ROI panel 2
         set(handles.pushbutton6,'Visible','on'); % pushbutton SAVE panel 2
 
+        set(handles.text14,'Visible','on');
         set(handles.pushbutton7,'Visible','on'); % pushbutton ADD panel 3
         set(handles.pushbutton8,'Visible','on'); % pushbutton DEL panel 3
         set(handles.pushbutton12,'Visible','off'); % pushbutton ROI panel 3
@@ -1101,17 +1108,19 @@ function popupmenu2_Callback(hObject, ~, handles)
         
 
     elseif handles.id_variable==3
-
+        set(handles.text12,'Visible','on');
         set(handles.pushbutton1,'Visible','on'); % pushbutton ADD panel 1
         set(handles.pushbutton2,'Visible','on'); % pushbutton DEL panel 1
         set(handles.pushbutton10,'Visible','off'); % pushbutton ROI panel 1
         set(handles.pushbutton3,'Visible','on'); % pushbutton SAVE panel 1
 
+        set(handles.text13,'Visible','on');
         set(handles.pushbutton4,'Visible','on'); % pushbutton ADD panel 2
         set(handles.pushbutton5,'Visible','on'); % pushbutton DEL panel 2
         set(handles.pushbutton11,'Visible','off'); % pushbutton ROI panel 2
         set(handles.pushbutton6,'Visible','on'); % pushbutton SAVE panel 2
 
+        set(handles.text14,'Visible','on');
         set(handles.pushbutton7,'Visible','on'); % pushbutton ADD panel 3
         set(handles.pushbutton8,'Visible','on'); % pushbutton DEL panel 3
         set(handles.pushbutton12,'Visible','off'); % pushbutton ROI panel 3
@@ -1148,17 +1157,19 @@ function popupmenu2_Callback(hObject, ~, handles)
 
 
     elseif handles.id_variable==4
-
+        set(handles.text12,'Visible','off');
         set(handles.pushbutton1,'Visible','off'); % pushbutton ADD panel 1
         set(handles.pushbutton2,'Visible','off'); % pushbutton DEL panel 1
         set(handles.pushbutton10,'Visible','on'); % pushbutton ROI panel 1
         set(handles.pushbutton3,'Visible','on'); % pushbutton SAVE panel 1
 
+        set(handles.text13,'Visible','off');
         set(handles.pushbutton4,'Visible','off'); % pushbutton ADD panel 2
         set(handles.pushbutton5,'Visible','off'); % pushbutton DEL panel 2
         set(handles.pushbutton11,'Visible','on'); % pushbutton ROI panel 2
         set(handles.pushbutton6,'Visible','on'); % pushbutton SAVE panel 2
 
+        set(handles.text14,'Visible','off');
         set(handles.pushbutton7,'Visible','off'); % pushbutton ADD panel 3
         set(handles.pushbutton8,'Visible','off'); % pushbutton DEL panel 3
         set(handles.pushbutton12,'Visible','on'); % pushbutton ROI panel 3
@@ -1168,17 +1179,19 @@ function popupmenu2_Callback(hObject, ~, handles)
         set(handles.uipanel4,'visible','off')
         
     elseif handles.id_variable==5 % jelena bock
-        
+        set(handles.text12,'Visible','off');
         set(handles.pushbutton1,'Visible','off'); % pushbutton ADD panel 1
         set(handles.pushbutton2,'Visible','off'); % pushbutton DEL panel 1
         set(handles.pushbutton10,'Visible','off'); % pushbutton ROI panel 1
         set(handles.pushbutton3,'Visible','off'); % pushbutton SAVE panel 1
 
+        set(handles.text13,'Visible','off');
         set(handles.pushbutton4,'Visible','off'); % pushbutton ADD panel 2
         set(handles.pushbutton5,'Visible','off'); % pushbutton DEL panel 2
         set(handles.pushbutton11,'Visible','off'); % pushbutton ROI panel 2
         set(handles.pushbutton6,'Visible','off'); % pushbutton SAVE panel 2
 
+        set(handles.text14,'Visible','off');
         set(handles.pushbutton7,'Visible','off'); % pushbutton ADD panel 3
         set(handles.pushbutton8,'Visible','off'); % pushbutton DEL panel 3
         set(handles.pushbutton12,'Visible','off'); % pushbutton ROI panel 3
@@ -1193,17 +1206,19 @@ function popupmenu2_Callback(hObject, ~, handles)
         handles.IPCMRA = (IPCMRA/max(IPCMRA(:)))*255;
 
     elseif handles.id_variable==6 % michael markl  
-        
+        set(handles.text12,'Visible','off');
         set(handles.pushbutton1,'Visible','off'); % pushbutton ADD panel 1
         set(handles.pushbutton2,'Visible','off'); % pushbutton DEL panel 1
         set(handles.pushbutton10,'Visible','off'); % pushbutton ROI panel 1
         set(handles.pushbutton3,'Visible','off'); % pushbutton SAVE panel 1
 
+        set(handles.text13,'Visible','off');
         set(handles.pushbutton4,'Visible','off'); % pushbutton ADD panel 2
         set(handles.pushbutton5,'Visible','off'); % pushbutton DEL panel 2
         set(handles.pushbutton11,'Visible','off'); % pushbutton ROI panel 2
         set(handles.pushbutton6,'Visible','off'); % pushbutton SAVE panel 2
 
+        set(handles.text14,'Visible','off');
         set(handles.pushbutton7,'Visible','off'); % pushbutton ADD panel 3
         set(handles.pushbutton8,'Visible','off'); % pushbutton DEL panel 3
         set(handles.pushbutton12,'Visible','off'); % pushbutton ROI panel 3
@@ -1219,17 +1234,19 @@ function popupmenu2_Callback(hObject, ~, handles)
         handles.IPCMRA = (IPCMRA/max(IPCMRA(:)))*255;
         
     elseif handles.id_variable==7 % A Hennemuth  
-        
+        set(handles.text12,'Visible','off');
         set(handles.pushbutton1,'Visible','off'); % pushbutton ADD panel 1
         set(handles.pushbutton2,'Visible','off'); % pushbutton DEL panel 1
         set(handles.pushbutton10,'Visible','off'); % pushbutton ROI panel 1
         set(handles.pushbutton3,'Visible','off'); % pushbutton SAVE panel 1
 
+        set(handles.text13,'Visible','off');
         set(handles.pushbutton4,'Visible','off'); % pushbutton ADD panel 2
         set(handles.pushbutton5,'Visible','off'); % pushbutton DEL panel 2
         set(handles.pushbutton11,'Visible','off'); % pushbutton ROI panel 2
         set(handles.pushbutton6,'Visible','off'); % pushbutton SAVE panel 2
 
+        set(handles.text14,'Visible','off');
         set(handles.pushbutton7,'Visible','off'); % pushbutton ADD panel 3
         set(handles.pushbutton8,'Visible','off'); % pushbutton DEL panel 3
         set(handles.pushbutton12,'Visible','off'); % pushbutton ROI panel 3
@@ -1246,17 +1263,19 @@ function popupmenu2_Callback(hObject, ~, handles)
         
 
     elseif handles.id_variable==8 % JBOCK - JSOTELO
-        
+        set(handles.text12,'Visible','off');
         set(handles.pushbutton1,'Visible','off'); % pushbutton ADD panel 1
         set(handles.pushbutton2,'Visible','off'); % pushbutton DEL panel 1
         set(handles.pushbutton10,'Visible','off'); % pushbutton ROI panel 1
         set(handles.pushbutton3,'Visible','off'); % pushbutton SAVE panel 1
 
+        set(handles.text13,'Visible','off');
         set(handles.pushbutton4,'Visible','off'); % pushbutton ADD panel 2
         set(handles.pushbutton5,'Visible','off'); % pushbutton DEL panel 2
         set(handles.pushbutton11,'Visible','off'); % pushbutton ROI panel 2
         set(handles.pushbutton6,'Visible','off'); % pushbutton SAVE panel 2
 
+        set(handles.text14,'Visible','off');
         set(handles.pushbutton7,'Visible','off'); % pushbutton ADD panel 3
         set(handles.pushbutton8,'Visible','off'); % pushbutton DEL panel 3
         set(handles.pushbutton12,'Visible','off'); % pushbutton ROI panel 3
@@ -1299,17 +1318,19 @@ function popupmenu2_Callback(hObject, ~, handles)
         close(f)
     
     elseif handles.id_variable==9 % michael markl - JSOTELO
-        
+        set(handles.text12,'Visible','off');
         set(handles.pushbutton1,'Visible','off'); % pushbutton ADD panel 1
         set(handles.pushbutton2,'Visible','off'); % pushbutton DEL panel 1
         set(handles.pushbutton10,'Visible','off'); % pushbutton ROI panel 1
         set(handles.pushbutton3,'Visible','off'); % pushbutton SAVE panel 1
 
+        set(handles.text13,'Visible','off');
         set(handles.pushbutton4,'Visible','off'); % pushbutton ADD panel 2
         set(handles.pushbutton5,'Visible','off'); % pushbutton DEL panel 2
         set(handles.pushbutton11,'Visible','off'); % pushbutton ROI panel 2
         set(handles.pushbutton6,'Visible','off'); % pushbutton SAVE panel 2
 
+        set(handles.text14,'Visible','off');
         set(handles.pushbutton7,'Visible','off'); % pushbutton ADD panel 3
         set(handles.pushbutton8,'Visible','off'); % pushbutton DEL panel 3
         set(handles.pushbutton12,'Visible','off'); % pushbutton ROI panel 3
@@ -1354,17 +1375,19 @@ function popupmenu2_Callback(hObject, ~, handles)
         close(f)
     
     elseif handles.id_variable==10 % A Hennemuth - JSOTELO
-        
+        set(handles.text12,'Visible','off');
         set(handles.pushbutton1,'Visible','off'); % pushbutton ADD panel 1
         set(handles.pushbutton2,'Visible','off'); % pushbutton DEL panel 1
         set(handles.pushbutton10,'Visible','off'); % pushbutton ROI panel 1
         set(handles.pushbutton3,'Visible','off'); % pushbutton SAVE panel 1
 
+        set(handles.text13,'Visible','off');
         set(handles.pushbutton4,'Visible','off'); % pushbutton ADD panel 2
         set(handles.pushbutton5,'Visible','off'); % pushbutton DEL panel 2
         set(handles.pushbutton11,'Visible','off'); % pushbutton ROI panel 2
         set(handles.pushbutton6,'Visible','off'); % pushbutton SAVE panel 2
 
+        set(handles.text14,'Visible','off');
         set(handles.pushbutton7,'Visible','off'); % pushbutton ADD panel 3
         set(handles.pushbutton8,'Visible','off'); % pushbutton DEL panel 3
         set(handles.pushbutton12,'Visible','off'); % pushbutton ROI panel 3
@@ -2336,16 +2359,19 @@ function pushbutton9_Callback(hObject, ~, handles)
         handles.id_variable = get(handles.popupmenu2, 'Value');
 
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        set(handles.text12,'Visible','off');
         set(handles.pushbutton1,'Visible','off'); % pushbutton ADD panel 1
         set(handles.pushbutton2,'Visible','off'); % pushbutton DEL panel 1
         set(handles.pushbutton10,'Visible','off'); % pushbutton ROI panel 1
         set(handles.pushbutton3,'Visible','off'); % pushbutton SAVE panel 1
 
+        set(handles.text13,'Visible','off');
         set(handles.pushbutton4,'Visible','off'); % pushbutton ADD panel 2
         set(handles.pushbutton5,'Visible','off'); % pushbutton DEL panel 2
         set(handles.pushbutton11,'Visible','off'); % pushbutton ROI panel 2
         set(handles.pushbutton6,'Visible','off'); % pushbutton SAVE panel 2
 
+        set(handles.text14,'Visible','off');
         set(handles.pushbutton7,'Visible','off'); % pushbutton ADD panel 3
         set(handles.pushbutton8,'Visible','off'); % pushbutton DEL panel 3
         set(handles.pushbutton12,'Visible','off'); % pushbutton ROI panel 3
@@ -2501,16 +2527,19 @@ function pushbutton9_Callback(hObject, ~, handles)
         handles.id_variable = get(handles.popupmenu2, 'Value');
 
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        set(handles.text12,'Visible','off');
         set(handles.pushbutton1,'Visible','off'); % pushbutton ADD panel 1
         set(handles.pushbutton2,'Visible','off'); % pushbutton DEL panel 1
         set(handles.pushbutton10,'Visible','off'); % pushbutton ROI panel 1
         set(handles.pushbutton3,'Visible','off'); % pushbutton SAVE panel 1
 
+        set(handles.text13,'Visible','off');
         set(handles.pushbutton4,'Visible','off'); % pushbutton ADD panel 2
         set(handles.pushbutton5,'Visible','off'); % pushbutton DEL panel 2
         set(handles.pushbutton11,'Visible','off'); % pushbutton ROI panel 2
         set(handles.pushbutton6,'Visible','off'); % pushbutton SAVE panel 2
 
+        set(handles.text14,'Visible','off');
         set(handles.pushbutton7,'Visible','off'); % pushbutton ADD panel 3
         set(handles.pushbutton8,'Visible','off'); % pushbutton DEL panel 3
         set(handles.pushbutton12,'Visible','off'); % pushbutton ROI panel 3
@@ -2675,16 +2704,19 @@ function pushbutton9_Callback(hObject, ~, handles)
         handles.id_variable = get(handles.popupmenu2, 'Value');
 
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        set(handles.text12,'Visible','off');
         set(handles.pushbutton1,'Visible','off'); % pushbutton ADD panel 1
         set(handles.pushbutton2,'Visible','off'); % pushbutton DEL panel 1
         set(handles.pushbutton10,'Visible','off'); % pushbutton ROI panel 1
         set(handles.pushbutton3,'Visible','off'); % pushbutton SAVE panel 1
 
+        set(handles.text13,'Visible','off');
         set(handles.pushbutton4,'Visible','off'); % pushbutton ADD panel 2
         set(handles.pushbutton5,'Visible','off'); % pushbutton DEL panel 2
         set(handles.pushbutton11,'Visible','off'); % pushbutton ROI panel 2
         set(handles.pushbutton6,'Visible','off'); % pushbutton SAVE panel 2
 
+        set(handles.text14,'Visible','off');
         set(handles.pushbutton7,'Visible','off'); % pushbutton ADD panel 3
         set(handles.pushbutton8,'Visible','off'); % pushbutton DEL panel 3
         set(handles.pushbutton12,'Visible','off'); % pushbutton ROI panel 3
@@ -3714,16 +3746,19 @@ function pushbutton6_Callback(hObject, ~, handles)
         handles.id_variable = get(handles.popupmenu2, 'Value');
 
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        set(handles.text12,'Visible','off');
         set(handles.pushbutton1,'Visible','off'); % pushbutton ADD panel 1
         set(handles.pushbutton2,'Visible','off'); % pushbutton DEL panel 1
         set(handles.pushbutton10,'Visible','off'); % pushbutton ROI panel 1
         set(handles.pushbutton3,'Visible','off'); % pushbutton SAVE panel 1
 
+        set(handles.text13,'Visible','off');
         set(handles.pushbutton4,'Visible','off'); % pushbutton ADD panel 2
         set(handles.pushbutton5,'Visible','off'); % pushbutton DEL panel 2
         set(handles.pushbutton11,'Visible','off'); % pushbutton ROI panel 2
         set(handles.pushbutton6,'Visible','off'); % pushbutton SAVE panel 2
 
+        set(handles.text14,'Visible','off');
         set(handles.pushbutton7,'Visible','off'); % pushbutton ADD panel 3
         set(handles.pushbutton8,'Visible','off'); % pushbutton DEL panel 3
         set(handles.pushbutton12,'Visible','off'); % pushbutton ROI panel 3
@@ -3879,16 +3914,19 @@ function pushbutton6_Callback(hObject, ~, handles)
         handles.id_variable = get(handles.popupmenu2, 'Value');
 
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        set(handles.text12,'Visible','off');
         set(handles.pushbutton1,'Visible','off'); % pushbutton ADD panel 1
         set(handles.pushbutton2,'Visible','off'); % pushbutton DEL panel 1
         set(handles.pushbutton10,'Visible','off'); % pushbutton ROI panel 1
         set(handles.pushbutton3,'Visible','off'); % pushbutton SAVE panel 1
 
+        set(handles.text13,'Visible','off');
         set(handles.pushbutton4,'Visible','off'); % pushbutton ADD panel 2
         set(handles.pushbutton5,'Visible','off'); % pushbutton DEL panel 2
         set(handles.pushbutton11,'Visible','off'); % pushbutton ROI panel 2
         set(handles.pushbutton6,'Visible','off'); % pushbutton SAVE panel 2
 
+        set(handles.text14,'Visible','off');
         set(handles.pushbutton7,'Visible','off'); % pushbutton ADD panel 3
         set(handles.pushbutton8,'Visible','off'); % pushbutton DEL panel 3
         set(handles.pushbutton12,'Visible','off'); % pushbutton ROI panel 3
@@ -4053,16 +4091,19 @@ function pushbutton6_Callback(hObject, ~, handles)
         handles.id_variable = get(handles.popupmenu2, 'Value');
 
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        set(handles.text12,'Visible','off');
         set(handles.pushbutton1,'Visible','off'); % pushbutton ADD panel 1
         set(handles.pushbutton2,'Visible','off'); % pushbutton DEL panel 1
         set(handles.pushbutton10,'Visible','off'); % pushbutton ROI panel 1
         set(handles.pushbutton3,'Visible','off'); % pushbutton SAVE panel 1
 
+        set(handles.text13,'Visible','off');
         set(handles.pushbutton4,'Visible','off'); % pushbutton ADD panel 2
         set(handles.pushbutton5,'Visible','off'); % pushbutton DEL panel 2
         set(handles.pushbutton11,'Visible','off'); % pushbutton ROI panel 2
         set(handles.pushbutton6,'Visible','off'); % pushbutton SAVE panel 2
 
+        set(handles.text14,'Visible','off');
         set(handles.pushbutton7,'Visible','off'); % pushbutton ADD panel 3
         set(handles.pushbutton8,'Visible','off'); % pushbutton DEL panel 3
         set(handles.pushbutton12,'Visible','off'); % pushbutton ROI panel 3
@@ -5094,16 +5135,19 @@ function pushbutton3_Callback(hObject, ~, handles)
         handles.id_variable = get(handles.popupmenu2, 'Value');
 
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        set(handles.text12,'Visible','off');
         set(handles.pushbutton1,'Visible','off'); % pushbutton ADD panel 1
         set(handles.pushbutton2,'Visible','off'); % pushbutton DEL panel 1
         set(handles.pushbutton10,'Visible','off'); % pushbutton ROI panel 1
         set(handles.pushbutton3,'Visible','off'); % pushbutton SAVE panel 1
 
+        set(handles.text13,'Visible','off');
         set(handles.pushbutton4,'Visible','off'); % pushbutton ADD panel 2
         set(handles.pushbutton5,'Visible','off'); % pushbutton DEL panel 2
         set(handles.pushbutton11,'Visible','off'); % pushbutton ROI panel 2
         set(handles.pushbutton6,'Visible','off'); % pushbutton SAVE panel 2
 
+        set(handles.text14,'Visible','off');
         set(handles.pushbutton7,'Visible','off'); % pushbutton ADD panel 3
         set(handles.pushbutton8,'Visible','off'); % pushbutton DEL panel 3
         set(handles.pushbutton12,'Visible','off'); % pushbutton ROI panel 3
@@ -5259,16 +5303,19 @@ function pushbutton3_Callback(hObject, ~, handles)
         handles.id_variable = get(handles.popupmenu2, 'Value');
 
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        set(handles.text12,'Visible','off');
         set(handles.pushbutton1,'Visible','off'); % pushbutton ADD panel 1
         set(handles.pushbutton2,'Visible','off'); % pushbutton DEL panel 1
         set(handles.pushbutton10,'Visible','off'); % pushbutton ROI panel 1
         set(handles.pushbutton3,'Visible','off'); % pushbutton SAVE panel 1
 
+        set(handles.text13,'Visible','off');
         set(handles.pushbutton4,'Visible','off'); % pushbutton ADD panel 2
         set(handles.pushbutton5,'Visible','off'); % pushbutton DEL panel 2
         set(handles.pushbutton11,'Visible','off'); % pushbutton ROI panel 2
         set(handles.pushbutton6,'Visible','off'); % pushbutton SAVE panel 2
 
+        set(handles.text14,'Visible','off');
         set(handles.pushbutton7,'Visible','off'); % pushbutton ADD panel 3
         set(handles.pushbutton8,'Visible','off'); % pushbutton DEL panel 3
         set(handles.pushbutton12,'Visible','off'); % pushbutton ROI panel 3
@@ -5433,16 +5480,19 @@ function pushbutton3_Callback(hObject, ~, handles)
         handles.id_variable = get(handles.popupmenu2, 'Value');
 
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        set(handles.text12,'Visible','off');
         set(handles.pushbutton1,'Visible','off'); % pushbutton ADD panel 1
         set(handles.pushbutton2,'Visible','off'); % pushbutton DEL panel 1
         set(handles.pushbutton10,'Visible','off'); % pushbutton ROI panel 1
         set(handles.pushbutton3,'Visible','off'); % pushbutton SAVE panel 1
 
+        set(handles.text13,'Visible','off');
         set(handles.pushbutton4,'Visible','off'); % pushbutton ADD panel 2
         set(handles.pushbutton5,'Visible','off'); % pushbutton DEL panel 2
         set(handles.pushbutton11,'Visible','off'); % pushbutton ROI panel 2
         set(handles.pushbutton6,'Visible','off'); % pushbutton SAVE panel 2
 
+        set(handles.text14,'Visible','off');
         set(handles.pushbutton7,'Visible','off'); % pushbutton ADD panel 3
         set(handles.pushbutton8,'Visible','off'); % pushbutton DEL panel 3
         set(handles.pushbutton12,'Visible','off'); % pushbutton ROI panel 3
