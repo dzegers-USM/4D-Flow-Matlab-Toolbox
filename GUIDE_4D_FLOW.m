@@ -998,6 +998,16 @@ guidata(hObject, handles);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function pushbutton12_Callback(hObject, eventdata, handles)
+
+    if sum(handles.SEG(:))==0
+        waitfor(...
+            errordlg(...
+                'The figure has not been segmented. To segment the figure, use the Thresholding tool (T).',...
+                'Generate Mesh Error'...
+            )...
+        );
+        return
+    end
     
     input               = [];
     input.SEG           = handles.SEG;
@@ -16180,6 +16190,23 @@ function pushbutton62_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
+    % if isfield(handles,'MR_PCA_AP_smooth') ...
+    % || sum(handles.MR_PCA_FH_smooth(:))==0 ...
+    % || sum(handles.MR_PCA_RL_smooth(:))==0
+
+    if isfield(handles,'MR_PCA_AP_smooth') == 0 ...
+    || isfield(handles,'MR_PCA_FH_smooth') == 0 ...
+    || isfield(handles,'MR_PCA_RL_smooth') == 0 ...
+    || isfield(handles,'list_n') == 0
+        waitfor(...
+            errordlg(...
+                'Peak flow has not been calculated. To calculate it, use the Peak Flow tool (P).',...
+                'Laplace Error'...
+            )...
+        );
+        return
+    end
+
     input.SEG = handles.SEG;
     input.IPCMRA = handles.IPCMRA;
     input.voxel_MR = handles.voxel_MR;
@@ -16279,7 +16306,7 @@ function pushbutton62_Callback(hObject, eventdata, handles)
        
         if id_while ==1
 
-            process_completed = getappdata(0,'process_completed')
+            process_completed = getappdata(0,'process_completed');
             if process_completed == 0
                 return
             elseif process_completed == 1
@@ -18900,6 +18927,16 @@ function pushbutton81_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
+    if sum(handles.faces(:))==0 || sum(handles.nodes(:))==0
+        waitfor(...
+            errordlg(...
+                'The mesh has not been generated. To generate the mesh, use the Generate Mesh tool (G).',...
+                'Peak Flow Error'...
+            )...
+        );
+        return
+    end
+
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %%% Flow Quantification
     input                     = [];
@@ -20336,3 +20373,34 @@ switch answer
         delete(hObject);
     case 'Cancel'
 end
+
+
+% --- Executes on key press with focus on figure1 and none of its controls.
+function figure1_KeyPressFcn(hObject, eventdata, handles)
+% hObject    handle to figure1 (see GCBO)
+% eventdata  structure with the following fields (see MATLAB.UI.FIGURE)
+%	Key: name of the key that was pressed, in lower case
+%	Character: character interpretation of the key(s) that was pressed
+%	Modifier: name(s) of the modifier key(s) (i.e., control, shift) pressed
+% handles    structure with handles and user data (see GUIDATA)
+     keyPressed = eventdata.Key;
+     if strcmpi(keyPressed,'t')
+         % Thresholding
+         uipushtool3_ClickedCallback(handles.uipushtool3,eventdata,handles);
+     end
+     if strcmpi(keyPressed,'r')
+         % Refine Segmentation
+         uipushtool4_ClickedCallback(handles.uipushtool4,eventdata,handles);
+     end
+     if strcmpi(keyPressed,'g')
+         % Generate mesh
+         pushbutton12_Callback(handles.pushbutton12,eventdata,handles);
+     end
+     if strcmpi(keyPressed,'p')
+         % Peak flow
+         pushbutton81_Callback(handles.pushbutton81,eventdata,handles);
+     end
+     if strcmpi(keyPressed,'l')
+         % Lagrange
+         pushbutton62_Callback(handles.pushbutton62,eventdata,handles);
+     end
