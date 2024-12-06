@@ -11802,6 +11802,16 @@ guidata(hObject, handles);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function Save_Data_Callback(hObject, eventdata, handles)
+    if isfield(handles,'save_id_SEG_mat') == 0 ...
+    || isfield(handles,'save_id_SEG_vti') == 0
+        waitfor(...
+            errordlg(...
+                'There is no data to save.',...
+                'Error Saving Data'...
+            )...
+        );
+        return;
+    end
     
     input.save_id_SEG_mat       = handles.save_id_SEG_mat;
     input.save_id_SEG_vti       = handles.save_id_SEG_vti;
@@ -20392,24 +20402,38 @@ function figure1_KeyPressFcn(hObject, eventdata, handles)
 %	Character: character interpretation of the key(s) that was pressed
 %	Modifier: name(s) of the modifier key(s) (i.e., control, shift) pressed
 % handles    structure with handles and user data (see GUIDATA)
-     keyPressed = eventdata.Key;
-     if strcmpi(keyPressed,'t')
-         % Thresholding
-         uipushtool3_ClickedCallback(handles.uipushtool3,eventdata,handles);
-     end
-     if strcmpi(keyPressed,'r')
-         % Refine Segmentation
-         uipushtool4_ClickedCallback(handles.uipushtool4,eventdata,handles);
-     end
-     if strcmpi(keyPressed,'g')
-         % Generate mesh
-         pushbutton12_Callback(handles.pushbutton12,eventdata,handles);
-     end
-     if strcmpi(keyPressed,'p')
-         % Peak flow
-         pushbutton81_Callback(handles.pushbutton81,eventdata,handles);
-     end
-     if strcmpi(keyPressed,'l')
-         % Lagrange
-         pushbutton62_Callback(handles.pushbutton62,eventdata,handles);
-     end
+    modifier = eventdata.Modifier;
+    keyPressed = eventdata.Key;
+    if strcmpi(modifier,'control')
+        if strcmpi(keyPressed,'s')
+            Save_Data_Callback(handles.Save_Data,eventdata,handles);
+            return;
+        end
+    end
+    
+    
+    if strcmpi(keyPressed,'t')
+        % Thresholding
+        uipushtool3_ClickedCallback(handles.uipushtool3,eventdata,handles);
+        return;
+    end
+    if strcmpi(keyPressed,'r')
+        % Refine Segmentation
+        uipushtool4_ClickedCallback(handles.uipushtool4,eventdata,handles);
+        return;
+    end
+    if strcmpi(keyPressed,'g')
+        % Generate mesh
+        pushbutton12_Callback(handles.pushbutton12,eventdata,handles);
+        return;
+    end
+    if strcmpi(keyPressed,'p')
+        % Peak flow
+        pushbutton81_Callback(handles.pushbutton81,eventdata,handles);
+        return;
+    end
+    if strcmpi(keyPressed,'l')
+        % Lagrange
+        pushbutton62_Callback(handles.pushbutton62,eventdata,handles);
+        return;
+    end
