@@ -560,7 +560,6 @@ function pushbutton1_Callback(hObject, eventdata, handles)
     set(handles.radiobutton5,'Visible','on','Value',1)
     set(handles.radiobutton6,'Visible','off','Value',0)
     set(handles.radiobutton7,'Visible','off','Value',0)
-    set(handles.pushbutton4,'Visible','off');
     set(handles.radiobutton4,'Visible','off');
     
 handles.output = hObject;
@@ -646,7 +645,6 @@ function pushbutton2_Callback(hObject, eventdata, handles)
     set(handles.radiobutton5,'Visible','on','Value',1)
     set(handles.radiobutton6,'Visible','off','Value',0)
     set(handles.radiobutton7,'Visible','off','Value',0)
-    set(handles.pushbutton4,'Visible','off');
     set(handles.radiobutton4,'Visible','off');
     
     
@@ -778,7 +776,6 @@ function pushbutton3_Callback(hObject, eventdata, handles)
     set(handles.text13,'string',['Characteristic Length: ',num2str(sqrt(xdata(I)*4/sqrt(3)),3),' [mm]'],'visible','on');
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    set(handles.pushbutton4,'Visible','on');
     set(handles.radiobutton1,'Visible','on');
     set(handles.radiobutton5,'Visible','on','Value',1);
     set(handles.radiobutton6,'Visible','on','Value',0);
@@ -786,21 +783,11 @@ function pushbutton3_Callback(hObject, eventdata, handles)
 
     % disp(min(handles.nodes)) % JSOTELO
     % disp(max(handles.nodes)) % JSOTELO
-    
-    
-handles.output = hObject;
-guidata(hObject, handles);
-    
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-function pushbutton4_Callback(hObject, eventdata, handles)
-    
     % answer finite element mesh
-    handles.answer1 = questdlg(  '¿Do you want to smooth the velocities field before interpolating it to the mesh?','Question','Yes','No','No');
+    handles.answer1 = questdlg('¿Do you want to smooth the velocities field before interpolating it to the mesh?','Question','Yes','No','No');
     switch handles.answer1
         case 'Yes'
-            
             prompt = {'Select the kernel size to smooth the velocities (one odd number):'};
             dlgtitle = 'Kernel size';
             definput = {'3'};
@@ -808,25 +795,20 @@ function pushbutton4_Callback(hObject, eventdata, handles)
             handles.kernel_size = str2double(cell2mat(inputdlg(prompt,dlgtitle,dims,definput)));
             handles.id_kernel = 1;
         
-        case 'No'   
-            
+        case 'No'
             handles.id_kernel = 0;
-            
     end
     
     % answer finite element mesh
-    handles.answer2 = questdlg(  '¿Which interpolation method you want to use to interpolate the data to the finite element mesh?','Question','linear','nearest','cubic','cubic');
+    handles.answer2 = questdlg('¿Which interpolation method you want to use to interpolate the data to the finite element mesh?','Question','linear','nearest','cubic','cubic');
     switch handles.answer2
         case 'linear'
-            
             handles.int_method = 'linear';
         
         case 'nearest'  
-            
             handles.int_method = 'nearest';
             
         case 'cubic' 
-            
             handles.int_method = 'cubic';
             
     end
@@ -956,12 +938,11 @@ function pushbutton4_Callback(hObject, eventdata, handles)
     set(handles.pushbutton9,'visible','on')
     set(handles.pushbutton10,'visible','on')
     set(handles.pushbutton12,'visible','on')
-
-
+    
+    
 handles.output = hObject;
 guidata(hObject, handles);
-  
-
+    
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function radiobutton1_Callback(hObject, eventdata, handles)
@@ -1297,7 +1278,6 @@ function figure1_SizeChangedFcn(hObject, eventdata, handles)
     set(handles.edit8,'FontUnits','Normalized','FontSize',0.5)
 
     set(handles.pushbutton1,'FontUnits','Normalized','FontSize',0.24)
-    set(handles.pushbutton4,'FontUnits','Normalized','FontSize',0.4)
     set(handles.pushbutton8,'FontUnits','Normalized','FontSize',0.57)
     set(handles.pushbutton9,'FontUnits','Normalized','FontSize',0.57)
     set(handles.pushbutton10,'FontUnits','Normalized','FontSize',0.57)
@@ -2413,7 +2393,6 @@ function pushbutton13_Callback(hObject, eventdata, handles)
                 set(handles.text13,'string',['Characteristic Length: ',num2str(sqrt(xdata(I)*4/sqrt(3)),3),' [mm]'],'visible','on');
                 
                 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-                set(handles.pushbutton4,'Visible','on');
                 set(handles.radiobutton1,'Visible','on');
                 set(handles.radiobutton5,'Visible','on','Value',1);
                 set(handles.radiobutton6,'Visible','on','Value',0);

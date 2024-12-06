@@ -58,7 +58,7 @@ handles.output = hObject;
         set(handles.slider2,'Value', handles.max_value_th/handles.max_value_th,'sliderstep',slider_step,'max',1,'min',0)
         set(handles.text5,'String',num2str(handles.min_value_th))
         set(handles.text6,'String',num2str(handles.max_value_th))
-        set(handles.text8,'String',['from ',num2str(min(handles.IPCMRA(:))),' to ',num2str(max(handles.IPCMRA(:)))])
+        % set(handles.text8,'String',['from ',num2str(min(handles.IPCMRA(:))),' to ',num2str(max(handles.IPCMRA(:)))])
         axes(handles.axes1);
         imagesc([handles.yd(1,1),handles.yd(end,end)]',[handles.xd(1,1),handles.xd(end,end)]',squeeze(handles.IPCMRA(:,:,handles.slider_axes1)))
         axis image
@@ -77,8 +77,8 @@ handles.output = hObject;
         set(handles.text4,'Visible','off')
         set(handles.text5,'Visible','off')
         set(handles.text6,'Visible','off')
-        set(handles.text7,'Visible','off')
-        set(handles.text8,'Visible','off')
+        % set(handles.text7,'Visible','off')
+        % set(handles.text8,'Visible','off')
         set(handles.slider1,'Visible','off')
         set(handles.slider2,'Visible','off')
         set(handles.pushbutton1,'Visible','off')
@@ -605,8 +605,6 @@ function figure1_SizeChangedFcn(hObject, eventdata, handles)
     set(handles.figure1, 'Position', [FigPos(1:2),FigPos(3),FigPos(4) ]);
     set(handles.figure1, 'Units', 'normalized');
     
-    set(handles.text7,'FontUnits','Normalized','FontSize',0.60)
-    set(handles.text8,'FontUnits','Normalized','FontSize',0.60)
     set(handles.text10,'FontUnits','Normalized','FontSize', 0.60)
     set(handles.text11,'FontUnits','Normalized','FontSize', 0.60)
     set(handles.text12,'FontUnits','Normalized','FontSize', 0.60)

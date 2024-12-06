@@ -2,3 +2,6 @@ iso2mesh/*
 
 # MATLAB autosave files
 *.asv
+
+# Build artifacts
+GUIDE_4D_FLOW/*

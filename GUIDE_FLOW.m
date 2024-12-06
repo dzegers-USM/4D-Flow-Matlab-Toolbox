@@ -2375,7 +2375,16 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         h = imline(handles.axes1);
         setappdata(handles.figure1,'waitROI',h);
+
+        % Change button style to represent its new function
+        set(handles.pushbutton1,'Backgroundcolor',[0.65 0.65 0.65]);
+        set(handles.pushbutton1,'String','APPLY SELECTED PLANE');
+       
         PUNTOS_C = wait(h);
+
+        % Restore button style
+        set(handles.pushbutton1,'Backgroundcolor',[0.94 0.94 0.94]);
+        set(handles.pushbutton1,'String','SELECT PLANE');
 
         cancelROI = getappdata(handles.figure1,'cancelROI');
         setappdata(handles.figure1,'cancelROI',0);
@@ -2995,7 +3004,24 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         h = imline(handles.axes1);
+        setappdata(handles.figure1,'waitROI',h);
+
+        % Change button style to represent its new function
+        set(handles.pushbutton1,'Backgroundcolor',[0.65 0.65 0.65]);
+        set(handles.pushbutton1,'String','APPLY SELECTED PLANE');
+       
         PUNTOS_C = wait(h);
+
+        % Restore button style
+        set(handles.pushbutton1,'Backgroundcolor',[0.94 0.94 0.94]);
+        set(handles.pushbutton1,'String','SELECT PLANE');
+
+        cancelROI = getappdata(handles.figure1,'cancelROI');
+        setappdata(handles.figure1,'cancelROI',0);
+        setappdata(handles.figure1,'waitROI',0);
+        if cancelROI == 1
+            return;
+        end
 
         if handles.id_image ==1
 
@@ -3703,7 +3729,24 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         h = imline(handles.axes1);
+        setappdata(handles.figure1,'waitROI',h);
+
+        % Change button style to represent its new function
+        set(handles.pushbutton1,'Backgroundcolor',[0.65 0.65 0.65]);
+        set(handles.pushbutton1,'String','APPLY SELECTED PLANE');
+       
         PUNTOS_C = wait(h);
+
+        % Restore button style
+        set(handles.pushbutton1,'Backgroundcolor',[0.94 0.94 0.94]);
+        set(handles.pushbutton1,'String','SELECT PLANE');
+
+        cancelROI = getappdata(handles.figure1,'cancelROI');
+        setappdata(handles.figure1,'cancelROI',0);
+        setappdata(handles.figure1,'waitROI',0);
+        if cancelROI == 1
+            return;
+        end
 
         if handles.id_image ==1
 
