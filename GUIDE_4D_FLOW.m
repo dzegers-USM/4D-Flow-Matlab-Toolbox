@@ -73,6 +73,7 @@ varargout{1} = handles.output;
 function pushbutton1_Callback(hObject, eventdata, handles)
     
     set(handles.uipanel1,'Visible','on')
+    set(handles.uipanel20,'Visible','on')
     set(handles.uipanel6,'Visible','off')
     set(handles.pushbutton1,'BackgroundColor',[0 0 0])
     set(handles.pushbutton15,'BackgroundColor',[0.2 0.2 0.2])
@@ -89,6 +90,7 @@ function pushbutton15_Callback(hObject, eventdata, handles)
     set(handles.pushbutton1,'BackgroundColor',[0.2 0.2 0.2])
     set(handles.pushbutton15,'BackgroundColor',[0 0 0])
     set(handles.uipanel1,'Visible','off')
+    set(handles.uipanel20,'Visible','off')
     set(handles.uipanel6,'Position',pan1pos,'Visible','off')
     
     
@@ -1078,8 +1080,8 @@ function pushbutton12_Callback(hObject, eventdata, handles)
         handles.MR_PCA_RL = RL_ori(3:end-2,3:end-2,3:end-2,:);
 
         list_string = {'Select visualization...','Surface','Voxel','Mesh','Velocity'};
-        set(handles.popupmenu1,'visible','on','String',list_string);
-        set(handles.pushbutton81,'visible','on');
+        set(handles.popupmenu1,'enable','on','String',list_string);
+        set(handles.pushbutton81,'enable','on');
         
         if isfolder('vWERP')
             set(handles.pushbutton83,'visible','on');
@@ -3028,7 +3030,7 @@ function pushbutton13_Callback(hObject, eventdata, handles)
                    'Velocity','WSS','OSI','Vorticity',...
                    'Helicity Density','R. Helicity Density',...
                    'Viscous Dissipation','Energy Loss','Kinetic Energy'};
-    set(handles.popupmenu1,'visible','on','String',list_string);
+    set(handles.popupmenu1,'enable','on','String',list_string);
     handles.save_id_wss_mat = 1;
     handles.save_id_osi_mat = 1;
     handles.save_id_vor_mat = 1;
@@ -3048,7 +3050,7 @@ function pushbutton13_Callback(hObject, eventdata, handles)
     close(h)
     disp('The finite element quantification is finish ...')
     
-    set(handles.pushbutton62,'visible','on');% include
+    set(handles.pushbutton62,'enable','on');% include
     
 handles.output = hObject;
 guidata(hObject, handles);
@@ -4149,7 +4151,7 @@ function pushbutton14_Callback(hObject, eventdata, handles)
     for n=1:size(handles.veset,3)
         slider_step(1) = 1/handles.d;
         slider_step(2) = 0.1;
-        set(handles.slider4,'Visible','on','Value', n/handles.d,'sliderstep',slider_step,'max',1,'min',0)
+        set(handles.slider4,'visible','on','Value', n/handles.d,'sliderstep',slider_step,'max',1,'min',0)
         %%%% Velocity
         if handles.id_vel == 1 && handles.id_seg == 0
             axes(handles.axes4);
@@ -6070,7 +6072,7 @@ switch get(handles.popupmenu1,'Value')
         axis off
         view([-34,-51])
         set(handles.pushbutton14,'visible','off')
-        set(handles.slider4,'Visible','off')
+        set(handles.slider4,'visible','off')
         if handles.slider_axes1 ==1, handles.slider_axes1_voxel = 0; else, handles.slider_axes1_voxel = (handles.slider_axes1*handles.voxel_MR(3))-handles.voxel_MR(3); end
         if handles.slider_axes2 ==1, handles.slider_axes2_voxel = 0; else, handles.slider_axes2_voxel = (handles.slider_axes2*handles.voxel_MR(2))-handles.voxel_MR(2); end
         if handles.slider_axes3 ==1, handles.slider_axes3_voxel = 0; else, handles.slider_axes3_voxel = (handles.slider_axes3*handles.voxel_MR(1))-handles.voxel_MR(1); end
@@ -6171,7 +6173,7 @@ switch get(handles.popupmenu1,'Value')
         axis off
         view([-34,-51])
         set(handles.pushbutton14,'visible','off')
-        set(handles.slider4,'Visible','off')
+        set(handles.slider4,'visible','off')
         if handles.slider_axes1 ==1, handles.slider_axes1_voxel = 0; else, handles.slider_axes1_voxel = (handles.slider_axes1*handles.voxel_MR(3))-handles.voxel_MR(3); end
         if handles.slider_axes2 ==1, handles.slider_axes2_voxel = 0; else, handles.slider_axes2_voxel = (handles.slider_axes2*handles.voxel_MR(2))-handles.voxel_MR(2); end
         if handles.slider_axes3 ==1, handles.slider_axes3_voxel = 0; else, handles.slider_axes3_voxel = (handles.slider_axes3*handles.voxel_MR(1))-handles.voxel_MR(1); end
@@ -10279,6 +10281,7 @@ function Load_Folder_Callback(hObject, eventdata, handles)
     % THIS FUNCTION LOAD THE INFORMATION TO BE PROCESSED 
     handles.id_unwrappping = 0;
     set(handles.uipanel1,'Visible','off')
+    set(handles.uipanel20,'Visible','off')
     cla(handles.uipanel1,'reset');
     path(path,['IO_CODES',filesep]) % cambiar
     path(path,'iso2mesh/')
@@ -11516,6 +11519,8 @@ function Load_Folder_Callback(hObject, eventdata, handles)
     set(handles.pushbutton4,'CData',g,'visible','on')
     set(handles.pushbutton5,'CData',g)
     set(handles.uipanel1,'Visible','on')
+    set(handles.uipanel19,'Visible','on')
+    set(handles.uipanel20,'Visible','on')
     set(handles.uipanel6,'Visible','on')
     set(handles.pushbutton1,'visible','on','BackgroundColor',[0 0 0])
     set(handles.pushbutton15,'visible','on','BackgroundColor',[0.2 0.2 0.2])
@@ -12105,7 +12110,7 @@ function Save_Data_Callback(hObject, eventdata, handles)
     handles.save_selection = [s_selection(:,2),s_selection(:,3),s_selection(:,4),s_selection(:,1)];
     
     if sum(handles.save_selection(:))==0
-        msgbox('The data was not saved ...','Warning','warn')
+        msgbox('Data was not saved.','Warning','warn')
     else
         directory = uigetdir(pwd, 'Select Directory');
 
@@ -13403,23 +13408,18 @@ set(handles.text108,'FontUnits','Normalized','FontSize',0.58)
 set(handles.pushbutton9,'FontUnits','Normalized','FontSize',0.38)
 set(handles.pushbutton10,'FontUnits','Normalized','FontSize',0.38)
 set(handles.pushbutton11,'FontUnits','Normalized','FontSize',0.38)
-set(handles.pushbutton12,'FontUnits','Normalized','FontSize',0.22)
 set(handles.pushbutton14,'FontUnits','Normalized','FontSize',0.51)
-set(handles.pushbutton62,'FontUnits','Normalized','FontSize',0.22)
 set(handles.pushbutton69,'FontUnits','Normalized','FontSize',0.38)
 set(handles.pushbutton70,'FontUnits','Normalized','FontSize',0.38)
 set(handles.pushbutton71,'FontUnits','Normalized','FontSize',0.38)
 set(handles.pushbutton78,'FontUnits','Normalized','FontSize',0.38)
 set(handles.pushbutton79,'FontUnits','Normalized','FontSize',0.38)
 set(handles.pushbutton80,'FontUnits','Normalized','FontSize',0.38)
-set(handles.pushbutton81,'FontUnits','Normalized','FontSize',0.22)
 set(handles.pushbutton83,'FontUnits','Normalized','FontSize',0.22)
 set(handles.pushbutton84,'FontUnits','Normalized','FontSize',0.22)
 set(handles.popupmenu1,'FontUnits','Normalized','FontSize',0.59)
 
 % UNWRAPPING
-set(handles.pushbutton1,'FontUnits','Normalized','FontSize',0.47)
-set(handles.pushbutton15,'FontUnits','Normalized','FontSize',0.47)
 set(handles.pushbutton16,'FontUnits','Normalized','FontSize',0.29)
 set(handles.pushbutton17,'FontUnits','Normalized','FontSize',0.29)
 set(handles.pushbutton18,'FontUnits','Normalized','FontSize',0.29)
@@ -13617,9 +13617,10 @@ if handles.id_seg == 1
             axis off
             set(handles.text4, 'visible', 'off');
             list_string = {'...'};
-            set(handles.popupmenu1,'visible','off','String',list_string,'value',1);
+            set(handles.popupmenu1,'enable','off','String',list_string,'value',1);
             set(handles.pushbutton5, 'visible', 'off');
-            set(handles.pushbutton12, 'visible', 'off');
+            set(handles.pushbutton12, 'enable', 'off');
+            set(handles.pushbutton91, 'enable', 'off');
             set(handles.pushbutton14, 'visible', 'off');
             set(handles.slider4, 'visible', 'off');
             handles.SEG = zeros(size(handles.SEG));
@@ -13708,9 +13709,10 @@ else
     axis off
     set(handles.text4, 'visible', 'off');
     list_string = {'...'};
-    set(handles.popupmenu1,'visible','off','String',list_string,'value',1);
+    set(handles.popupmenu1,'enable','off','String',list_string,'value',1);
     set(handles.pushbutton5, 'visible', 'off');
-    set(handles.pushbutton12, 'visible', 'off');
+    set(handles.pushbutton12, 'enable', 'off');
+    set(handles.pushbutton91, 'enable', 'off');
     set(handles.pushbutton14, 'visible', 'off');
     set(handles.slider4, 'visible', 'off');
     handles.SEG = zeros(size(handles.SEG));
@@ -13802,9 +13804,10 @@ function uipushtool3_ClickedCallback(hObject, eventdata, handles)
     axis off
     set(handles.text4, 'visible', 'off');
     list_string = {'...'};
-    set(handles.popupmenu1,'visible','off','String',list_string,'value',1);
+    set(handles.popupmenu1,'enable','off','String',list_string,'value',1);
     set(handles.pushbutton5, 'visible', 'off');
-    set(handles.pushbutton12, 'visible', 'off');
+    set(handles.pushbutton12, 'enable', 'off');
+    set(handles.pushbutton91, 'enable', 'off');
     set(handles.pushbutton14, 'visible', 'off');
     set(handles.slider4, 'visible', 'off');
     handles.id_unwrappping = 0;
@@ -13913,7 +13916,7 @@ function uipushtool3_ClickedCallback(hObject, eventdata, handles)
         updateMainImageTexts(handles,round(handles.slider_axes1),handles.c,round(handles.slider_axes2),handles.b,round(handles.slider_axes3),handles.a,true);
 
         list_string = {'Select visualization...','Surface','Voxel'};
-        set(handles.popupmenu1,'visible','on','String',list_string);
+        set(handles.popupmenu1,'enable','on','String',list_string);
         popupmnenu1_pos = get(handles.popupmenu1,'Value');
         if popupmnenu1_pos == 2
             [X,Y,Z] = meshgrid(0:size(handles.IPCMRA,1)-1,0:size(handles.IPCMRA,2)-1,0:size(handles.IPCMRA,3)-1);
@@ -13976,7 +13979,8 @@ function uipushtool3_ClickedCallback(hObject, eventdata, handles)
     end
     handles.save_id_SEG_mat = 1;
     handles.save_id_SEG_vti = 1;
-    set(handles.pushbutton12,'visible','on');
+    set(handles.pushbutton12,'enable','on');
+    set(handles.pushbutton91,'enable','on');
     
     
 handles.output = hObject;
@@ -14083,7 +14087,8 @@ function uipushtool4_ClickedCallback(hObject, eventdata, handles)
         handles.L = input.L;
         handles.NUM = input.NUM;
         handles.Lrgb = input.Lrgb;
-        set(handles.pushbutton12,'visible','on');
+        set(handles.pushbutton12,'enable','on');
+        set(handles.pushbutton91,'enable','on');
         
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -15508,7 +15513,7 @@ function Load_SEG_Callback(hObject, eventdata, handles)
             updateMainImageTexts(handles,round(handles.slider_axes1),handles.c,round(handles.slider_axes2),handles.b,round(handles.slider_axes3),handles.a,true);
 
             list_string = {'Select visualization...','Surface','Voxel'};
-            set(handles.popupmenu1,'visible','on','String',list_string);
+            set(handles.popupmenu1,'enable','on','String',list_string);
             
         elseif handles.a-2 == as && handles.b-2 == bs && handles.c-2 == cs % load original without modification
             
@@ -15591,7 +15596,7 @@ function Load_SEG_Callback(hObject, eventdata, handles)
             updateMainImageTexts(handles,round(handles.slider_axes1),handles.c,round(handles.slider_axes2),handles.b,round(handles.slider_axes3),handles.a,true);
 
             list_string = {'Select visualization...','Surface','Voxel'};
-            set(handles.popupmenu1,'visible','on','String',list_string);
+            set(handles.popupmenu1,'enable','on','String',list_string);
 
         elseif handles.a-2 == (as-2)*2 && handles.b-2 == (bs-2)*2 && handles.c-2 == (cs-2)*2 % load Segmentation for SuperRes
             
@@ -15675,7 +15680,7 @@ function Load_SEG_Callback(hObject, eventdata, handles)
             updateMainImageTexts(handles,round(handles.slider_axes1),handles.c,round(handles.slider_axes2),handles.b,round(handles.slider_axes3),handles.a,true);
 
             list_string = {'Select visualization...','Surface','Voxel'};
-            set(handles.popupmenu1,'visible','on','String',list_string);
+            set(handles.popupmenu1,'enable','on','String',list_string);
             
         else
             
@@ -15767,7 +15772,7 @@ function Load_SEG_Callback(hObject, eventdata, handles)
             updateMainImageTexts(handles,round(handles.slider_axes1),handles.c,round(handles.slider_axes2),handles.b,round(handles.slider_axes3),handles.a,true);
 
             list_string = {'Select visualization...','Surface','Voxel'};
-            set(handles.popupmenu1,'visible','on','String',list_string);
+            set(handles.popupmenu1,'enable','on','String',list_string);
 
         end
 
@@ -16399,7 +16404,7 @@ function pushbutton62_Callback(hObject, eventdata, handles)
                                'Circum. Unit Vectors','WSSa','WSSc','Axial Angle','Forward Velocity','Backward Velocity',...
                                'Regurgitant Flow','Centerline Flow','Eccentricity',...
                                'Curvature','Ellipticity','Length of Vessel','Forward Vortex','Flattening','Area','Axial Circulation'};
-                set(handles.popupmenu1,'visible','on','String',list_string);
+                set(handles.popupmenu1,'enable','on','String',list_string);
 
 
                 handles.save_id_lap_mat     = 1;
@@ -19210,7 +19215,7 @@ function pushbutton81_Callback(hObject, eventdata, handles)
                    'Velocity','WSS','OSI','Vorticity',...
                    'Helicity Density','R. Helicity Density',...
                    'Viscous Dissipation','Energy Loss','Kinetic Energy'};
-    set(handles.popupmenu1,'visible','on','String',list_string);
+    set(handles.popupmenu1,'enable','on','String',list_string);
     handles.save_id_wss_mat = 1;
     handles.save_id_osi_mat = 1;
     handles.save_id_vor_mat = 1;
@@ -19230,7 +19235,7 @@ function pushbutton81_Callback(hObject, eventdata, handles)
     close(h)
     disp('The finite element quantification is finish ...')
     
-    set(handles.pushbutton62,'visible','on');% include
+    set(handles.pushbutton62,'enable','on');% include
 
 handles.output = hObject;
 guidata(hObject, handles);
@@ -20018,6 +20023,8 @@ if exist('4DFlowNet-master', 'dir')==7
     % THIS FUNCTION LOAD THE INFORMATION TO BE PROCESSED 
     handles.id_unwrappping = 0;
     set(handles.uipanel1,'Visible','off')
+    set(handles.uipanel19,'Visible','off')
+    set(handles.uipanel20,'Visible','off')
     cla(handles.uipanel1,'reset');
     path(path,['IO_CODES',filesep]) % cambiar
     path(path,'iso2mesh/')
@@ -20573,3 +20580,17 @@ function figure1_KeyPressFcn(hObject, eventdata, handles)
         pushbutton62_Callback(handles.pushbutton62,eventdata,handles);
         return;
     end
+
+
+% --- Executes on button press in pushbutton90.
+function pushbutton90_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton90 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on button press in pushbutton91.
+function pushbutton91_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton91 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
