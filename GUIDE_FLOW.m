@@ -2383,7 +2383,7 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         PUNTOS_C = wait(h);
 
         % Restore button style
-        set(handles.pushbutton1,'Backgroundcolor',[0.94 0.94 0.94]);
+        set(handles.pushbutton1,'Backgroundcolor',[0.90 0.90 0.90]);
         set(handles.pushbutton1,'String','SELECT PLANE');
 
         cancelROI = getappdata(handles.figure1,'cancelROI');
@@ -3013,7 +3013,7 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         PUNTOS_C = wait(h);
 
         % Restore button style
-        set(handles.pushbutton1,'Backgroundcolor',[0.94 0.94 0.94]);
+        set(handles.pushbutton1,'Backgroundcolor',[0.90 0.90 0.90]);
         set(handles.pushbutton1,'String','SELECT PLANE');
 
         cancelROI = getappdata(handles.figure1,'cancelROI');
@@ -3738,7 +3738,7 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         PUNTOS_C = wait(h);
 
         % Restore button style
-        set(handles.pushbutton1,'Backgroundcolor',[0.94 0.94 0.94]);
+        set(handles.pushbutton1,'Backgroundcolor',[0.90 0.90 0.90]);
         set(handles.pushbutton1,'String','SELECT PLANE');
 
         cancelROI = getappdata(handles.figure1,'cancelROI');
