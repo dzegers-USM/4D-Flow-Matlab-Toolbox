@@ -1,6 +1,6 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration file="D:\Repos\4D-Flow-Matlab-Toolbox\GUIDE_4D_FLOW.prj" location="D:\Repos\4D-Flow-Matlab-Toolbox" name="GUIDE_4D_FLOW" target="target.ezdeploy.standalone" target-name="Application Compiler">
-    <param.appname>FOURD_FLOW_MATLAB_TOOLBOX</param.appname>
+  <configuration build-checksum="1929160331" file="D:\Repos\4D-Flow-Matlab-Toolbox\GUIDE_4D_FLOW.prj" location="D:\Repos\4D-Flow-Matlab-Toolbox" name="GUIDE_4D_FLOW" preferred-package-location="D:\Repos\4D-Flow-Matlab-Toolbox\GUIDE_4D_FLOW\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
+    <param.appname>APP_4D_FLOW</param.appname>
     <param.icon />
     <param.icons />
     <param.version>1.0</param.version>
@@ -11,7 +11,7 @@
     <param.description />
     <param.screenshot />
     <param.guid />
-    <param.installpath.string>\FOURD_FLOW_MATLAB_TOOLBOX\</param.installpath.string>
+    <param.installpath.string>\APP_4D_FLOW\</param.installpath.string>
     <param.installpath.combo>option.installpath.programfiles</param.installpath.combo>
     <param.logo />
     <param.install.notes />
@@ -27,7 +27,7 @@
     <param.web.mcr>true</param.web.mcr>
     <param.package.mcr>false</param.package.mcr>
     <param.no.mcr>false</param.no.mcr>
-    <param.web.mcr.name>MyAppInstaller_web</param.web.mcr.name>
+    <param.web.mcr.name>4DFlowInstaller_web</param.web.mcr.name>
     <param.package.mcr.name>MyAppInstaller_mcr</param.package.mcr.name>
     <param.no.mcr.name>MyAppInstaller_app</param.no.mcr.name>
     <param.windows.command.prompt>true</param.windows.command.prompt>
@@ -69,7 +69,6 @@
       <param.web.mcr />
       <param.package.mcr />
       <param.no.mcr />
-      <param.web.mcr.name />
       <param.package.mcr.name />
       <param.no.mcr.name />
       <param.windows.command.prompt />
@@ -83,10 +82,14 @@
       <file>${PROJECT_ROOT}\GUIDE_4D_FLOW.m</file>
     </fileset.main>
     <fileset.resources>
+      <file>${PROJECT_ROOT}\IO_CODES</file>
       <file>${PROJECT_ROOT}\iso2mesh</file>
       <file>${PROJECT_ROOT}\Symbols</file>
     </fileset.resources>
-    <fileset.package />
+    <fileset.package>
+      <file>${PROJECT_ROOT}\IO_CODES</file>
+      <file>${PROJECT_ROOT}\iso2mesh</file>
+    </fileset.package>
     <fileset.depfun>
       <file>${PROJECT_ROOT}\GUIDE_4D_FLOW.fig</file>
       <file>${PROJECT_ROOT}\GUIDE_CONTRAST.p</file>
@@ -106,23 +109,13 @@
       <file>${PROJECT_ROOT}\GUIDE_SEGMENTATION.m</file>
       <file>${PROJECT_ROOT}\GUIDE_THRESHOLDING.fig</file>
       <file>${PROJECT_ROOT}\GUIDE_THRESHOLDING.m</file>
-      <file>${PROJECT_ROOT}\IO_CODES\AXIAL_CIRCUMFERENTIAL_UNIT_VECTORS.p</file>
-      <file>${PROJECT_ROOT}\IO_CODES\bface_correction.p</file>
-      <file>${PROJECT_ROOT}\IO_CODES\CENTERLINE.p</file>
-      <file>${PROJECT_ROOT}\IO_CODES\FAST_FEM.p</file>
-      <file>${PROJECT_ROOT}\IO_CODES\FAST_LAPLACE.p</file>
-      <file>${PROJECT_ROOT}\IO_CODES\label2rgb3d.p</file>
-      <file>${PROJECT_ROOT}\IO_CODES\LENGTH_AND_CURVATURE.p</file>
-      <file>${PROJECT_ROOT}\IO_CODES\RADIUS_DIAMETER_FLATTENING_ELLIPTICITY.p</file>
-      <file>${PROJECT_ROOT}\IO_CODES\REGURGITANT_FLOW_AND_ECCENTRICITY.p</file>
-      <file>${PROJECT_ROOT}\IO_CODES\rgb2hex.p</file>
       <file>${PROJECT_ROOT}\OFFSET_ERR_AND_NOISE_MASKING.fig</file>
       <file>${PROJECT_ROOT}\OFFSET_ERR_AND_NOISE_MASKING.m</file>
       <file>${PROJECT_ROOT}\updateMainImageTexts.m</file>
     </fileset.depfun>
     <build-deliverables>
       <file location="${PROJECT_ROOT}\GUIDE_4D_FLOW\for_testing" name="splash.png" optional="false">D:\Repos\4D-Flow-Matlab-Toolbox\GUIDE_4D_FLOW\for_testing\splash.png</file>
-      <file location="${PROJECT_ROOT}\GUIDE_4D_FLOW\for_testing" name="FOURD_FLOW_MATLAB_TOOLBOX.exe" optional="false">D:\Repos\4D-Flow-Matlab-Toolbox\GUIDE_4D_FLOW\for_testing\FOURD_FLOW_MATLAB_TOOLBOX.exe</file>
+      <file location="${PROJECT_ROOT}\GUIDE_4D_FLOW\for_testing" name="APP_4D_FLOW.exe" optional="false">D:\Repos\4D-Flow-Matlab-Toolbox\GUIDE_4D_FLOW\for_testing\APP_4D_FLOW.exe</file>
       <file location="${PROJECT_ROOT}\GUIDE_4D_FLOW\for_testing" name="readme.txt" optional="true">D:\Repos\4D-Flow-Matlab-Toolbox\GUIDE_4D_FLOW\for_testing\readme.txt</file>
     </build-deliverables>
     <workflow />
