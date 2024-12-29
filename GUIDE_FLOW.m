@@ -221,7 +221,7 @@ function GUIDE_FLOW_OpeningFcn(hObject, eventdata, handles, varargin)
         
         set(handles.pushbutton1, 'FontUnits', 'points');
         FontS = get(handles.pushbutton1, 'FontSize');
-        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.21);
+        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',1/3);
         
         axes(handles.axes1);
         plot(0.0)
@@ -265,7 +265,7 @@ function GUIDE_FLOW_OpeningFcn(hObject, eventdata, handles, varargin)
         
         set(handles.pushbutton1, 'FontUnits', 'points');
         FontS = get(handles.pushbutton1, 'FontSize');
-        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.21);
+        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',1/3);
         
         axes(handles.axes1);
         plot(0.0)
@@ -302,7 +302,7 @@ function GUIDE_FLOW_OpeningFcn(hObject, eventdata, handles, varargin)
         
         set(handles.pushbutton1, 'FontUnits', 'points');
         FontS = get(handles.pushbutton1, 'FontSize');
-        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.21);
+        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',1/3);
         
         axes(handles.axes1);
         plot(0.0)
@@ -340,7 +340,7 @@ function GUIDE_FLOW_OpeningFcn(hObject, eventdata, handles, varargin)
         
         set(handles.pushbutton1, 'FontUnits', 'points');
         FontS = get(handles.pushbutton1, 'FontSize');
-        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.21);
+        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',1/3);
         
         axes(handles.axes1);
         plot(0.0)
@@ -1346,7 +1346,7 @@ switch get(handles.popupmenu3,'Value')
 
         set(handles.pushbutton1, 'FontUnits', 'points');
         FontS = get(handles.pushbutton1, 'FontSize');
-        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.21);
+        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',1/3);
         
         axes(handles.axes1);
         plot(0.0)
@@ -1528,7 +1528,7 @@ switch get(handles.popupmenu3,'Value')
         
         set(handles.pushbutton1, 'FontUnits', 'points');
         FontS = get(handles.pushbutton1, 'FontSize');
-        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.21);
+        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',1/3);
         
         axes(handles.axes1);
         plot(0.0)
@@ -1572,7 +1572,7 @@ switch get(handles.popupmenu3,'Value')
         
         set(handles.pushbutton1, 'FontUnits', 'points');
         FontS = get(handles.pushbutton1, 'FontSize');
-        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.21);
+        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',1/3);
         
         axes(handles.axes1);
         plot(0.0)
@@ -1618,7 +1618,7 @@ switch get(handles.popupmenu3,'Value')
         
         set(handles.pushbutton1, 'FontUnits', 'points');
         FontS = get(handles.pushbutton1, 'FontSize');
-        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.21);
+        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',1/3);
         
         axes(handles.axes1);
         plot(0.0)
@@ -1700,7 +1700,7 @@ if handles.id_move_peak_flow == 1
 
         set(handles.pushbutton1, 'FontUnits', 'points');
         FontS = get(handles.pushbutton1, 'FontSize');
-        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.21,'string','SAVE PEAK FLOW');
+        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',1/3,'string','SAVE PEAK FLOW');
         set(handles.text1,'visible','on','string',['# Cardiac Phase: ',num2str(handles.peak_flow)])
         
         axes(handles.axes1);
@@ -4309,7 +4309,7 @@ if val == 3
 
         set(handles.pushbutton1, 'FontUnits', 'points');
         FontS = get(handles.pushbutton1, 'FontSize');
-        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.21);
+        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',1/3);
         
         axes(handles.axes1);
         plot(0.0)
@@ -4345,7 +4345,7 @@ elseif val == 4
         
         set(handles.pushbutton1, 'FontUnits', 'points');
         FontS = get(handles.pushbutton1, 'FontSize');
-        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.21);
+        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',1/3);
         
         axes(handles.axes1);
         plot(0.0)
@@ -4374,7 +4374,7 @@ elseif val == 5
         
         set(handles.pushbutton1, 'FontUnits', 'points');
         FontS = get(handles.pushbutton1, 'FontSize');
-        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.21);
+        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',1/3);
         
         axes(handles.axes1);
         plot(0.0)
@@ -4403,7 +4403,7 @@ elseif val == 6
         
         set(handles.pushbutton1, 'FontUnits', 'points');
         FontS = get(handles.pushbutton1, 'FontSize');
-        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',0.21);
+        set(handles.pushbutton1, 'FontUnits', 'normalized','FontSize',1/3);
         
         axes(handles.axes1);
         plot(0.0)
@@ -4433,7 +4433,7 @@ end
     set(handles.popupmenu2,'FontUnits','Normalized','FontSize',0.37)
     set(handles.popupmenu3,'FontUnits','Normalized','FontSize',0.37)
     set(handles.text1,'FontUnits','Normalized','FontSize',0.78)
-    set(handles.pushbutton1,'FontUnits','Normalized','FontSize',0.21)
+    set(handles.pushbutton1,'FontUnits','Normalized','FontSize',1/3)
 
 handles.output = hObject;
 guidata(hObject, handles);  
