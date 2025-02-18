@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration build-checksum="1929160331" file="D:\Repos\4D-Flow-Matlab-Toolbox\GUIDE_4D_FLOW.prj" location="D:\Repos\4D-Flow-Matlab-Toolbox" name="GUIDE_4D_FLOW" preferred-package-location="D:\Repos\4D-Flow-Matlab-Toolbox\GUIDE_4D_FLOW\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
+  <configuration build-checksum="4195442968" file="D:\Repos\4D-Flow-Matlab-Toolbox\GUIDE_4D_FLOW.prj" location="D:\Repos\4D-Flow-Matlab-Toolbox" name="GUIDE_4D_FLOW" preferred-package-location="D:\Repos\4D-Flow-Matlab-Toolbox\GUIDE_4D_FLOW\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
     <param.appname>APP_4D_FLOW</param.appname>
     <param.icon />
     <param.icons />
@@ -9,7 +9,7 @@
     <param.company />
     <param.summary />
     <param.description />
-    <param.screenshot />
+    <param.screenshot>${PROJECT_ROOT}\Symbols\splash-screen.png</param.screenshot>
     <param.guid />
     <param.installpath.string>\APP_4D_FLOW\</param.installpath.string>
     <param.installpath.combo>option.installpath.programfiles</param.installpath.combo>
@@ -51,7 +51,6 @@
       <param.company />
       <param.summary />
       <param.description />
-      <param.screenshot />
       <param.guid />
       <param.installpath.string />
       <param.installpath.combo />
@@ -82,12 +81,13 @@
       <file>${PROJECT_ROOT}\GUIDE_4D_FLOW.m</file>
     </fileset.main>
     <fileset.resources>
+      <file>${PROJECT_ROOT}\GUIDE_SECTIONS_LAPLACE.fig</file>
+      <file>${PROJECT_ROOT}\GUIDE_SECTIONS_LAPLACE.m</file>
       <file>${PROJECT_ROOT}\IO_CODES</file>
       <file>${PROJECT_ROOT}\iso2mesh</file>
       <file>${PROJECT_ROOT}\Symbols</file>
     </fileset.resources>
     <fileset.package>
-      <file>${PROJECT_ROOT}\IO_CODES</file>
       <file>${PROJECT_ROOT}\iso2mesh</file>
     </fileset.package>
     <fileset.depfun>
@@ -101,10 +101,9 @@
       <file>${PROJECT_ROOT}\GUIDE_LAPLACE.fig</file>
       <file>${PROJECT_ROOT}\GUIDE_LAPLACE.m</file>
       <file>${PROJECT_ROOT}\GUIDE_REFORMATTING.p</file>
-      <file>${PROJECT_ROOT}\GUIDE_SAVE.p</file>
+      <file>${PROJECT_ROOT}\GUIDE_SAVE.fig</file>
+      <file>${PROJECT_ROOT}\GUIDE_SAVE.m</file>
       <file>${PROJECT_ROOT}\GUIDE_SAW.p</file>
-      <file>${PROJECT_ROOT}\GUIDE_SECTIONS_LAPLACE.fig</file>
-      <file>${PROJECT_ROOT}\GUIDE_SECTIONS_LAPLACE.m</file>
       <file>${PROJECT_ROOT}\GUIDE_SEGMENTATION.fig</file>
       <file>${PROJECT_ROOT}\GUIDE_SEGMENTATION.m</file>
       <file>${PROJECT_ROOT}\GUIDE_THRESHOLDING.fig</file>

@@ -4272,6 +4272,10 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         close(h)
     end
 % end
+
+% Allow user to continue
+set(handles.pushbutton3,'enable','on');
+
 handles.output = hObject;
 guidata(hObject, handles);
 

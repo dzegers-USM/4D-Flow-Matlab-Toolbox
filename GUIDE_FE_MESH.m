@@ -561,6 +561,9 @@ function pushbutton1_Callback(hObject, eventdata, handles)
     set(handles.radiobutton6,'Visible','off','Value',0)
     set(handles.radiobutton7,'Visible','off','Value',0)
     set(handles.radiobutton4,'Visible','off');
+
+    set(handles.pushbutton2,'enable','on');
+    set(handles.pushbutton3,'enable','off');
     
 handles.output = hObject;
 guidata(hObject, handles);
@@ -646,7 +649,8 @@ function pushbutton2_Callback(hObject, eventdata, handles)
     set(handles.radiobutton6,'Visible','off','Value',0)
     set(handles.radiobutton7,'Visible','off','Value',0)
     set(handles.radiobutton4,'Visible','off');
-    
+
+    set(handles.pushbutton3,'enable','on');
     
 handles.output = hObject;
 guidata(hObject, handles);
@@ -933,11 +937,12 @@ function pushbutton3_Callback(hObject, eventdata, handles)
     set(handles.slider1,'Value', 5/100,'sliderstep',slider_step,'max',1,'min',0)
     set(handles.slider1,'visible','on')
     
-    set(handles.text30,'visible','on')
-    set(handles.pushbutton8,'visible','on')
-    set(handles.pushbutton9,'visible','on')
-    set(handles.pushbutton10,'visible','on')
-    set(handles.pushbutton12,'visible','on')
+    set(handles.text30,'visible','on');
+    set(handles.pushbutton8,'visible','on');
+    set(handles.pushbutton9,'visible','on');
+    set(handles.pushbutton10,'visible','on');
+    set(handles.pushbutton12,'visible','on');
+    set(handles.pushbutton14,'enable','on');
     
     
 handles.output = hObject;
@@ -978,6 +983,8 @@ function radiobutton1_Callback(hObject, eventdata, handles)
         colorbar('off')
         
     end
+
+set(handles.pushbutton14,'enable','on');
 
 handles.output = hObject;
 guidata(hObject, handles);

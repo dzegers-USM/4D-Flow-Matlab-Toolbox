@@ -2954,9 +2954,25 @@ if handles.id_vwerp  == 1
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+        % Disable draw buttons
+        set(handles.pushbutton1,'String','APPLY INLET');
+        set(handles.pushbutton1,'enable','off');
+        set(handles.pushbutton2,'enable','off');
+
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
+        
+        % Change button style to represent its new function
+        set(handles.pushbutton1,'enable','on');
+        set(handles.pushbutton1,'Backgroundcolor',[0.65 0.65 0.65]);
+
         PUNTOS_C = wait(h);
+
+        % Reset buttons
+        set(handles.pushbutton1,'String','DRAW INLET');
+        set(handles.pushbutton1,'Backgroundcolor',[0.9 0.9 0.9]);
+        set(handles.pushbutton2,'enable','on');
 
         if handles.id_image ==1
 
@@ -3641,9 +3657,25 @@ if handles.id_vwerp  == 1
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+        % Disable draw buttons
+        set(handles.pushbutton1,'String','APPLY INLET');
+        set(handles.pushbutton1,'enable','off');
+        set(handles.pushbutton2,'enable','off');
+
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
+        
+        % Change button style to represent its new function
+        set(handles.pushbutton1,'enable','on');
+        set(handles.pushbutton1,'Backgroundcolor',[0.65 0.65 0.65]);
+
         PUNTOS_C = wait(h);
+
+        % Reset buttons
+        set(handles.pushbutton1,'String','DRAW INLET');
+        set(handles.pushbutton1,'Backgroundcolor',[0.9 0.9 0.9]);
+        set(handles.pushbutton2,'enable','on');
 
         if handles.id_image ==1
 
@@ -4444,9 +4476,25 @@ if handles.id_vwerp  == 1
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        % Disable draw buttons
+        set(handles.pushbutton1,'String','APPLY INLET');
+        set(handles.pushbutton1,'enable','off');
+        set(handles.pushbutton2,'enable','off');
+
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
+        
+        % Change button style to represent its new function
+        set(handles.pushbutton1,'enable','on');
+        set(handles.pushbutton1,'Backgroundcolor',[0.65 0.65 0.65]);
+
         PUNTOS_C = wait(h);
+
+        % Reset buttons
+        set(handles.pushbutton1,'String','DRAW INLET');
+        set(handles.pushbutton1,'Backgroundcolor',[0.9 0.9 0.9]);
+        set(handles.pushbutton2,'enable','on');
 
         if handles.id_image ==1
 
@@ -5153,9 +5201,25 @@ else
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        % Disable draw buttons
+        set(handles.pushbutton1,'String','APPLY INLET');
+        set(handles.pushbutton1,'enable','off');
+        set(handles.pushbutton2,'enable','off');
+
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
+        
+        % Change button style to represent its new function
+        set(handles.pushbutton1,'enable','on');
+        set(handles.pushbutton1,'Backgroundcolor',[0.65 0.65 0.65]);
+
         PUNTOS_C = wait(h);
+
+        % Reset buttons
+        set(handles.pushbutton1,'String','DRAW INLET');
+        set(handles.pushbutton1,'Backgroundcolor',[0.9 0.9 0.9]);
+        set(handles.pushbutton2,'enable','on');
 
         if handles.id_image ==1
 
@@ -5821,9 +5885,25 @@ else
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        % Disable draw buttons
+        set(handles.pushbutton1,'String','APPLY INLET');
+        set(handles.pushbutton1,'enable','off');
+        set(handles.pushbutton2,'enable','off');
+
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
+        
+        % Change button style to represent its new function
+        set(handles.pushbutton1,'enable','on');
+        set(handles.pushbutton1,'Backgroundcolor',[0.65 0.65 0.65]);
+
         PUNTOS_C = wait(h);
+
+        % Reset buttons
+        set(handles.pushbutton1,'String','DRAW INLET');
+        set(handles.pushbutton1,'Backgroundcolor',[0.9 0.9 0.9]);
+        set(handles.pushbutton2,'enable','on');
 
         if handles.id_image ==1
 
@@ -6607,9 +6687,25 @@ else
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+       
+        % Disable draw buttons
+        set(handles.pushbutton1,'String','APPLY INLET');
+        set(handles.pushbutton1,'enable','off');
+        set(handles.pushbutton2,'enable','off');
+
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
+        
+        % Change button style to represent its new function
+        set(handles.pushbutton1,'enable','on');
+        set(handles.pushbutton1,'Backgroundcolor',[0.65 0.65 0.65]);
+
         PUNTOS_C = wait(h);
+
+        % Reset buttons
+        set(handles.pushbutton1,'String','DRAW INLET');
+        set(handles.pushbutton1,'Backgroundcolor',[0.9 0.9 0.9]);
+        set(handles.pushbutton2,'enable','on');
 
         if handles.id_image ==1
 
@@ -7306,9 +7402,25 @@ if handles.id_vwerp == 1
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+        % Disable draw buttons
+        set(handles.pushbutton2,'String','APPLY OUTLET');
+        set(handles.pushbutton1,'enable','off');
+        set(handles.pushbutton2,'enable','off');
+
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
+        
+        % Change button style to represent its new function
+        set(handles.pushbutton2,'enable','on');
+        set(handles.pushbutton2,'Backgroundcolor',[0.65 0.65 0.65]);
+
         PUNTOS_C = wait(h);
+
+        % Reset buttons
+        set(handles.pushbutton2,'String','DRAW OUTLET');
+        set(handles.pushbutton2,'Backgroundcolor',[0.9 0.9 0.9]);
+        set(handles.pushbutton1,'enable','on');
 
         if handles.id_image ==1
 
@@ -7975,9 +8087,25 @@ if handles.id_vwerp == 1
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        % Disable draw buttons
+        set(handles.pushbutton2,'String','APPLY OUTLET');
+        set(handles.pushbutton1,'enable','off');
+        set(handles.pushbutton2,'enable','off');
+
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
+        
+        % Change button style to represent its new function
+        set(handles.pushbutton2,'enable','on');
+        set(handles.pushbutton2,'Backgroundcolor',[0.65 0.65 0.65]);
+
         PUNTOS_C = wait(h);
+
+        % Reset buttons
+        set(handles.pushbutton2,'String','DRAW OUTLET');
+        set(handles.pushbutton2,'Backgroundcolor',[0.9 0.9 0.9]);
+        set(handles.pushbutton1,'enable','on');
 
         if handles.id_image ==1
 
@@ -8758,9 +8886,25 @@ if handles.id_vwerp == 1
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        % Disable draw buttons
+        set(handles.pushbutton2,'String','APPLY OUTLET');
+        set(handles.pushbutton1,'enable','off');
+        set(handles.pushbutton2,'enable','off');
+
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
+        
+        % Change button style to represent its new function
+        set(handles.pushbutton2,'enable','on');
+        set(handles.pushbutton2,'Backgroundcolor',[0.65 0.65 0.65]);
+
         PUNTOS_C = wait(h);
+
+        % Reset buttons
+        set(handles.pushbutton2,'String','DRAW OUTLET');
+        set(handles.pushbutton2,'Backgroundcolor',[0.9 0.9 0.9]);
+        set(handles.pushbutton1,'enable','on');
 
         if handles.id_image ==1
 
@@ -9436,9 +9580,25 @@ else
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        % Disable draw buttons
+        set(handles.pushbutton2,'String','APPLY OUTLET');
+        set(handles.pushbutton1,'enable','off');
+        set(handles.pushbutton2,'enable','off');
+
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
+        
+        % Change button style to represent its new function
+        set(handles.pushbutton2,'enable','on');
+        set(handles.pushbutton2,'Backgroundcolor',[0.65 0.65 0.65]);
+
         PUNTOS_C = wait(h);
+
+        % Reset buttons
+        set(handles.pushbutton2,'String','DRAW OUTLET');
+        set(handles.pushbutton2,'Backgroundcolor',[0.9 0.9 0.9]);
+        set(handles.pushbutton1,'enable','on');
 
         if handles.id_image ==1
 
@@ -10101,9 +10261,25 @@ else
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        % Disable draw buttons
+        set(handles.pushbutton2,'String','APPLY OUTLET');
+        set(handles.pushbutton1,'enable','off');
+        set(handles.pushbutton2,'enable','off');
+
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
+        
+        % Change button style to represent its new function
+        set(handles.pushbutton2,'enable','on');
+        set(handles.pushbutton2,'Backgroundcolor',[0.65 0.65 0.65]);
+
         PUNTOS_C = wait(h);
+
+        % Reset buttons
+        set(handles.pushbutton2,'String','DRAW OUTLET');
+        set(handles.pushbutton2,'Backgroundcolor',[0.9 0.9 0.9]);
+        set(handles.pushbutton1,'enable','on');
 
         if handles.id_image ==1
 
@@ -10879,9 +11055,25 @@ else
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        % Disable draw buttons
+        set(handles.pushbutton2,'String','APPLY OUTLET');
+        set(handles.pushbutton1,'enable','off');
+        set(handles.pushbutton2,'enable','off');
+
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
+        
+        % Change button style to represent its new function
+        set(handles.pushbutton2,'enable','on');
+        set(handles.pushbutton2,'Backgroundcolor',[0.65 0.65 0.65]);
+
         PUNTOS_C = wait(h);
+
+        % Reset buttons
+        set(handles.pushbutton2,'String','DRAW OUTLET');
+        set(handles.pushbutton2,'Backgroundcolor',[0.9 0.9 0.9]);
+        set(handles.pushbutton1,'enable','on');
 
         if handles.id_image ==1
 
@@ -14788,6 +14980,9 @@ else
     set(handles.text1,'visible','off')
     
 end
+
+% Enable continue button
+set(handles.pushbutton15,'enable','on');
 
 handles.output = hObject;  
 guidata(hObject, handles);
