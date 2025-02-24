@@ -174,7 +174,7 @@ function GUIDE_LAPLACE_OpeningFcn(hObject, eventdata, handles, varargin)
             handles.volInt = true;
             handles.resamp_factor = 1;
             handles.percentage_noise = 0.0;
-            set(handles.pushbutton3,'String','vWERP','FontUnits','Normalized','FontSize',0.24)
+            set(handles.pushbutton3,'String','vWERP')
         end
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -258,7 +258,7 @@ function GUIDE_LAPLACE_OpeningFcn(hObject, eventdata, handles, varargin)
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             if handles.inlet_exec == 1 && handles.outlet_exec == 1
 
-                set(handles.pushbutton3,'Visible','on');
+                set(handles.pushbutton3,'enable','on');
 
             end
 
@@ -328,9 +328,10 @@ function GUIDE_LAPLACE_OpeningFcn(hObject, eventdata, handles, varargin)
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             if handles.inlet_exec == 1 && handles.outlet_exec == 1
 
-                set(handles.pushbutton3,'Visible','on');
+                set(handles.pushbutton3,'enable','on');
                 set(handles.pushbutton1,'Visible','off');
                 set(handles.pushbutton2,'Visible','off');
+                set(handles.text11,'Visible','off');
                 set(handles.pushbutton12,'Visible','off');
                 set(handles.popupmenu1,'Value',1);
                 set(handles.popupmenu3,'Value',1);
@@ -545,13 +546,14 @@ function GUIDE_LAPLACE_OpeningFcn(hObject, eventdata, handles, varargin)
             set(handles.popupmenu2,'String',handles.list_string);
 
             set(handles.pushbutton1,'Visible','on');
+            set(handles.text11,'Visible','on');
             if handles.inlet_exec == 1
 
                 set(handles.pushbutton2,'Visible','on');
 
             end
 
-            set(handles.pushbutton3,'Visible','off');
+            set(handles.pushbutton3,'enable','off');
 
             handles.id_ipcmra = 1;
             handles.id_mag = 0;
@@ -612,7 +614,7 @@ function GUIDE_LAPLACE_OpeningFcn(hObject, eventdata, handles, varargin)
 %                     set(handles.popupmenu2,'String',handles.list_string);
 % 
 %                     set(handles.pushbutton2,'Visible','on');
-%                     set(handles.pushbutton3,'Visible','on');
+%                     set(handles.pushbutton3,'enable','on');
 % 
 %                     handles.id_section_loaded = 1;
 % 
@@ -816,7 +818,7 @@ function GUIDE_LAPLACE_OpeningFcn(hObject, eventdata, handles, varargin)
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             if handles.inlet_exec == 1 && handles.outlet_exec == 1
 
-                set(handles.pushbutton3,'Visible','on');
+                set(handles.pushbutton3,'enable','on');
 
             end
 
@@ -877,9 +879,10 @@ function GUIDE_LAPLACE_OpeningFcn(hObject, eventdata, handles, varargin)
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             if handles.inlet_exec == 1 && handles.outlet_exec == 1
 
-                set(handles.pushbutton3,'Visible','on');
+                set(handles.pushbutton3,'enable','on');
                 set(handles.pushbutton1,'Visible','off');
                 set(handles.pushbutton2,'Visible','off');
+                set(handles.text11,'Visible','off');
                 set(handles.pushbutton12,'Visible','off');
                 set(handles.popupmenu1,'Value',1);
                 set(handles.popupmenu3,'Value',1);
@@ -1094,13 +1097,14 @@ function GUIDE_LAPLACE_OpeningFcn(hObject, eventdata, handles, varargin)
             set(handles.popupmenu2,'String',handles.list_string);
 
             set(handles.pushbutton1,'Visible','on');
+            set(handles.text11,'Visible','on');
             if handles.inlet_exec == 1
 
                 set(handles.pushbutton2,'Visible','on');
 
             end
 
-            set(handles.pushbutton3,'Visible','off');
+            set(handles.pushbutton3,'enable','off');
 
             handles.id_ipcmra = 1;
             handles.id_mag = 0;
@@ -1161,7 +1165,7 @@ function GUIDE_LAPLACE_OpeningFcn(hObject, eventdata, handles, varargin)
 %                     set(handles.popupmenu2,'String',handles.list_string);
 % 
 %                     set(handles.pushbutton2,'Visible','on');
-%                     set(handles.pushbutton3,'Visible','on');
+%                     set(handles.pushbutton3,'enable','on');
 % 
 %                     handles.id_section_loaded = 1;
 % 
@@ -1578,6 +1582,7 @@ switch get(handles.popupmenu1,'Value')
         set(handles.text1,'visible','off')
         set(handles.pushbutton1,'visible','off')
         set(handles.pushbutton2,'visible','off')
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton5,'Visible','off')
         set(handles.pushbutton6,'Visible','off')
         set(handles.pushbutton12,'Visible','off');
@@ -1598,6 +1603,7 @@ switch get(handles.popupmenu1,'Value')
             
             set(handles.pushbutton1,'Visible','on');
             set(handles.pushbutton2,'Visible','on');
+            set(handles.text11,'Visible','on');
             set(handles.pushbutton12,'Visible','on');
                 
             handles.list_string = {'Sagital View','Axial View','Coronal View'};
@@ -1636,6 +1642,7 @@ switch get(handles.popupmenu1,'Value')
             
             set(handles.pushbutton1,'Visible','on');
             set(handles.pushbutton2,'Visible','on');
+            set(handles.text11,'Visible','on');
             set(handles.pushbutton12,'Visible','on');
             
             
@@ -1675,6 +1682,7 @@ switch get(handles.popupmenu1,'Value')
             
             set(handles.pushbutton1,'Visible','on');
             set(handles.pushbutton2,'Visible','on');
+            set(handles.text11,'Visible','on');
             set(handles.pushbutton12,'Visible','on');
             
             
@@ -1735,6 +1743,7 @@ switch get(handles.popupmenu1,'Value')
             
             set(handles.pushbutton1,'Visible','on');
             set(handles.pushbutton2,'Visible','on');
+            set(handles.text11,'Visible','on');
             set(handles.pushbutton12,'Visible','on');
 
             handles.list_string = {'Sagital View','Axial View','Coronal View'};
@@ -1774,6 +1783,7 @@ switch get(handles.popupmenu1,'Value')
 
             set(handles.pushbutton1,'Visible','on');
             set(handles.pushbutton2,'Visible','on');
+            set(handles.text11,'Visible','on');
             set(handles.pushbutton12,'Visible','on');
             
             handles.list_string = {'Sagital View','Axial View','Coronal View'};
@@ -1813,6 +1823,7 @@ switch get(handles.popupmenu1,'Value')
             
             set(handles.pushbutton1,'Visible','on');
             set(handles.pushbutton2,'Visible','on');
+            set(handles.text11,'Visible','on');
             set(handles.pushbutton12,'Visible','on');
 
             handles.list_string = {'Sagital View','Axial View','Coronal View'};
@@ -3550,17 +3561,18 @@ if handles.id_vwerp  == 1
         handles.inlet_exec = 1;
         set(handles.pushbutton1,'Visible','off');
         set(handles.pushbutton2,'Visible','off');
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
         set(handles.popupmenu1,'Value',1);
         set(handles.popupmenu3,'Value',1);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         if handles.outlet_exec == 1
 
-            set(handles.pushbutton3,'Visible','on');
+            set(handles.pushbutton3,'enable','on');
 
         else 
 
-            set(handles.pushbutton3,'Visible','off');
+            set(handles.pushbutton3,'enable','off');
 
         end  
 
@@ -4368,17 +4380,18 @@ if handles.id_vwerp  == 1
         handles.inlet_exec = 1;
         set(handles.pushbutton1,'Visible','off');
         set(handles.pushbutton2,'Visible','off');
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
         set(handles.popupmenu1,'Value',1);
         set(handles.popupmenu3,'Value',1);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         if handles.outlet_exec == 1
 
-            set(handles.pushbutton3,'Visible','on');
+            set(handles.pushbutton3,'enable','on');
 
         else 
 
-            set(handles.pushbutton3,'Visible','off');
+            set(handles.pushbutton3,'enable','off');
 
         end  
 
@@ -5092,17 +5105,18 @@ if handles.id_vwerp  == 1
         handles.inlet_exec = 1;
         set(handles.pushbutton1,'Visible','off');
         set(handles.pushbutton2,'Visible','off');
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
         set(handles.popupmenu1,'Value',1);
         set(handles.popupmenu3,'Value',1);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         if handles.outlet_exec == 1
 
-            set(handles.pushbutton3,'Visible','on');
+            set(handles.pushbutton3,'enable','on');
 
         else 
 
-            set(handles.pushbutton3,'Visible','off');
+            set(handles.pushbutton3,'enable','off');
 
         end  
         
@@ -5784,17 +5798,18 @@ else
         handles.inlet_exec = 1;
         set(handles.pushbutton1,'Visible','off');
         set(handles.pushbutton2,'Visible','off');
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
         set(handles.popupmenu1,'Value',1);
         set(handles.popupmenu3,'Value',1);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         if handles.outlet_exec == 1
 
-            set(handles.pushbutton3,'Visible','on');
+            set(handles.pushbutton3,'enable','on');
 
         else 
 
-            set(handles.pushbutton3,'Visible','off');
+            set(handles.pushbutton3,'enable','off');
 
         end  
 
@@ -6586,17 +6601,18 @@ else
         handles.inlet_exec = 1;
         set(handles.pushbutton1,'Visible','off');
         set(handles.pushbutton2,'Visible','off');
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
         set(handles.popupmenu1,'Value',1);
         set(handles.popupmenu3,'Value',1);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         if handles.outlet_exec == 1
 
-            set(handles.pushbutton3,'Visible','on');
+            set(handles.pushbutton3,'enable','on');
 
         else 
 
-            set(handles.pushbutton3,'Visible','off');
+            set(handles.pushbutton3,'enable','off');
 
         end  
 
@@ -7279,17 +7295,18 @@ else
         handles.inlet_exec = 1;
         set(handles.pushbutton1,'Visible','off');
         set(handles.pushbutton2,'Visible','off');
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
         set(handles.popupmenu1,'Value',1);
         set(handles.popupmenu3,'Value',1);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         if handles.outlet_exec == 1
 
-            set(handles.pushbutton3,'Visible','on');
+            set(handles.pushbutton3,'enable','on');
 
         else 
 
-            set(handles.pushbutton3,'Visible','off');
+            set(handles.pushbutton3,'enable','off');
 
         end  
 
@@ -7298,6 +7315,8 @@ else
 
 end
 
+% Enable return button
+set(handles.pushbutton17,'visible','on');
 
 handles.output = hObject;
 guidata(hObject, handles);
@@ -7979,17 +7998,18 @@ if handles.id_vwerp == 1
         handles.outlet_exec = 1;
         set(handles.pushbutton1,'Visible','off');
         set(handles.pushbutton2,'Visible','off');
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
         set(handles.popupmenu1,'Value',1);
         set(handles.popupmenu3,'Value',1);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         if handles.inlet_exec == 1
 
-            set(handles.pushbutton3,'Visible','on');
+            set(handles.pushbutton3,'enable','on');
 
         else
 
-            set(handles.pushbutton3,'Visible','off');
+            set(handles.pushbutton3,'enable','off');
 
         end
 
@@ -8779,17 +8799,18 @@ if handles.id_vwerp == 1
         handles.outlet_exec = 1;
         set(handles.pushbutton1,'Visible','off');
         set(handles.pushbutton2,'Visible','off');
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
         set(handles.popupmenu1,'Value',1);
         set(handles.popupmenu3,'Value',1);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         if handles.inlet_exec == 1
 
-            set(handles.pushbutton3,'Visible','on');
+            set(handles.pushbutton3,'enable','on');
 
         else
 
-            set(handles.pushbutton3,'Visible','off');
+            set(handles.pushbutton3,'enable','off');
 
         end
 
@@ -9472,17 +9493,18 @@ if handles.id_vwerp == 1
         handles.outlet_exec = 1;
         set(handles.pushbutton1,'Visible','off');
         set(handles.pushbutton2,'Visible','off');
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
         set(handles.popupmenu1,'Value',1);
         set(handles.popupmenu3,'Value',1);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         if handles.inlet_exec == 1
 
-            set(handles.pushbutton3,'Visible','on');
+            set(handles.pushbutton3,'enable','on');
 
         else
 
-            set(handles.pushbutton3,'Visible','off');
+            set(handles.pushbutton3,'enable','off');
 
         end
         
@@ -10159,17 +10181,18 @@ else
         handles.outlet_exec = 1;
         set(handles.pushbutton1,'Visible','off');
         set(handles.pushbutton2,'Visible','off');
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
         set(handles.popupmenu1,'Value',1);
         set(handles.popupmenu3,'Value',1);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         if handles.inlet_exec == 1
 
-            set(handles.pushbutton3,'Visible','on');
+            set(handles.pushbutton3,'enable','on');
 
         else
 
-            set(handles.pushbutton3,'Visible','off');
+            set(handles.pushbutton3,'enable','off');
 
         end
 
@@ -10954,17 +10977,18 @@ else
         handles.outlet_exec = 1;
         set(handles.pushbutton1,'Visible','off');
         set(handles.pushbutton2,'Visible','off');
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
         set(handles.popupmenu1,'Value',1);
         set(handles.popupmenu3,'Value',1);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         if handles.inlet_exec == 1
 
-            set(handles.pushbutton3,'Visible','on');
+            set(handles.pushbutton3,'enable','on');
 
         else
 
-            set(handles.pushbutton3,'Visible','off');
+            set(handles.pushbutton3,'enable','off');
 
         end
 
@@ -11641,23 +11665,26 @@ else
         handles.outlet_exec = 1;
         set(handles.pushbutton1,'Visible','off');
         set(handles.pushbutton2,'Visible','off');
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
         set(handles.popupmenu1,'Value',1);
         set(handles.popupmenu3,'Value',1);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         if handles.inlet_exec == 1
 
-            set(handles.pushbutton3,'Visible','on');
+            set(handles.pushbutton3,'enable','on');
 
         else
 
-            set(handles.pushbutton3,'Visible','off');
+            set(handles.pushbutton3,'enable','off');
 
         end
 
     end  
 end
 
+% Enable return button
+set(handles.pushbutton17,'visible','on');
 
 handles.output = hObject;  
 guidata(hObject, handles);
@@ -11705,6 +11732,7 @@ switch get(handles.popupmenu2,'Value')
         set(handles.popupmenu3,'value',1)
         set(handles.pushbutton1,'visible','off')
         set(handles.pushbutton2,'visible','off')
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton5,'Visible','off')
         set(handles.pushbutton6,'Visible','off')
         set(handles.pushbutton12,'Visible','off');
@@ -11746,6 +11774,7 @@ switch get(handles.popupmenu2,'Value')
             set(handles.popupmenu3,'value',1)
             set(handles.pushbutton1,'visible','off')
             set(handles.pushbutton2,'visible','off')
+            set(handles.text11,'Visible','off');
             set(handles.pushbutton5,'Visible','off')
             set(handles.pushbutton6,'Visible','off')
             set(handles.pushbutton12,'Visible','off');
@@ -11971,19 +12000,20 @@ switch get(handles.popupmenu2,'Value')
             set(handles.popupmenu3,'value',1)
             set(handles.pushbutton1,'visible','off')
             set(handles.pushbutton2,'visible','off')
+            set(handles.text11,'Visible','off');
             set(handles.pushbutton12,'Visible','off');
             
             if (handles.inlet_exec == 1) && (handles.outlet_exec == 1)
 
-                set(handles.pushbutton3,'Visible','on');
+                set(handles.pushbutton3,'enable','on');
 
             else 
 
-                set(handles.pushbutton3,'Visible','off');
+                set(handles.pushbutton3,'enable','off');
 
             end  
             
-%             set(handles.pushbutton3,'Visible','off')
+%             set(handles.pushbutton3,'enable','off')
             set(handles.pushbutton5,'Visible','off')
             set(handles.pushbutton6,'Visible','off')
 
@@ -12010,6 +12040,7 @@ switch get(handles.popupmenu2,'Value')
             set(handles.popupmenu3,'value',1)
             set(handles.pushbutton1,'visible','off')
             set(handles.pushbutton2,'visible','off')
+            set(handles.text11,'Visible','off');
             set(handles.pushbutton12,'Visible','off');
 
 
@@ -12113,19 +12144,20 @@ switch get(handles.popupmenu2,'Value')
             set(handles.popupmenu3,'value',1)
             set(handles.pushbutton1,'visible','off')
             set(handles.pushbutton2,'visible','off')
+            set(handles.text11,'Visible','off');
             set(handles.pushbutton12,'Visible','off');
 
             if (handles.inlet_exec == 1) && (handles.outlet_exec == 1)
 
-                set(handles.pushbutton3,'Visible','on');
+                set(handles.pushbutton3,'enable','on');
 
             else 
 
-                set(handles.pushbutton3,'Visible','off');
+                set(handles.pushbutton3,'enable','off');
 
             end  
             
-%             set(handles.pushbutton3,'Visible','off')
+%             set(handles.pushbutton3,'enable','off')
             set(handles.pushbutton5,'Visible','off')
             set(handles.pushbutton6,'Visible','off')
             
@@ -12150,6 +12182,7 @@ switch get(handles.popupmenu2,'Value')
             set(handles.popupmenu3,'value',1)
             set(handles.pushbutton1,'visible','off')
             set(handles.pushbutton2,'visible','off')
+            set(handles.text11,'Visible','off');
             set(handles.pushbutton12,'Visible','off');
 
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -12211,19 +12244,20 @@ switch get(handles.popupmenu2,'Value')
             set(handles.popupmenu3,'value',1)
             set(handles.pushbutton1,'visible','off')
             set(handles.pushbutton2,'visible','off')
+            set(handles.text11,'Visible','off');
             set(handles.pushbutton12,'Visible','off');
             
             if (handles.inlet_exec == 1) && (handles.outlet_exec == 1)
 
-                set(handles.pushbutton3,'Visible','on');
+                set(handles.pushbutton3,'enable','on');
 
             else 
 
-                set(handles.pushbutton3,'Visible','off');
+                set(handles.pushbutton3,'enable','off');
 
             end  
             
-%             set(handles.pushbutton3,'Visible','off')
+%             set(handles.pushbutton3,'enable','off')
 
 
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -12307,6 +12341,7 @@ switch get(handles.popupmenu2,'Value')
             set(handles.popupmenu3,'value',1)
             set(handles.pushbutton1,'visible','off')
             set(handles.pushbutton2,'visible','off')
+            set(handles.text11,'Visible','off');
             set(handles.pushbutton12,'Visible','off');
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
@@ -12368,19 +12403,20 @@ switch get(handles.popupmenu2,'Value')
             set(handles.popupmenu3,'value',1)
             set(handles.pushbutton1,'visible','off')
             set(handles.pushbutton2,'visible','off')
+            set(handles.text11,'Visible','off');
             set(handles.pushbutton12,'Visible','off');
             
             if (handles.inlet_exec == 1) && (handles.outlet_exec == 1)
 
-                set(handles.pushbutton3,'Visible','on');
+                set(handles.pushbutton3,'enable','on');
 
             else 
 
-                set(handles.pushbutton3,'Visible','off');
+                set(handles.pushbutton3,'enable','off');
 
             end  
             
-%             set(handles.pushbutton3,'Visible','off')
+%             set(handles.pushbutton3,'enable','off')
 
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -12433,6 +12469,7 @@ switch get(handles.popupmenu2,'Value')
             set(handles.popupmenu3,'value',1)
             set(handles.pushbutton1,'visible','off')
             set(handles.pushbutton2,'visible','off')
+            set(handles.text11,'Visible','off');
             set(handles.pushbutton12,'Visible','off');
     
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -12489,18 +12526,19 @@ switch get(handles.popupmenu2,'Value')
             set(handles.popupmenu3,'value',1)
             set(handles.pushbutton1,'visible','off')
             set(handles.pushbutton2,'visible','off')
+            set(handles.text11,'Visible','off');
             set(handles.pushbutton12,'Visible','off');
 
             if (handles.inlet_exec == 1) && (handles.outlet_exec == 1)
 
-                set(handles.pushbutton3,'Visible','on');
+                set(handles.pushbutton3,'enable','on');
 
             else 
 
-                set(handles.pushbutton3,'Visible','off');
+                set(handles.pushbutton3,'enable','off');
 
             end  
-%             set(handles.pushbutton3,'Visible','off')
+%             set(handles.pushbutton3,'enable','off')
             set(handles.pushbutton5,'Visible','off')
             set(handles.pushbutton6,'Visible','off')
             
@@ -12555,6 +12593,7 @@ switch get(handles.popupmenu2,'Value')
             set(handles.popupmenu3,'value',1)
             set(handles.pushbutton1,'visible','off')
             set(handles.pushbutton2,'visible','off')
+            set(handles.text11,'Visible','off');
             set(handles.pushbutton12,'Visible','off');
 
 
@@ -12639,6 +12678,7 @@ switch get(handles.popupmenu2,'Value')
         set(handles.popupmenu3,'value',1)
         set(handles.pushbutton1,'visible','off')
         set(handles.pushbutton2,'visible','off')
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
 
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -12692,6 +12732,7 @@ switch get(handles.popupmenu2,'Value')
         set(handles.popupmenu3,'value',1)
         set(handles.pushbutton1,'visible','off')
         set(handles.pushbutton2,'visible','off')
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
 
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -12747,6 +12788,7 @@ switch get(handles.popupmenu2,'Value')
         set(handles.popupmenu3,'value',1)
         set(handles.pushbutton1,'visible','off')
         set(handles.pushbutton2,'visible','off')
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
 
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -12872,6 +12914,7 @@ switch get(handles.popupmenu2,'Value')
         set(handles.popupmenu3,'value',1)
         set(handles.pushbutton1,'visible','off')
         set(handles.pushbutton2,'visible','off')
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
 
     case 13 % wall shear stress circumferential
@@ -12969,6 +13012,7 @@ switch get(handles.popupmenu2,'Value')
         set(handles.popupmenu3,'value',1)
         set(handles.pushbutton1,'visible','off')
         set(handles.pushbutton2,'visible','off')
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
 
     case 14 % axial angle
@@ -13055,6 +13099,7 @@ switch get(handles.popupmenu2,'Value')
         set(handles.popupmenu3,'value',1)
         set(handles.pushbutton1,'visible','off')
         set(handles.pushbutton2,'visible','off')
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
 
     case 15 % forward velocity
@@ -13152,6 +13197,7 @@ switch get(handles.popupmenu2,'Value')
         set(handles.popupmenu3,'value',1)
         set(handles.pushbutton1,'visible','off')
         set(handles.pushbutton2,'visible','off')
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
 
     case 16 % backward velocity
@@ -13250,6 +13296,7 @@ switch get(handles.popupmenu2,'Value')
         set(handles.popupmenu3,'value',1)
         set(handles.pushbutton1,'visible','off')
         set(handles.pushbutton2,'visible','off')
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
 
     case 17 % regurgitant flow
@@ -13303,6 +13350,7 @@ switch get(handles.popupmenu2,'Value')
         set(handles.popupmenu3,'value',1)
         set(handles.pushbutton1,'visible','off')
         set(handles.pushbutton2,'visible','off')
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -13357,6 +13405,7 @@ switch get(handles.popupmenu2,'Value')
         set(handles.popupmenu3,'value',1)
         set(handles.pushbutton1,'visible','off')
         set(handles.pushbutton2,'visible','off')
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
 
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -13440,6 +13489,7 @@ switch get(handles.popupmenu2,'Value')
         set(handles.popupmenu3,'value',1)
         set(handles.pushbutton1,'visible','off')
         set(handles.pushbutton2,'visible','off')
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -13532,6 +13582,7 @@ switch get(handles.popupmenu2,'Value')
         set(handles.popupmenu3,'value',1)
         set(handles.pushbutton1,'visible','off')
         set(handles.pushbutton2,'visible','off')
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -13614,6 +13665,7 @@ switch get(handles.popupmenu2,'Value')
         set(handles.popupmenu3,'value',1)
         set(handles.pushbutton1,'visible','off')
         set(handles.pushbutton2,'visible','off')
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -13696,6 +13748,7 @@ switch get(handles.popupmenu2,'Value')
         set(handles.popupmenu3,'value',1)
         set(handles.pushbutton1,'visible','off')
         set(handles.pushbutton2,'visible','off')
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -13780,6 +13833,7 @@ switch get(handles.popupmenu2,'Value')
         set(handles.popupmenu3,'value',1)
         set(handles.pushbutton1,'visible','off')
         set(handles.pushbutton2,'visible','off')
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -13984,6 +14038,7 @@ switch get(handles.popupmenu2,'Value')
         set(handles.popupmenu3,'value',1)
         set(handles.pushbutton1,'visible','off')
         set(handles.pushbutton2,'visible','off')
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
 
     case 25 % area
@@ -14039,6 +14094,7 @@ switch get(handles.popupmenu2,'Value')
         set(handles.popupmenu3,'value',1)
         set(handles.pushbutton1,'visible','off')
         set(handles.pushbutton2,'visible','off')
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -14157,6 +14213,7 @@ switch get(handles.popupmenu2,'Value')
         set(handles.popupmenu3,'value',1)
         set(handles.pushbutton1,'visible','off')
         set(handles.pushbutton2,'visible','off')
+        set(handles.text11,'Visible','off');
         set(handles.pushbutton12,'Visible','off');
 end
 handles.output = hObject;  
@@ -14634,8 +14691,9 @@ if handles.id_vwerp  == 1
     set(handles.popupmenu3,'value',1)
     set(handles.pushbutton1,'visible','off')
     set(handles.pushbutton2,'visible','off')
+    set(handles.text11,'Visible','off');
     set(handles.pushbutton12,'visible','off')
-    set(handles.pushbutton3,'Visible','off')
+    set(handles.pushbutton3,'enable','off')
     set(handles.pushbutton5,'Visible','off')
     set(handles.pushbutton6,'Visible','off')
     set(handles.text3,'Visible','off')
@@ -15008,6 +15066,7 @@ switch get(handles.popupmenu3,'Value')
             
             set(handles.pushbutton1,'Visible','on');
             set(handles.pushbutton2,'Visible','on');
+            set(handles.text11,'Visible','on');
             if handles.id_vwerp == 1
                 set(handles.pushbutton12,'Visible','on');
             end
@@ -15042,6 +15101,7 @@ switch get(handles.popupmenu3,'Value')
 
             set(handles.pushbutton1,'Visible','on');
             set(handles.pushbutton2,'Visible','on');
+            set(handles.text11,'Visible','on');
             if handles.id_vwerp == 1
                 set(handles.pushbutton12,'Visible','on');
             end
@@ -15083,6 +15143,7 @@ switch get(handles.popupmenu3,'Value')
             
             set(handles.pushbutton1,'Visible','on');
             set(handles.pushbutton2,'Visible','on');
+            set(handles.text11,'Visible','on');
             if handles.id_vwerp == 1
                 set(handles.pushbutton12,'Visible','on');
             end
@@ -15117,6 +15178,7 @@ switch get(handles.popupmenu3,'Value')
             
             set(handles.pushbutton1,'Visible','on');
             set(handles.pushbutton2,'Visible','on');
+            set(handles.text11,'Visible','on');
             if handles.id_vwerp == 1
                 set(handles.pushbutton12,'Visible','on');
             end
@@ -15158,6 +15220,7 @@ switch get(handles.popupmenu3,'Value')
 
             set(handles.pushbutton1,'Visible','on');
             set(handles.pushbutton2,'Visible','on');
+            set(handles.text11,'Visible','on');
             if handles.id_vwerp == 1
                 set(handles.pushbutton12,'Visible','on');
             end
@@ -15192,6 +15255,7 @@ switch get(handles.popupmenu3,'Value')
             
             set(handles.pushbutton1,'Visible','on');
             set(handles.pushbutton2,'Visible','on');
+            set(handles.text11,'Visible','on');
             if handles.id_vwerp == 1
                 set(handles.pushbutton12,'Visible','on');
             end
@@ -15278,7 +15342,6 @@ function GUIDE_LAPLACE_SizeChangedFcn(hObject, eventdata, handles)
     set(handles.text4,'FontUnits','Normalized','FontSize',0.52)
     set(handles.text5,'FontUnits','Normalized','FontSize',0.52)
     set(handles.text6,'FontUnits','Normalized','FontSize',0.52)
-    set(handles.pushbutton3,'FontUnits','Normalized','FontSize',0.24)
     set(handles.pushbutton5,'FontUnits','Normalized','FontSize',0.24)
     set(handles.pushbutton6,'FontUnits','Normalized','FontSize',0.24)
     set(handles.pushbutton7,'FontUnits','Normalized','FontSize',0.24)
@@ -15300,13 +15363,13 @@ if rb_method == 1
     
     handles.werp = 2;
     set(handles.radiobutton2,'Value',0);
-    set(handles.pushbutton3,'String','vWERP','FontUnits','Normalized','FontSize',0.24)
+    set(handles.pushbutton3,'String','vWERP')
     
 elseif rb_method == 0
     
     handles.werp = 1;
     set(handles.radiobutton2,'Value',1);
-    set(handles.pushbutton3,'String','WERP','FontUnits','Normalized','FontSize',0.24)
+    set(handles.pushbutton3,'String','WERP')
 end
 
 handles.output = hObject;
@@ -15483,6 +15546,7 @@ function pushbutton5_Callback(hObject, eventdata, handles)
     set(handles.popupmenu3,'value',1)
     set(handles.pushbutton1,'visible','off')
     set(handles.pushbutton2,'visible','off')
+    set(handles.text11,'Visible','off');
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -15546,7 +15610,7 @@ function pushbutton6_Callback(hObject, eventdata, handles)
     set(handles.popupmenu3,'value',1)
     set(handles.pushbutton1,'visible','off')
     set(handles.pushbutton2,'visible','off')
-
+    set(handles.text11,'Visible','off');
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -15867,7 +15931,7 @@ function pushbutton10_Callback(hObject, eventdata, handles)
     % 
     % mask = handles.SEG_for_vwerp;
     
-    set(handles.pushbutton3,'Visible','on');
+    set(handles.pushbutton3,'enable','on');
     
 handles.output = hObject;
 guidata(hObject, handles);
@@ -16018,7 +16082,7 @@ function pushbutton11_Callback(hObject, eventdata, handles)
     % 
     % mask = handles.SEG_for_vwerp;
 
-    set(handles.pushbutton3,'Visible','on');
+    set(handles.pushbutton3,'enable','on');
     set(handles.pushbutton7,'Visible','off');
     set(handles.text5,'Visible','on');
     set(handles.edit2,'Visible','on');
@@ -16101,7 +16165,7 @@ switch answer
             axis off
             view([-34,-51])
 
-            set(handles.pushbutton3,'Visible','on');
+            set(handles.pushbutton3,'enable','on');
 
     case 'CSV File'
 
@@ -16264,6 +16328,7 @@ switch answer
             handles.outlet_exec = 1;
             set(handles.pushbutton1,'Visible','off');
             set(handles.pushbutton2,'Visible','off');
+            set(handles.text11,'Visible','off');
             set(handles.pushbutton12,'Visible','off');
             set(handles.popupmenu1,'Value',1);
             set(handles.popupmenu3,'Value',1);
@@ -16271,20 +16336,21 @@ switch answer
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             if handles.inlet_exec == 1
     
-                set(handles.pushbutton3,'Visible','on');
+                set(handles.pushbutton3,'enable','on');
     
             else
     
-                set(handles.pushbutton3,'Visible','off');
+                set(handles.pushbutton3,'enable','off');
     
             end
     
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             if handles.inlet_exec == 1 && handles.outlet_exec == 1
 
-                set(handles.pushbutton3,'Visible','on');
+                set(handles.pushbutton3,'enable','on');
                 set(handles.pushbutton1,'Visible','off');
                 set(handles.pushbutton2,'Visible','off');
+                set(handles.text11,'Visible','off');
                 set(handles.pushbutton12,'Visible','off');
                 set(handles.popupmenu1,'Value',1);
                 set(handles.popupmenu3,'Value',1);
@@ -16372,7 +16438,7 @@ switch answer
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             if handles.inlet_exec == 1 && handles.outlet_exec == 1
 
-                set(handles.pushbutton3,'Visible','on');
+                set(handles.pushbutton3,'enable','on');
                 set(handles.pushbutton1,'Visible','off');
                 set(handles.pushbutton2,'Visible','off');
                 set(handles.pushbutton12,'Visible','off');
@@ -16418,3 +16484,11 @@ function pushbutton16_Callback(hObject, eventdata, handles)
     setappdata(0,'process_completed',0);
     close(handles.GUIDE_LAPLACE);
 
+% --- Executes on button press in pushbutton17.
+function pushbutton17_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton3 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+    set(handles.popupmenu1,'value',2);
+    set(handles.pushbutton17,'visible','off');
+    popupmenu1_Callback(hObject, eventdata, handles);

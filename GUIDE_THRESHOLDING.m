@@ -110,7 +110,7 @@ handles.output = hObject;
         set(handles.uitable1, 'Position', [FigPos(1:2),FigPos(3),FigPos(4) ]);
         set(handles.uitable1, 'Units', 'normalized');
         
-        set(handles.uitable1,'visible','on','ColumnName',{'Color','# voxels','Selection'},'ColumnEditable',true,'ColumnWidth',{round(AA(3)/3)*0.9 round(AA(3)/3)*0.9 round(AA(3)/3)*0.9})
+        set(handles.uitable1,'visible','on','ColumnName',{'Label','# voxels','Selection'},'ColumnEditable',true,'ColumnWidth',{round(AA(3)/3)*0.9 round(AA(3)/3)*0.9 round(AA(3)/3)*0.9})
         handles.data_colors = cell(handles.NUM,3);
         R = squeeze(handles.Lrgb(:,:,:,1));
         G = squeeze(handles.Lrgb(:,:,:,2));
@@ -256,7 +256,7 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         set(handles.uitable1, 'Units', 'normalized');
         
         
-        set(handles.uitable1,'visible','on','ColumnName',{'Color','# voxels','Selection'},'ColumnEditable',true,'ColumnWidth',{round(AA(3)/3)*0.9 round(AA(3)/3)*0.9 round(AA(3)/3)*0.9})
+        set(handles.uitable1,'visible','on','ColumnName',{'Label','# voxels','Selection'},'ColumnEditable',true,'ColumnWidth',{round(AA(3)/3)*0.9 round(AA(3)/3)*0.9 round(AA(3)/3)*0.9})
         handles.data_colors = cell(NUM,3);
         R = squeeze(handles.Lrgb(:,:,:,1));
         G = squeeze(handles.Lrgb(:,:,:,2));
@@ -597,7 +597,7 @@ function figure1_SizeChangedFcn(hObject, eventdata, handles)
     set(handles.uitable1, 'Position', [FigPos(1:2),FigPos(3),FigPos(4) ]);
     set(handles.uitable1, 'Units', 'normalized');
 
-    set(handles.uitable1,'visible','on','ColumnName',{'Color','# voxels','Selection'},'ColumnEditable',true,'ColumnWidth',{round(AA(3)/3)*0.9 round(AA(3)/3)*0.9 round(AA(3)/3)*0.9})
+    set(handles.uitable1,'visible','on','ColumnName',{'Label','# voxels','Selection'},'ColumnEditable',true,'ColumnWidth',{round(AA(3)/3)*0.9 round(AA(3)/3)*0.9 round(AA(3)/3)*0.9})
         
 
     set(handles.figure1, 'Units', 'pixels');
