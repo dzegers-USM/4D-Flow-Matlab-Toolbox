@@ -347,6 +347,12 @@ function pushbutton2_Callback(hObject, eventdata, handles)
        MAT(n,:) = [tableData{n,2},tableData{n,3}];
     end
     [r,c,v] = find(MAT(:,2)==1);
+
+    if sum(r) == 0
+        msgbox('No labels are selected.','Warning','warn');
+        return;
+    end
+
     SEG_new = zeros(size(handles.IPCMRA));
     L_new = zeros(size(handles.IPCMRA));
     for n=1:length(r)
@@ -358,7 +364,7 @@ function pushbutton2_Callback(hObject, eventdata, handles)
     handles.SEG = SEG_new;
     handles.L = L_new;
     handles.NUM = length(r);
-    if handles.view_sac == 1;
+    if handles.view_sac == 1
         axes(handles.axes1);
         imagesc([handles.yd(1,1),handles.yd(end,end)]',[handles.xd(1,1),handles.xd(end,end)]',squeeze(handles.IPCMRA(:,:,handles.slider_axes1)))
         hold on

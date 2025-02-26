@@ -611,7 +611,7 @@ function pushbutton2_Callback(hObject, eventdata, handles)
     d3 = sqrt(sum((handles.nodes(handles.faces(:,3),:)-handles.nodes(handles.faces(:,1),:)).^2,2));
     s = (d1+d2+d3)/2;
     
-    handles.surface_area = sqrt(s.*(s-d1).*(s-d2).*(s-d3));    
+    handles.surface_area = sqrt(s.*(s-d1).*(s-d2).*(s-d3));
     
     set(handles.text01, 'FontUnits', 'points');
     FontS = get(handles.text01, 'FontSize');
@@ -635,6 +635,11 @@ function pushbutton2_Callback(hObject, eventdata, handles)
     xdata = g.XData';
     ydata = g.YData';
     [C,I] = max(ydata);
+
+    if C > 2000
+        msgbox('Check the mesh and consider adjusting smooth parameters or the segmentation.','Abnormally high peak frequency','warn');
+    end
+
     txt1 = ['\leftarrow ', num2str(xdata(I))];
     t = text(xdata(I),max(ydata),txt1);
     t.Color = 'red';
