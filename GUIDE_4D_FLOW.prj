@@ -85,10 +85,10 @@
       <file>${PROJECT_ROOT}\GUIDE_SECTIONS_LAPLACE.m</file>
       <file>${PROJECT_ROOT}\IO_CODES</file>
       <file>${PROJECT_ROOT}\iso2mesh</file>
-      <file>${PROJECT_ROOT}\Symbols</file>
     </fileset.resources>
     <fileset.package>
       <file>${PROJECT_ROOT}\iso2mesh</file>
+      <file>${PROJECT_ROOT}\Symbols</file>
     </fileset.package>
     <fileset.depfun>
       <file>${PROJECT_ROOT}\GUIDE_4D_FLOW.fig</file>
