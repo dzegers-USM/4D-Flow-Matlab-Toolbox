@@ -55,9 +55,6 @@ function GUIDE_FLOW_OpeningFcn(hObject, eventdata, handles, varargin)
 % Choose default command line output for GUIDE_FLOW
     handles.output = hObject;
 
-
-    path(path,'iso2mesh/')
-
     % 1 if ROI draw operation was cancelled, 0 otherwise
     setappdata(handles.figure1,'cancelROI',0);
     % ROI being waited on, 0 otherwise

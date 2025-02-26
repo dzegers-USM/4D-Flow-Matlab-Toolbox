@@ -10283,8 +10283,7 @@ function Load_Folder_Callback(hObject, eventdata, handles)
     set(handles.uipanel1,'Visible','off')
     set(handles.uipanel20,'Visible','off')
     cla(handles.uipanel1,'reset');
-    path(path,['IO_CODES',filesep]) % cambiar
-    path(path,'iso2mesh/')
+
     folder_name = uigetdir([],'Load Folder...');
     
     if folder_name==0

@@ -55,8 +55,6 @@ function GUIDE_SECTIONS_LAPLACE_OpeningFcn(hObject, eventdata, handles, varargin
 % Choose default command line output for GUIDE_SECTIONS_LAPLACE
 handles.output = hObject;
 
-path(path,'iso2mesh/')
-
 % load data
 handles.elem            = varargin{1}.elem;
 handles.faces           = varargin{1}.faces;

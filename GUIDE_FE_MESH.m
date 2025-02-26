@@ -37,8 +37,6 @@ function GUIDE_FE_MESH_OpeningFcn(hObject, eventdata, handles, varargin)
     
     handles.cont_show = 1;
     
-    path(path,'iso2mesh/')
-
     %%%%%%%%%%%%%%%%%%%%%%% read input %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
     handles.SEG           = varargin{1}.SEG;

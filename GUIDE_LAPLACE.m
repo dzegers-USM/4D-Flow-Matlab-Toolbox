@@ -55,9 +55,6 @@ function GUIDE_LAPLACE_OpeningFcn(hObject, eventdata, handles, varargin)
     % Choose default command line output for GUIDE_LAPLACE
     handles.output = hObject;
 
-    path(path,'iso2mesh/')
-    path(path,'IO_CODES_MATLAB_CODES/') % cambiar
-
     % 1 if ROI draw operation was cancelled, 0 otherwise
     setappdata(handles.GUIDE_LAPLACE,'cancelROI',0);
     % ROI being waited on, 0 otherwise
