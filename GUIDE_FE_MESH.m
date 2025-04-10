@@ -947,7 +947,10 @@ function pushbutton3_Callback(hObject, eventdata, handles)
     set(handles.pushbutton9,'visible','on');
     set(handles.pushbutton10,'visible','on');
     set(handles.pushbutton12,'visible','on');
+
+    % Enable continue button and focus it
     set(handles.pushbutton14,'enable','on');
+    uicontrol(handles.pushbutton14);
     
     
 handles.output = hObject;
@@ -989,7 +992,9 @@ function radiobutton1_Callback(hObject, eventdata, handles)
         
     end
 
+% Enable continue button and focus it
 set(handles.pushbutton14,'enable','on');
+uicontrol(handles.pushbutton14);
 
 handles.output = hObject;
 guidata(hObject, handles);
