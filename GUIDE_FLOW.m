@@ -4273,8 +4273,9 @@ function pushbutton1_Callback(hObject, eventdata, handles)
     end
 % end
 
-% Allow user to continue
+% Enable continue button and focus it
 set(handles.pushbutton3,'enable','on');
+uicontrol(handles.pushbutton3);
 
 handles.output = hObject;
 guidata(hObject, handles);
