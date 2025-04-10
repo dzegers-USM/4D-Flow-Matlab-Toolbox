@@ -541,6 +541,10 @@ function GUIDE_FLOW_OpeningFcn(hObject, eventdata, handles, varargin)
         end
     end
 
+    icon_label = labelWithIcon('DRAW PLANE', '/Symbols/pencil.png');
+    set(handles.pushbutton1,'String',icon_label);
+
+
 % Update handles structure
 guidata(hObject, handles);
 % UIWAIT makes GUIDE_FLOW wait for user response (see UIRESUME)
@@ -2384,7 +2388,8 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 
         % Restore button style
         set(handles.pushbutton1,'Backgroundcolor',[0.90 0.90 0.90]);
-        set(handles.pushbutton1,'String','SELECT PLANE');
+        icon_label = labelWithIcon('DRAW PLANE', '/Symbols/pencil.png');
+        set(handles.pushbutton1,'String',icon_label);
 
         cancelROI = getappdata(handles.figure1,'cancelROI');
         setappdata(handles.figure1,'cancelROI',0);
@@ -3014,7 +3019,8 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 
         % Restore button style
         set(handles.pushbutton1,'Backgroundcolor',[0.90 0.90 0.90]);
-        set(handles.pushbutton1,'String','SELECT PLANE');
+        icon_label = labelWithIcon('DRAW PLANE', '/Symbols/pencil.png');
+        set(handles.pushbutton1,'String',icon_label);
 
         cancelROI = getappdata(handles.figure1,'cancelROI');
         setappdata(handles.figure1,'cancelROI',0);
@@ -3739,7 +3745,8 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 
         % Restore button style
         set(handles.pushbutton1,'Backgroundcolor',[0.90 0.90 0.90]);
-        set(handles.pushbutton1,'String','SELECT PLANE');
+        icon_label = labelWithIcon('DRAW PLANE', '/Symbols/pencil.png');
+        set(handles.pushbutton1,'String',icon_label);
 
         cancelROI = getappdata(handles.figure1,'cancelROI');
         setappdata(handles.figure1,'cancelROI',0);
