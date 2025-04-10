@@ -254,9 +254,9 @@ function GUIDE_LAPLACE_OpeningFcn(hObject, eventdata, handles, varargin)
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             if handles.inlet_exec == 1 && handles.outlet_exec == 1
-
+                % Enable calc button and focus it
                 set(handles.pushbutton3,'enable','on');
-
+                uicontrol(handles.pushbutton3);
             end
 
         elseif handles.id_mesh_outlet == 1
@@ -325,7 +325,10 @@ function GUIDE_LAPLACE_OpeningFcn(hObject, eventdata, handles, varargin)
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             if handles.inlet_exec == 1 && handles.outlet_exec == 1
 
+                % Enable calc button and focus it
                 set(handles.pushbutton3,'enable','on');
+                uicontrol(handles.pushbutton3);
+
                 set(handles.pushbutton1,'Visible','off');
                 set(handles.pushbutton2,'Visible','off');
                 set(handles.text11,'Visible','off');
@@ -814,9 +817,9 @@ function GUIDE_LAPLACE_OpeningFcn(hObject, eventdata, handles, varargin)
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             if handles.inlet_exec == 1 && handles.outlet_exec == 1
-
+                % Enable calc button and focus it
                 set(handles.pushbutton3,'enable','on');
-
+                uicontrol(handles.pushbutton3);
             end
 
         elseif handles.id_mesh_outlet == 1
@@ -875,8 +878,10 @@ function GUIDE_LAPLACE_OpeningFcn(hObject, eventdata, handles, varargin)
 
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             if handles.inlet_exec == 1 && handles.outlet_exec == 1
-
+                % Enable calc button and focus it
                 set(handles.pushbutton3,'enable','on');
+                uicontrol(handles.pushbutton3);
+
                 set(handles.pushbutton1,'Visible','off');
                 set(handles.pushbutton2,'Visible','off');
                 set(handles.text11,'Visible','off');
@@ -3564,13 +3569,11 @@ if handles.id_vwerp  == 1
         set(handles.popupmenu3,'Value',1);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         if handles.outlet_exec == 1
-
+            % Enable calc button and focus it
             set(handles.pushbutton3,'enable','on');
-
+            uicontrol(handles.pushbutton3);
         else 
-
             set(handles.pushbutton3,'enable','off');
-
         end  
 
         % we generate the next variables for vwerp
@@ -4383,13 +4386,11 @@ if handles.id_vwerp  == 1
         set(handles.popupmenu3,'Value',1);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         if handles.outlet_exec == 1
-
+            % Enable calc button and focus it
             set(handles.pushbutton3,'enable','on');
-
+            uicontrol(handles.pushbutton3);
         else 
-
             set(handles.pushbutton3,'enable','off');
-
         end  
 
         % we generate the next variables for vwerp
@@ -5108,13 +5109,11 @@ if handles.id_vwerp  == 1
         set(handles.popupmenu3,'Value',1);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         if handles.outlet_exec == 1
-
+            % Enable calc button and focus it
             set(handles.pushbutton3,'enable','on');
-
+            uicontrol(handles.pushbutton3);
         else 
-
             set(handles.pushbutton3,'enable','off');
-
         end  
         
         % we generate the next variables for vwerp
@@ -5801,13 +5800,11 @@ else
         set(handles.popupmenu3,'Value',1);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         if handles.outlet_exec == 1
-
+            % Enable calc button and focus it
             set(handles.pushbutton3,'enable','on');
-
+            uicontrol(handles.pushbutton3);
         else 
-
             set(handles.pushbutton3,'enable','off');
-
         end  
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -6604,13 +6601,11 @@ else
         set(handles.popupmenu3,'Value',1);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         if handles.outlet_exec == 1
-
+            % Enable calc button and focus it
             set(handles.pushbutton3,'enable','on');
-
+            uicontrol(handles.pushbutton3);
         else 
-
             set(handles.pushbutton3,'enable','off');
-
         end  
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -7298,13 +7293,11 @@ else
         set(handles.popupmenu3,'Value',1);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         if handles.outlet_exec == 1
-
+            % Enable calc button and focus it
             set(handles.pushbutton3,'enable','on');
-
+            uicontrol(handles.pushbutton3);
         else 
-
             set(handles.pushbutton3,'enable','off');
-
         end  
 
     end
@@ -8001,13 +7994,11 @@ if handles.id_vwerp == 1
         set(handles.popupmenu3,'Value',1);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         if handles.inlet_exec == 1
-
+            % Enable calc button and focus it
             set(handles.pushbutton3,'enable','on');
-
+            uicontrol(handles.pushbutton3);
         else
-
             set(handles.pushbutton3,'enable','off');
-
         end
 
         % we generate the next variables for vwerp
@@ -8802,13 +8793,11 @@ if handles.id_vwerp == 1
         set(handles.popupmenu3,'Value',1);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         if handles.inlet_exec == 1
-
+            % Enable calc button and focus it
             set(handles.pushbutton3,'enable','on');
-
+            uicontrol(handles.pushbutton3);
         else
-
             set(handles.pushbutton3,'enable','off');
-
         end
 
         % we generate the next variables for vwerp
@@ -9496,13 +9485,11 @@ if handles.id_vwerp == 1
         set(handles.popupmenu3,'Value',1);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         if handles.inlet_exec == 1
-
+            % Enable calc button and focus it
             set(handles.pushbutton3,'enable','on');
-
+            uicontrol(handles.pushbutton3);
         else
-
             set(handles.pushbutton3,'enable','off');
-
         end
         
         % we generate the next variables for vwerp
@@ -10184,13 +10171,11 @@ else
         set(handles.popupmenu3,'Value',1);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         if handles.inlet_exec == 1
-
+            % Enable calc button and focus it
             set(handles.pushbutton3,'enable','on');
-
+            uicontrol(handles.pushbutton3);
         else
-
             set(handles.pushbutton3,'enable','off');
-
         end
 
 
@@ -10980,13 +10965,11 @@ else
         set(handles.popupmenu3,'Value',1);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         if handles.inlet_exec == 1
-
+            % Enable calc button and focus it
             set(handles.pushbutton3,'enable','on');
-
+            uicontrol(handles.pushbutton3);
         else
-
             set(handles.pushbutton3,'enable','off');
-
         end
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -11668,13 +11651,11 @@ else
         set(handles.popupmenu3,'Value',1);
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         if handles.inlet_exec == 1
-
+            % Enable calc button and focus it
             set(handles.pushbutton3,'enable','on');
-
+            uicontrol(handles.pushbutton3);
         else
-
             set(handles.pushbutton3,'enable','off');
-
         end
 
     end  
@@ -12001,13 +11982,11 @@ switch get(handles.popupmenu2,'Value')
             set(handles.pushbutton12,'Visible','off');
             
             if (handles.inlet_exec == 1) && (handles.outlet_exec == 1)
-
+                % Enable calc button and focus it
                 set(handles.pushbutton3,'enable','on');
-
+                uicontrol(handles.pushbutton3);
             else 
-
                 set(handles.pushbutton3,'enable','off');
-
             end  
             
 %             set(handles.pushbutton3,'enable','off')
@@ -12145,13 +12124,11 @@ switch get(handles.popupmenu2,'Value')
             set(handles.pushbutton12,'Visible','off');
 
             if (handles.inlet_exec == 1) && (handles.outlet_exec == 1)
-
+                % Enable calc button and focus it
                 set(handles.pushbutton3,'enable','on');
-
+                uicontrol(handles.pushbutton3);
             else 
-
                 set(handles.pushbutton3,'enable','off');
-
             end  
             
 %             set(handles.pushbutton3,'enable','off')
@@ -12245,13 +12222,11 @@ switch get(handles.popupmenu2,'Value')
             set(handles.pushbutton12,'Visible','off');
             
             if (handles.inlet_exec == 1) && (handles.outlet_exec == 1)
-
+                % Enable calc button and focus it
                 set(handles.pushbutton3,'enable','on');
-
+                uicontrol(handles.pushbutton3);
             else 
-
                 set(handles.pushbutton3,'enable','off');
-
             end  
             
 %             set(handles.pushbutton3,'enable','off')
@@ -12404,13 +12379,11 @@ switch get(handles.popupmenu2,'Value')
             set(handles.pushbutton12,'Visible','off');
             
             if (handles.inlet_exec == 1) && (handles.outlet_exec == 1)
-
+                % Enable calc button and focus it
                 set(handles.pushbutton3,'enable','on');
-
+                uicontrol(handles.pushbutton3);
             else 
-
                 set(handles.pushbutton3,'enable','off');
-
             end  
             
 %             set(handles.pushbutton3,'enable','off')
@@ -12527,13 +12500,11 @@ switch get(handles.popupmenu2,'Value')
             set(handles.pushbutton12,'Visible','off');
 
             if (handles.inlet_exec == 1) && (handles.outlet_exec == 1)
-
+                % Enable calc button and focus it
                 set(handles.pushbutton3,'enable','on');
-
+                uicontrol(handles.pushbutton3);
             else 
-
                 set(handles.pushbutton3,'enable','off');
-
             end  
 %             set(handles.pushbutton3,'enable','off')
             set(handles.pushbutton5,'Visible','off')
@@ -15036,8 +15007,9 @@ else
     
 end
 
-% Enable continue button
+% Enable continue button and focus it
 set(handles.pushbutton15,'enable','on');
+uicontrol(handles.pushbutton15);
 
 handles.output = hObject;  
 guidata(hObject, handles);
@@ -15928,7 +15900,11 @@ function pushbutton10_Callback(hObject, eventdata, handles)
     % 
     % mask = handles.SEG_for_vwerp;
     
+    % Enable calc button and focus it
     set(handles.pushbutton3,'enable','on');
+    uicontrol(handles.pushbutton3);
+
+    set(handles)
     
 handles.output = hObject;
 guidata(hObject, handles);
@@ -16079,7 +16055,10 @@ function pushbutton11_Callback(hObject, eventdata, handles)
     % 
     % mask = handles.SEG_for_vwerp;
 
+    % Enable calc button and focus it
     set(handles.pushbutton3,'enable','on');
+    uicontrol(handles.pushbutton3);
+
     set(handles.pushbutton7,'Visible','off');
     set(handles.text5,'Visible','on');
     set(handles.edit2,'Visible','on');
@@ -16162,8 +16141,9 @@ switch answer
             axis off
             view([-34,-51])
 
+            % Enable calc button and focus it
             set(handles.pushbutton3,'enable','on');
-
+            uicontrol(handles.pushbutton3);
     case 'CSV File'
 
         if handles.id_vwerp == 1
@@ -16332,19 +16312,19 @@ switch answer
             set(handles.pushbutton5,'Visible','on');
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             if handles.inlet_exec == 1
-    
+                % Enable calc button and focus it
                 set(handles.pushbutton3,'enable','on');
-    
+                uicontrol(handles.pushbutton3);
             else
-    
                 set(handles.pushbutton3,'enable','off');
-    
             end
     
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             if handles.inlet_exec == 1 && handles.outlet_exec == 1
-
+                % Enable calc button and focus it
                 set(handles.pushbutton3,'enable','on');
+                uicontrol(handles.pushbutton3);
+                
                 set(handles.pushbutton1,'Visible','off');
                 set(handles.pushbutton2,'Visible','off');
                 set(handles.text11,'Visible','off');
@@ -16434,8 +16414,10 @@ switch answer
 
             %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
             if handles.inlet_exec == 1 && handles.outlet_exec == 1
-
+                % Enable calc button and focus it
                 set(handles.pushbutton3,'enable','on');
+                uicontrol(handles.pushbutton3);
+
                 set(handles.pushbutton1,'Visible','off');
                 set(handles.pushbutton2,'Visible','off');
                 set(handles.pushbutton12,'Visible','off');
