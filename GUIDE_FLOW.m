@@ -2381,8 +2381,7 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         setappdata(handles.figure1,'waitROI',h);
 
         % Change button style to represent its new function
-        set(handles.pushbutton1,'Backgroundcolor',[0.65 0.65 0.65]);
-        set(handles.pushbutton1,'String','APPLY SELECTED PLANE');
+        set(handles.pushbutton1,'String','APPLY PLANE');
        
         PUNTOS_C = wait(h);
 
@@ -3012,8 +3011,7 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         setappdata(handles.figure1,'waitROI',h);
 
         % Change button style to represent its new function
-        set(handles.pushbutton1,'Backgroundcolor',[0.65 0.65 0.65]);
-        set(handles.pushbutton1,'String','APPLY SELECTED PLANE');
+        set(handles.pushbutton1,'String','APPLY PLANE');
        
         PUNTOS_C = wait(h);
 
@@ -3738,8 +3736,7 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         setappdata(handles.figure1,'waitROI',h);
 
         % Change button style to represent its new function
-        set(handles.pushbutton1,'Backgroundcolor',[0.65 0.65 0.65]);
-        set(handles.pushbutton1,'String','APPLY SELECTED PLANE');
+        set(handles.pushbutton1,'String','APPLY PLANE');
        
         PUNTOS_C = wait(h);
 
