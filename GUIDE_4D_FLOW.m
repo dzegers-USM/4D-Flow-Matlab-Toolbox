@@ -5725,6 +5725,9 @@ function pushbutton5_Callback(hObject, eventdata, handles)
     input.Lrgb          = handles.Lrgb;
     input.SEG           = handles.SEG;
     input.peak_flow     = handles.peak_flow;
+    input.a             = handles.a;
+    input.b             = handles.b;
+    input.c             = handles.c;
     input.d             = handles.d;
     
     if get(handles.popupmenu1,'Value')>=4
