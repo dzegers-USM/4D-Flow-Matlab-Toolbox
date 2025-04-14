@@ -2979,7 +2979,8 @@ if handles.id_vwerp  == 1
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
         % Disable draw buttons
-        set(handles.pushbutton1,'String','APPLY INLET');
+        icon_label = labelWithIcon('APPLY INLET', '/Symbols/check.png');
+        set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
 
@@ -2988,7 +2989,6 @@ if handles.id_vwerp  == 1
         
         % Change button style to represent its new function
         set(handles.pushbutton1,'enable','on');
-        set(handles.pushbutton1,'Backgroundcolor',[0.65 0.65 0.65]);
 
         PUNTOS_C = wait(h);
 
@@ -3682,7 +3682,8 @@ if handles.id_vwerp  == 1
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
         % Disable draw buttons
-        set(handles.pushbutton1,'String','APPLY INLET');
+        icon_label = labelWithIcon('APPLY INLET', '/Symbols/check.png');
+        set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
 
@@ -3691,7 +3692,6 @@ if handles.id_vwerp  == 1
         
         % Change button style to represent its new function
         set(handles.pushbutton1,'enable','on');
-        set(handles.pushbutton1,'Backgroundcolor',[0.65 0.65 0.65]);
 
         PUNTOS_C = wait(h);
 
@@ -4501,7 +4501,8 @@ if handles.id_vwerp  == 1
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         % Disable draw buttons
-        set(handles.pushbutton1,'String','APPLY INLET');
+        icon_label = labelWithIcon('APPLY INLET', '/Symbols/check.png');
+        set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
 
@@ -4510,7 +4511,6 @@ if handles.id_vwerp  == 1
         
         % Change button style to represent its new function
         set(handles.pushbutton1,'enable','on');
-        set(handles.pushbutton1,'Backgroundcolor',[0.65 0.65 0.65]);
 
         PUNTOS_C = wait(h);
 
@@ -5226,7 +5226,8 @@ else
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         % Disable draw buttons
-        set(handles.pushbutton1,'String','APPLY INLET');
+        icon_label = labelWithIcon('APPLY INLET', '/Symbols/check.png');
+        set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
 
@@ -5235,7 +5236,6 @@ else
         
         % Change button style to represent its new function
         set(handles.pushbutton1,'enable','on');
-        set(handles.pushbutton1,'Backgroundcolor',[0.65 0.65 0.65]);
 
         PUNTOS_C = wait(h);
 
@@ -5910,7 +5910,8 @@ else
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         % Disable draw buttons
-        set(handles.pushbutton1,'String','APPLY INLET');
+        icon_label = labelWithIcon('APPLY INLET', '/Symbols/check.png');
+        set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
 
@@ -5919,7 +5920,6 @@ else
         
         % Change button style to represent its new function
         set(handles.pushbutton1,'enable','on');
-        set(handles.pushbutton1,'Backgroundcolor',[0.65 0.65 0.65]);
 
         PUNTOS_C = wait(h);
 
@@ -6712,7 +6712,8 @@ else
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
        
         % Disable draw buttons
-        set(handles.pushbutton1,'String','APPLY INLET');
+        icon_label = labelWithIcon('APPLY INLET', '/Symbols/check.png');
+        set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
 
@@ -6721,7 +6722,6 @@ else
         
         % Change button style to represent its new function
         set(handles.pushbutton1,'enable','on');
-        set(handles.pushbutton1,'Backgroundcolor',[0.65 0.65 0.65]);
 
         PUNTOS_C = wait(h);
 
@@ -7429,7 +7429,8 @@ if handles.id_vwerp == 1
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
         % Disable draw buttons
-        set(handles.pushbutton2,'String','APPLY OUTLET');
+        icon_label = labelWithIcon('APPLY OUTLET', '/Symbols/check.png');
+        set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
 
@@ -7438,7 +7439,6 @@ if handles.id_vwerp == 1
         
         % Change button style to represent its new function
         set(handles.pushbutton2,'enable','on');
-        set(handles.pushbutton2,'Backgroundcolor',[0.65 0.65 0.65]);
 
         PUNTOS_C = wait(h);
 
@@ -8114,7 +8114,8 @@ if handles.id_vwerp == 1
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         % Disable draw buttons
-        set(handles.pushbutton2,'String','APPLY OUTLET');
+        icon_label = labelWithIcon('APPLY OUTLET', '/Symbols/check.png');
+        set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
 
@@ -8123,7 +8124,6 @@ if handles.id_vwerp == 1
         
         % Change button style to represent its new function
         set(handles.pushbutton2,'enable','on');
-        set(handles.pushbutton2,'Backgroundcolor',[0.65 0.65 0.65]);
 
         PUNTOS_C = wait(h);
 
@@ -8913,7 +8913,8 @@ if handles.id_vwerp == 1
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         % Disable draw buttons
-        set(handles.pushbutton2,'String','APPLY OUTLET');
+        icon_label = labelWithIcon('APPLY OUTLET', '/Symbols/check.png');
+        set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
 
@@ -8922,7 +8923,6 @@ if handles.id_vwerp == 1
         
         % Change button style to represent its new function
         set(handles.pushbutton2,'enable','on');
-        set(handles.pushbutton2,'Backgroundcolor',[0.65 0.65 0.65]);
 
         PUNTOS_C = wait(h);
 
@@ -9607,7 +9607,8 @@ else
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         % Disable draw buttons
-        set(handles.pushbutton2,'String','APPLY OUTLET');
+        icon_label = labelWithIcon('APPLY OUTLET', '/Symbols/check.png');
+        set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
 
@@ -9616,7 +9617,6 @@ else
         
         % Change button style to represent its new function
         set(handles.pushbutton2,'enable','on');
-        set(handles.pushbutton2,'Backgroundcolor',[0.65 0.65 0.65]);
 
         PUNTOS_C = wait(h);
 
@@ -10288,7 +10288,8 @@ else
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         % Disable draw buttons
-        set(handles.pushbutton2,'String','APPLY OUTLET');
+        icon_label = labelWithIcon('APPLY OUTLET', '/Symbols/check.png');
+        set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
 
@@ -10297,7 +10298,6 @@ else
         
         % Change button style to represent its new function
         set(handles.pushbutton2,'enable','on');
-        set(handles.pushbutton2,'Backgroundcolor',[0.65 0.65 0.65]);
 
         PUNTOS_C = wait(h);
 
@@ -11082,7 +11082,8 @@ else
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         % Disable draw buttons
-        set(handles.pushbutton2,'String','APPLY OUTLET');
+        icon_label = labelWithIcon('APPLY OUTLET', '/Symbols/check.png');
+        set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
 
@@ -11091,7 +11092,6 @@ else
         
         % Change button style to represent its new function
         set(handles.pushbutton2,'enable','on');
-        set(handles.pushbutton2,'Backgroundcolor',[0.65 0.65 0.65]);
 
         PUNTOS_C = wait(h);
 
