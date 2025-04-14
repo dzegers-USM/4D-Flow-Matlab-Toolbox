@@ -66,6 +66,13 @@ function GUIDE_LAPLACE_OpeningFcn(hObject, eventdata, handles, varargin)
     handles.rot = 1;
     
     handles.id_vwerp        = varargin{1}.id_vwerp;
+
+    % Init buttons
+    icon_label = labelWithIcon('DRAW INLET', '/Symbols/pencil.png');
+    set(handles.pushbutton1,'String',icon_label);
+
+    icon_label = labelWithIcon('DRAW OUTLET', '/Symbols/pencil.png');
+    set(handles.pushbutton2,'String',icon_label);
     
     if handles.id_vwerp == 1
 
@@ -2986,7 +2993,8 @@ if handles.id_vwerp  == 1
         PUNTOS_C = wait(h);
 
         % Reset buttons
-        set(handles.pushbutton1,'String','DRAW INLET');
+        icon_label = labelWithIcon('DRAW INLET', '/Symbols/pencil.png');
+        set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton2,'enable','on');
 
@@ -3688,7 +3696,8 @@ if handles.id_vwerp  == 1
         PUNTOS_C = wait(h);
 
         % Reset buttons
-        set(handles.pushbutton1,'String','DRAW INLET');
+        icon_label = labelWithIcon('DRAW INLET', '/Symbols/pencil.png');
+        set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton2,'enable','on');
 
@@ -4506,7 +4515,8 @@ if handles.id_vwerp  == 1
         PUNTOS_C = wait(h);
 
         % Reset buttons
-        set(handles.pushbutton1,'String','DRAW INLET');
+        icon_label = labelWithIcon('DRAW INLET', '/Symbols/pencil.png');
+        set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton2,'enable','on');
 
@@ -5230,7 +5240,8 @@ else
         PUNTOS_C = wait(h);
 
         % Reset buttons
-        set(handles.pushbutton1,'String','DRAW INLET');
+        icon_label = labelWithIcon('DRAW INLET', '/Symbols/pencil.png');
+        set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton2,'enable','on');
 
@@ -5913,7 +5924,8 @@ else
         PUNTOS_C = wait(h);
 
         % Reset buttons
-        set(handles.pushbutton1,'String','DRAW INLET');
+        icon_label = labelWithIcon('DRAW INLET', '/Symbols/pencil.png');
+        set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton2,'enable','on');
 
@@ -6714,7 +6726,8 @@ else
         PUNTOS_C = wait(h);
 
         % Reset buttons
-        set(handles.pushbutton1,'String','DRAW INLET');
+        icon_label = labelWithIcon('DRAW INLET', '/Symbols/pencil.png');
+        set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton2,'enable','on');
 
@@ -7430,7 +7443,8 @@ if handles.id_vwerp == 1
         PUNTOS_C = wait(h);
 
         % Reset buttons
-        set(handles.pushbutton2,'String','DRAW OUTLET');
+        icon_label = labelWithIcon('DRAW OUTLET', '/Symbols/pencil.png');
+        set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton2,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton1,'enable','on');
 
@@ -8114,7 +8128,8 @@ if handles.id_vwerp == 1
         PUNTOS_C = wait(h);
 
         % Reset buttons
-        set(handles.pushbutton2,'String','DRAW OUTLET');
+        icon_label = labelWithIcon('DRAW OUTLET', '/Symbols/pencil.png');
+        set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton2,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton1,'enable','on');
 
@@ -8912,7 +8927,8 @@ if handles.id_vwerp == 1
         PUNTOS_C = wait(h);
 
         % Reset buttons
-        set(handles.pushbutton2,'String','DRAW OUTLET');
+        icon_label = labelWithIcon('DRAW OUTLET', '/Symbols/pencil.png');
+        set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton2,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton1,'enable','on');
 
@@ -9605,7 +9621,8 @@ else
         PUNTOS_C = wait(h);
 
         % Reset buttons
-        set(handles.pushbutton2,'String','DRAW OUTLET');
+        icon_label = labelWithIcon('DRAW OUTLET', '/Symbols/pencil.png');
+        set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton2,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton1,'enable','on');
 
@@ -10285,7 +10302,8 @@ else
         PUNTOS_C = wait(h);
 
         % Reset buttons
-        set(handles.pushbutton2,'String','DRAW OUTLET');
+        icon_label = labelWithIcon('DRAW OUTLET', '/Symbols/pencil.png');
+        set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton2,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton1,'enable','on');
 
@@ -11078,7 +11096,8 @@ else
         PUNTOS_C = wait(h);
 
         % Reset buttons
-        set(handles.pushbutton2,'String','DRAW OUTLET');
+        icon_label = labelWithIcon('DRAW OUTLET', '/Symbols/pencil.png');
+        set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton2,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton1,'enable','on');
 
