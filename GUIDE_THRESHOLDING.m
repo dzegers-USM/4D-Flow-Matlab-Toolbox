@@ -611,9 +611,6 @@ function figure1_SizeChangedFcn(hObject, eventdata, handles)
     set(handles.figure1, 'Position', [FigPos(1:2),FigPos(3),FigPos(4) ]);
     set(handles.figure1, 'Units', 'normalized');
     
-    set(handles.text10,'FontUnits','Normalized','FontSize', 0.60)
-    set(handles.text11,'FontUnits','Normalized','FontSize', 0.60)
-    set(handles.text12,'FontUnits','Normalized','FontSize', 0.60)
     set(handles.uitable1,'FontUnits','Normalized','FontSize',0.03)
     set(handles.popupmenu1,'FontUnits','Normalized','FontSize',0.33)
 
