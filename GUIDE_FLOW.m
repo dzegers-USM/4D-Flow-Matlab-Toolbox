@@ -2381,7 +2381,8 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         setappdata(handles.figure1,'waitROI',h);
 
         % Change button style to represent its new function
-        set(handles.pushbutton1,'String','APPLY PLANE');
+        icon_label = labelWithIcon('APPLY PLANE', '/Symbols/check.png');
+        set(handles.pushbutton1,'String',icon_label);
        
         PUNTOS_C = wait(h);
 
@@ -3011,7 +3012,8 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         setappdata(handles.figure1,'waitROI',h);
 
         % Change button style to represent its new function
-        set(handles.pushbutton1,'String','APPLY PLANE');
+        icon_label = labelWithIcon('APPLY PLANE', '/Symbols/check.png');
+        set(handles.pushbutton1,'String',icon_label);
        
         PUNTOS_C = wait(h);
 
@@ -3736,7 +3738,8 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         setappdata(handles.figure1,'waitROI',h);
 
         % Change button style to represent its new function
-        set(handles.pushbutton1,'String','APPLY PLANE');
+        icon_label = labelWithIcon('APPLY PLANE', '/Symbols/check.png');
+        set(handles.pushbutton1,'String',icon_label);
        
         PUNTOS_C = wait(h);
 

@@ -6,5 +6,5 @@ function icon_label = labelWithIcon(label, icon_loc)
     end
     root = replace(root, "\", "/");
     file_loc = strcat(['file:/', root, icon_loc]);
-    icon_label = strcat(['<html><img width=16 height=16 src="', file_loc, '"></img>', label]);
+    icon_label = strcat(['<html><img width=16 height=16 src="', file_loc, '"></img>&#32;', label]);
 end
