@@ -383,8 +383,8 @@ function GUIDE_SEGMENTATION_OpeningFcn(hObject, eventdata, handles, varargin)
 
         set(handles.text4,'visible','off');
         set(handles.text5,'visible','off');
-        set(handles.text6,'visible','on');
-        set(handles.text7,'visible','on');
+        set(handles.text6,'visible','off');
+        set(handles.text7,'visible','off');
 
         set(handles.pushbutton1,'visible','off');
         set(handles.pushbutton2,'visible','off');
