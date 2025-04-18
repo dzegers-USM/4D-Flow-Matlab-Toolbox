@@ -15411,9 +15411,12 @@ function Load_Project_Callback(hObject, eventdata, handles)
 function Save_Project_Callback(hObject, eventdata, handles)
     directory = uigetdir(pwd, 'Select Directory');
     if directory~=0
-        c = msgbox('Saving Data...');
+        h = waitbar(0, 'Saving project...');
+        wbch = allchild(h);
+        jp = wbch(1).JavaPeer;
+        jp.setIndeterminate(1);
         save([directory,'/handles.mat'],'handles','-v7.3')
-        close(c)
+        close(h)
     end
 handles.output = hObject;
 guidata(hObject, handles);
