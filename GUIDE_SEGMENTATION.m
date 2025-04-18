@@ -5957,8 +5957,6 @@ function figure1_SizeChangedFcn(hObject, eventdata, handles)
     FigPos = get(handles.figure1, 'Position');
     set(handles.figure1, 'Position', [FigPos(1:2),FigPos(3),FigPos(4) ]);
     set(handles.figure1, 'Units', 'normalized');
-    
-    set(handles.pushbutton6,'FontUnits','Normalized','FontSize',0.14)
 
 handles.output = hObject;  
 guidata(hObject, handles);
