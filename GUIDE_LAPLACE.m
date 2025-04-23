@@ -2983,6 +2983,7 @@ if handles.id_vwerp  == 1
         set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
+        set(handles.slider1,'enable','off');
 
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
@@ -2997,6 +2998,7 @@ if handles.id_vwerp  == 1
         set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton2,'enable','on');
+        set(handles.slider1,'enable','on');
 
         if handles.id_image ==1
 
@@ -3686,6 +3688,7 @@ if handles.id_vwerp  == 1
         set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
+        set(handles.slider1,'enable','off');
 
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
@@ -3700,6 +3703,7 @@ if handles.id_vwerp  == 1
         set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton2,'enable','on');
+        set(handles.slider1,'enable','on');
 
         if handles.id_image ==1
 
@@ -4505,6 +4509,7 @@ if handles.id_vwerp  == 1
         set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
+        set(handles.slider1,'enable','off');
 
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
@@ -4519,6 +4524,7 @@ if handles.id_vwerp  == 1
         set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton2,'enable','on');
+        set(handles.slider1,'enable','on');
 
         if handles.id_image ==1
 
@@ -5230,6 +5236,7 @@ else
         set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
+        set(handles.slider1,'enable','off');
 
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
@@ -5244,6 +5251,7 @@ else
         set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton2,'enable','on');
+        set(handles.slider1,'enable','on');
 
         if handles.id_image ==1
 
@@ -5914,6 +5922,7 @@ else
         set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
+        set(handles.slider1,'enable','off');
 
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
@@ -5928,6 +5937,7 @@ else
         set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton2,'enable','on');
+        set(handles.slider1,'enable','on');
 
         if handles.id_image ==1
 
@@ -6716,6 +6726,7 @@ else
         set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
+        set(handles.slider1,'enable','off');
 
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
@@ -6730,6 +6741,7 @@ else
         set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton2,'enable','on');
+        set(handles.slider1,'enable','on');
 
         if handles.id_image ==1
 
@@ -7433,6 +7445,7 @@ if handles.id_vwerp == 1
         set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
+        set(handles.slider1,'enable','off');
 
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
@@ -7447,6 +7460,7 @@ if handles.id_vwerp == 1
         set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton2,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton1,'enable','on');
+        set(handles.slider1,'enable','on');
 
         if handles.id_image ==1
 
@@ -8118,6 +8132,7 @@ if handles.id_vwerp == 1
         set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
+        set(handles.slider1,'enable','off');
 
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
@@ -8132,6 +8147,7 @@ if handles.id_vwerp == 1
         set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton2,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton1,'enable','on');
+        set(handles.slider1,'enable','on');
 
         if handles.id_image ==1
 
@@ -8917,6 +8933,7 @@ if handles.id_vwerp == 1
         set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
+        set(handles.slider1,'enable','off');
 
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
@@ -8931,6 +8948,7 @@ if handles.id_vwerp == 1
         set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton2,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton1,'enable','on');
+        set(handles.slider1,'enable','on');
 
         if handles.id_image ==1
 
@@ -9611,6 +9629,7 @@ else
         set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
+        set(handles.slider1,'enable','off');
 
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
@@ -9625,6 +9644,7 @@ else
         set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton2,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton1,'enable','on');
+        set(handles.slider1,'enable','on');
 
         if handles.id_image ==1
 
@@ -10292,6 +10312,7 @@ else
         set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
+        set(handles.slider1,'enable','off');
 
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
@@ -10306,6 +10327,7 @@ else
         set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton2,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton1,'enable','on');
+        set(handles.slider1,'enable','on');
 
         if handles.id_image ==1
 
