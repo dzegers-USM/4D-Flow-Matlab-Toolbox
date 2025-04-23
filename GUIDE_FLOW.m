@@ -2377,17 +2377,21 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+        % Disable input
+        icon_label = labelWithIcon('APPLY PLANE', '/Symbols/check.png');
+        set(handles.pushbutton1,'String',icon_label);
+        set(handles.pushbutton1,'enable','off');
+
         h = imline(handles.axes1);
         setappdata(handles.figure1,'waitROI',h);
 
-        % Change button style to represent its new function
-        icon_label = labelWithIcon('APPLY PLANE', '/Symbols/check.png');
-        set(handles.pushbutton1,'String',icon_label);
-       
+        % Enable apply button
+        set(handles.pushbutton1,'enable','on');
+
         PUNTOS_C = wait(h);
 
-        % Restore button style
-        set(handles.pushbutton1,'Backgroundcolor',[0.90 0.90 0.90]);
+        % Restore input styles
         icon_label = labelWithIcon('DRAW PLANE', '/Symbols/pencil.png');
         set(handles.pushbutton1,'String',icon_label);
 
@@ -3008,17 +3012,21 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        % Disable input
+        icon_label = labelWithIcon('APPLY PLANE', '/Symbols/check.png');
+        set(handles.pushbutton1,'String',icon_label);
+        set(handles.pushbutton1,'enable','off');
+
         h = imline(handles.axes1);
         setappdata(handles.figure1,'waitROI',h);
 
-        % Change button style to represent its new function
-        icon_label = labelWithIcon('APPLY PLANE', '/Symbols/check.png');
-        set(handles.pushbutton1,'String',icon_label);
-       
+        % Enable apply button
+        set(handles.pushbutton1,'enable','on');
+
         PUNTOS_C = wait(h);
 
-        % Restore button style
-        set(handles.pushbutton1,'Backgroundcolor',[0.90 0.90 0.90]);
+        % Restore input styles
         icon_label = labelWithIcon('DRAW PLANE', '/Symbols/pencil.png');
         set(handles.pushbutton1,'String',icon_label);
 
@@ -3734,17 +3742,21 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        % Disable input
+        icon_label = labelWithIcon('APPLY PLANE', '/Symbols/check.png');
+        set(handles.pushbutton1,'String',icon_label);
+        set(handles.pushbutton1,'enable','off');
+
         h = imline(handles.axes1);
         setappdata(handles.figure1,'waitROI',h);
 
-        % Change button style to represent its new function
-        icon_label = labelWithIcon('APPLY PLANE', '/Symbols/check.png');
-        set(handles.pushbutton1,'String',icon_label);
-       
+        % Enable apply button
+        set(handles.pushbutton1,'enable','on');
+
         PUNTOS_C = wait(h);
 
-        % Restore button style
-        set(handles.pushbutton1,'Backgroundcolor',[0.90 0.90 0.90]);
+        % Restore input styles
         icon_label = labelWithIcon('DRAW PLANE', '/Symbols/pencil.png');
         set(handles.pushbutton1,'String',icon_label);
 
