@@ -2382,6 +2382,7 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         icon_label = labelWithIcon('APPLY PLANE', '/Symbols/check.png');
         set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
+        set(handles.slider1,'enable','off');
 
         h = imline(handles.axes1);
         setappdata(handles.figure1,'waitROI',h);
@@ -2394,6 +2395,7 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         % Restore input styles
         icon_label = labelWithIcon('DRAW PLANE', '/Symbols/pencil.png');
         set(handles.pushbutton1,'String',icon_label);
+        set(handles.slider1,'enable','on');
 
         cancelROI = getappdata(handles.figure1,'cancelROI');
         setappdata(handles.figure1,'cancelROI',0);
@@ -3017,6 +3019,7 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         icon_label = labelWithIcon('APPLY PLANE', '/Symbols/check.png');
         set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
+        set(handles.slider1,'enable','off');
 
         h = imline(handles.axes1);
         setappdata(handles.figure1,'waitROI',h);
@@ -3029,6 +3032,7 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         % Restore input styles
         icon_label = labelWithIcon('DRAW PLANE', '/Symbols/pencil.png');
         set(handles.pushbutton1,'String',icon_label);
+        set(handles.slider1,'enable','on');
 
         cancelROI = getappdata(handles.figure1,'cancelROI');
         setappdata(handles.figure1,'cancelROI',0);
@@ -3747,6 +3751,7 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         icon_label = labelWithIcon('APPLY PLANE', '/Symbols/check.png');
         set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
+        set(handles.slider1,'enable','off');
 
         h = imline(handles.axes1);
         setappdata(handles.figure1,'waitROI',h);
@@ -3759,6 +3764,7 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         % Restore input styles
         icon_label = labelWithIcon('DRAW PLANE', '/Symbols/pencil.png');
         set(handles.pushbutton1,'String',icon_label);
+        set(handles.slider1,'enable','on');
 
         cancelROI = getappdata(handles.figure1,'cancelROI');
         setappdata(handles.figure1,'cancelROI',0);
