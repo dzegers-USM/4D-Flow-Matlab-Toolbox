@@ -538,6 +538,10 @@ function GUIDE_FLOW_OpeningFcn(hObject, eventdata, handles, varargin)
         end
     end
 
+    icon_label = labelWithIcon('DRAW PLANE', '/Symbols/pencil.png');
+    set(handles.pushbutton1,'String',icon_label);
+
+
 % Update handles structure
 guidata(hObject, handles);
 % UIWAIT makes GUIDE_FLOW wait for user response (see UIRESUME)
@@ -2370,18 +2374,25 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+        % Disable input
+        icon_label = labelWithIcon('APPLY PLANE', '/Symbols/check.png');
+        set(handles.pushbutton1,'String',icon_label);
+        set(handles.pushbutton1,'enable','off');
+        set(handles.slider1,'enable','off');
+
         h = imline(handles.axes1);
         setappdata(handles.figure1,'waitROI',h);
 
-        % Change button style to represent its new function
-        set(handles.pushbutton1,'Backgroundcolor',[0.65 0.65 0.65]);
-        set(handles.pushbutton1,'String','APPLY SELECTED PLANE');
-       
+        % Enable apply button
+        set(handles.pushbutton1,'enable','on');
+
         PUNTOS_C = wait(h);
 
-        % Restore button style
-        set(handles.pushbutton1,'Backgroundcolor',[0.90 0.90 0.90]);
-        set(handles.pushbutton1,'String','SELECT PLANE');
+        % Restore input styles
+        icon_label = labelWithIcon('DRAW PLANE', '/Symbols/pencil.png');
+        set(handles.pushbutton1,'String',icon_label);
+        set(handles.slider1,'enable','on');
 
         cancelROI = getappdata(handles.figure1,'cancelROI');
         setappdata(handles.figure1,'cancelROI',0);
@@ -3000,18 +3011,25 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        % Disable input
+        icon_label = labelWithIcon('APPLY PLANE', '/Symbols/check.png');
+        set(handles.pushbutton1,'String',icon_label);
+        set(handles.pushbutton1,'enable','off');
+        set(handles.slider1,'enable','off');
+
         h = imline(handles.axes1);
         setappdata(handles.figure1,'waitROI',h);
 
-        % Change button style to represent its new function
-        set(handles.pushbutton1,'Backgroundcolor',[0.65 0.65 0.65]);
-        set(handles.pushbutton1,'String','APPLY SELECTED PLANE');
-       
+        % Enable apply button
+        set(handles.pushbutton1,'enable','on');
+
         PUNTOS_C = wait(h);
 
-        % Restore button style
-        set(handles.pushbutton1,'Backgroundcolor',[0.90 0.90 0.90]);
-        set(handles.pushbutton1,'String','SELECT PLANE');
+        % Restore input styles
+        icon_label = labelWithIcon('DRAW PLANE', '/Symbols/pencil.png');
+        set(handles.pushbutton1,'String',icon_label);
+        set(handles.slider1,'enable','on');
 
         cancelROI = getappdata(handles.figure1,'cancelROI');
         setappdata(handles.figure1,'cancelROI',0);
@@ -3725,18 +3743,25 @@ function pushbutton1_Callback(hObject, eventdata, handles)
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        % Disable input
+        icon_label = labelWithIcon('APPLY PLANE', '/Symbols/check.png');
+        set(handles.pushbutton1,'String',icon_label);
+        set(handles.pushbutton1,'enable','off');
+        set(handles.slider1,'enable','off');
+
         h = imline(handles.axes1);
         setappdata(handles.figure1,'waitROI',h);
 
-        % Change button style to represent its new function
-        set(handles.pushbutton1,'Backgroundcolor',[0.65 0.65 0.65]);
-        set(handles.pushbutton1,'String','APPLY SELECTED PLANE');
-       
+        % Enable apply button
+        set(handles.pushbutton1,'enable','on');
+
         PUNTOS_C = wait(h);
 
-        % Restore button style
-        set(handles.pushbutton1,'Backgroundcolor',[0.90 0.90 0.90]);
-        set(handles.pushbutton1,'String','SELECT PLANE');
+        % Restore input styles
+        icon_label = labelWithIcon('DRAW PLANE', '/Symbols/pencil.png');
+        set(handles.pushbutton1,'String',icon_label);
+        set(handles.slider1,'enable','on');
 
         cancelROI = getappdata(handles.figure1,'cancelROI');
         setappdata(handles.figure1,'cancelROI',0);

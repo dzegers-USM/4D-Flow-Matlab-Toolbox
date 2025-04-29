@@ -70,6 +70,9 @@ function GUIDE_SEGMENTATION_OpeningFcn(hObject, eventdata, handles, varargin)
         set(handles.pushbutton3,'CData',f3,'visible','on');
         set(handles.pushbutton4,'CData',f4,'visible','on');
         set(handles.pushbutton5,'CData',f5,'visible','on');
+
+        set(handles.text6,'visible','on');
+        set(handles.text7,'visible','on');
         
         handles.IPCMRA          = varargin{1}.IPCMRA;
         handles.ANG             = varargin{1}.ANG; % Julio Sotelo
@@ -377,8 +380,12 @@ function GUIDE_SEGMENTATION_OpeningFcn(hObject, eventdata, handles, varargin)
         handles.peak_flow      = varargin{1}.peak_flow;
         set(handles.popupmenu1,'visible','off');
         set(handles.popupmenu2,'visible','off');
+
         set(handles.text4,'visible','off');
         set(handles.text5,'visible','off');
+        set(handles.text6,'visible','off');
+        set(handles.text7,'visible','off');
+
         set(handles.pushbutton1,'visible','off');
         set(handles.pushbutton2,'visible','off');
         set(handles.pushbutton3,'visible','off');
@@ -674,6 +681,7 @@ function GUIDE_SEGMENTATION_OpeningFcn(hObject, eventdata, handles, varargin)
         handles.SEG             = varargin{1}.SEG;
         handles.faces           = varargin{1}.faces;
         handles.nodes           = varargin{1}.nodes;
+        handles.c               = varargin{1}.c;
         handles.d               = varargin{1}.d;
         handles.peak_flow       = varargin{1}.peak_flow;
         handles.veset           = varargin{1}.veset;
@@ -734,7 +742,11 @@ function GUIDE_SEGMENTATION_OpeningFcn(hObject, eventdata, handles, varargin)
         set(handles.pushbutton11,'visible','off');
         set(handles.pushbutton12,'visible','off');
         set(handles.slider1,'visible','off');
+
         set(handles.text1,'visible','off');
+        set(handles.text6,'visible','off');
+        set(handles.text7,'visible','off');
+
         set(handles.uitoolbar1,'visible','on'); % Julio Sotelo
         if handles.ref==2
             [X,Y,Z] = meshgrid(0:size(handles.IPCMRA,1)-1,0:size(handles.IPCMRA,2)-1,0:size(handles.IPCMRA,3)-1);
@@ -5945,8 +5957,6 @@ function figure1_SizeChangedFcn(hObject, eventdata, handles)
     FigPos = get(handles.figure1, 'Position');
     set(handles.figure1, 'Position', [FigPos(1:2),FigPos(3),FigPos(4) ]);
     set(handles.figure1, 'Units', 'normalized');
-    
-    set(handles.pushbutton6,'FontUnits','Normalized','FontSize',0.14)
 
 handles.output = hObject;  
 guidata(hObject, handles);

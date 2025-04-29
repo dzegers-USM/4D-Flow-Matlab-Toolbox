@@ -63,6 +63,13 @@ function GUIDE_LAPLACE_OpeningFcn(hObject, eventdata, handles, varargin)
     handles.rot = 1;
     
     handles.id_vwerp        = varargin{1}.id_vwerp;
+
+    % Init buttons
+    icon_label = labelWithIcon('DRAW INLET', '/Symbols/pencil.png');
+    set(handles.pushbutton1,'String',icon_label);
+
+    icon_label = labelWithIcon('DRAW OUTLET', '/Symbols/pencil.png');
+    set(handles.pushbutton2,'String',icon_label);
     
     if handles.id_vwerp == 1
 
@@ -2969,23 +2976,26 @@ if handles.id_vwerp  == 1
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
         % Disable draw buttons
-        set(handles.pushbutton1,'String','APPLY INLET');
+        icon_label = labelWithIcon('APPLY INLET', '/Symbols/check.png');
+        set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
+        set(handles.slider1,'enable','off');
 
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
         
         % Change button style to represent its new function
         set(handles.pushbutton1,'enable','on');
-        set(handles.pushbutton1,'Backgroundcolor',[0.65 0.65 0.65]);
 
         PUNTOS_C = wait(h);
 
         % Reset buttons
-        set(handles.pushbutton1,'String','DRAW INLET');
+        icon_label = labelWithIcon('DRAW INLET', '/Symbols/pencil.png');
+        set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton2,'enable','on');
+        set(handles.slider1,'enable','on');
 
         if handles.id_image ==1
 
@@ -3671,23 +3681,26 @@ if handles.id_vwerp  == 1
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
         % Disable draw buttons
-        set(handles.pushbutton1,'String','APPLY INLET');
+        icon_label = labelWithIcon('APPLY INLET', '/Symbols/check.png');
+        set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
+        set(handles.slider1,'enable','off');
 
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
         
         % Change button style to represent its new function
         set(handles.pushbutton1,'enable','on');
-        set(handles.pushbutton1,'Backgroundcolor',[0.65 0.65 0.65]);
 
         PUNTOS_C = wait(h);
 
         % Reset buttons
-        set(handles.pushbutton1,'String','DRAW INLET');
+        icon_label = labelWithIcon('DRAW INLET', '/Symbols/pencil.png');
+        set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton2,'enable','on');
+        set(handles.slider1,'enable','on');
 
         if handles.id_image ==1
 
@@ -4489,23 +4502,26 @@ if handles.id_vwerp  == 1
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         % Disable draw buttons
-        set(handles.pushbutton1,'String','APPLY INLET');
+        icon_label = labelWithIcon('APPLY INLET', '/Symbols/check.png');
+        set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
+        set(handles.slider1,'enable','off');
 
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
         
         % Change button style to represent its new function
         set(handles.pushbutton1,'enable','on');
-        set(handles.pushbutton1,'Backgroundcolor',[0.65 0.65 0.65]);
 
         PUNTOS_C = wait(h);
 
         % Reset buttons
-        set(handles.pushbutton1,'String','DRAW INLET');
+        icon_label = labelWithIcon('DRAW INLET', '/Symbols/pencil.png');
+        set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton2,'enable','on');
+        set(handles.slider1,'enable','on');
 
         if handles.id_image ==1
 
@@ -5213,23 +5229,26 @@ else
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         % Disable draw buttons
-        set(handles.pushbutton1,'String','APPLY INLET');
+        icon_label = labelWithIcon('APPLY INLET', '/Symbols/check.png');
+        set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
+        set(handles.slider1,'enable','off');
 
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
         
         % Change button style to represent its new function
         set(handles.pushbutton1,'enable','on');
-        set(handles.pushbutton1,'Backgroundcolor',[0.65 0.65 0.65]);
 
         PUNTOS_C = wait(h);
 
         % Reset buttons
-        set(handles.pushbutton1,'String','DRAW INLET');
+        icon_label = labelWithIcon('DRAW INLET', '/Symbols/pencil.png');
+        set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton2,'enable','on');
+        set(handles.slider1,'enable','on');
 
         if handles.id_image ==1
 
@@ -5641,7 +5660,7 @@ else
         view([-34,-51])
 
         answer1 = questdlg(...
-            '¿Which color should be selected as inlet?',...
+            "Which color section contains the vessel's inlet?",...
             'Select Inlet',...
             'Red',...
             'Green',...
@@ -5896,23 +5915,26 @@ else
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         % Disable draw buttons
-        set(handles.pushbutton1,'String','APPLY INLET');
+        icon_label = labelWithIcon('APPLY INLET', '/Symbols/check.png');
+        set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
+        set(handles.slider1,'enable','off');
 
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
         
         % Change button style to represent its new function
         set(handles.pushbutton1,'enable','on');
-        set(handles.pushbutton1,'Backgroundcolor',[0.65 0.65 0.65]);
 
         PUNTOS_C = wait(h);
 
         % Reset buttons
-        set(handles.pushbutton1,'String','DRAW INLET');
+        icon_label = labelWithIcon('DRAW INLET', '/Symbols/pencil.png');
+        set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton2,'enable','on');
+        set(handles.slider1,'enable','on');
 
         if handles.id_image ==1
 
@@ -6437,7 +6459,7 @@ else
         view([-34,-51])
 
         answer1 = questdlg(...
-            '¿Which color should be selected as inlet?',...
+            "Which color section contains the vessel's inlet?",...
             'Select Inlet',...
             'Red',...
             'Green',...
@@ -6697,23 +6719,26 @@ else
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
        
         % Disable draw buttons
-        set(handles.pushbutton1,'String','APPLY INLET');
+        icon_label = labelWithIcon('APPLY INLET', '/Symbols/check.png');
+        set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
+        set(handles.slider1,'enable','off');
 
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
         
         % Change button style to represent its new function
         set(handles.pushbutton1,'enable','on');
-        set(handles.pushbutton1,'Backgroundcolor',[0.65 0.65 0.65]);
 
         PUNTOS_C = wait(h);
 
         % Reset buttons
-        set(handles.pushbutton1,'String','DRAW INLET');
+        icon_label = labelWithIcon('DRAW INLET', '/Symbols/pencil.png');
+        set(handles.pushbutton1,'String',icon_label);
         set(handles.pushbutton1,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton2,'enable','on');
+        set(handles.slider1,'enable','on');
 
         if handles.id_image ==1
 
@@ -7131,7 +7156,7 @@ else
         view([-34,-51])
 
         answer1 = questdlg(...
-            '¿Which color should be selected as inlet?',...
+            "Which color section contains the vessel's inlet?",...
             'Select Inlet',...
             'Red',...
             'Green',...
@@ -7413,23 +7438,26 @@ if handles.id_vwerp == 1
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
         % Disable draw buttons
-        set(handles.pushbutton2,'String','APPLY OUTLET');
+        icon_label = labelWithIcon('APPLY OUTLET', '/Symbols/check.png');
+        set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
+        set(handles.slider1,'enable','off');
 
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
         
         % Change button style to represent its new function
         set(handles.pushbutton2,'enable','on');
-        set(handles.pushbutton2,'Backgroundcolor',[0.65 0.65 0.65]);
 
         PUNTOS_C = wait(h);
 
         % Reset buttons
-        set(handles.pushbutton2,'String','DRAW OUTLET');
+        icon_label = labelWithIcon('DRAW OUTLET', '/Symbols/pencil.png');
+        set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton2,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton1,'enable','on');
+        set(handles.slider1,'enable','on');
 
         if handles.id_image ==1
 
@@ -8097,23 +8125,26 @@ if handles.id_vwerp == 1
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         % Disable draw buttons
-        set(handles.pushbutton2,'String','APPLY OUTLET');
+        icon_label = labelWithIcon('APPLY OUTLET', '/Symbols/check.png');
+        set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
+        set(handles.slider1,'enable','off');
 
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
         
         % Change button style to represent its new function
         set(handles.pushbutton2,'enable','on');
-        set(handles.pushbutton2,'Backgroundcolor',[0.65 0.65 0.65]);
 
         PUNTOS_C = wait(h);
 
         % Reset buttons
-        set(handles.pushbutton2,'String','DRAW OUTLET');
+        icon_label = labelWithIcon('DRAW OUTLET', '/Symbols/pencil.png');
+        set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton2,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton1,'enable','on');
+        set(handles.slider1,'enable','on');
 
         if handles.id_image ==1
 
@@ -8895,23 +8926,26 @@ if handles.id_vwerp == 1
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         % Disable draw buttons
-        set(handles.pushbutton2,'String','APPLY OUTLET');
+        icon_label = labelWithIcon('APPLY OUTLET', '/Symbols/check.png');
+        set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
+        set(handles.slider1,'enable','off');
 
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
         
         % Change button style to represent its new function
         set(handles.pushbutton2,'enable','on');
-        set(handles.pushbutton2,'Backgroundcolor',[0.65 0.65 0.65]);
 
         PUNTOS_C = wait(h);
 
         % Reset buttons
-        set(handles.pushbutton2,'String','DRAW OUTLET');
+        icon_label = labelWithIcon('DRAW OUTLET', '/Symbols/pencil.png');
+        set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton2,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton1,'enable','on');
+        set(handles.slider1,'enable','on');
 
         if handles.id_image ==1
 
@@ -9588,23 +9622,26 @@ else
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         % Disable draw buttons
-        set(handles.pushbutton2,'String','APPLY OUTLET');
+        icon_label = labelWithIcon('APPLY OUTLET', '/Symbols/check.png');
+        set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
+        set(handles.slider1,'enable','off');
 
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
         
         % Change button style to represent its new function
         set(handles.pushbutton2,'enable','on');
-        set(handles.pushbutton2,'Backgroundcolor',[0.65 0.65 0.65]);
 
         PUNTOS_C = wait(h);
 
         % Reset buttons
-        set(handles.pushbutton2,'String','DRAW OUTLET');
+        icon_label = labelWithIcon('DRAW OUTLET', '/Symbols/pencil.png');
+        set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton2,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton1,'enable','on');
+        set(handles.slider1,'enable','on');
 
         if handles.id_image ==1
 
@@ -10012,7 +10049,7 @@ else
         view([-34,-51])
 
         answer1 = questdlg(...
-            '¿Which color should be selected as outlet?',...
+            "Which color section contains the vessel's outlet?",...
             'Select Outlet',...
             'Red',...
             'Green',...
@@ -10268,23 +10305,26 @@ else
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         % Disable draw buttons
-        set(handles.pushbutton2,'String','APPLY OUTLET');
+        icon_label = labelWithIcon('APPLY OUTLET', '/Symbols/check.png');
+        set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
+        set(handles.slider1,'enable','off');
 
         h = imline(handles.axes1);
         setappdata(handles.GUIDE_LAPLACE,'waitROI',h);
         
         % Change button style to represent its new function
         set(handles.pushbutton2,'enable','on');
-        set(handles.pushbutton2,'Backgroundcolor',[0.65 0.65 0.65]);
 
         PUNTOS_C = wait(h);
 
         % Reset buttons
-        set(handles.pushbutton2,'String','DRAW OUTLET');
+        icon_label = labelWithIcon('DRAW OUTLET', '/Symbols/pencil.png');
+        set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton2,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton1,'enable','on');
+        set(handles.slider1,'enable','on');
 
         if handles.id_image ==1
 
@@ -10808,7 +10848,7 @@ else
         view([-34,-51])
 
         answer1 = questdlg(...
-            '¿Which color should be selected as outlet?',...
+            "Which color section contains the vessel's outlet?",...
             'Select Outlet',...
             'Red',...
             'Green',...
@@ -11061,7 +11101,8 @@ else
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
         % Disable draw buttons
-        set(handles.pushbutton2,'String','APPLY OUTLET');
+        icon_label = labelWithIcon('APPLY OUTLET', '/Symbols/check.png');
+        set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton1,'enable','off');
         set(handles.pushbutton2,'enable','off');
 
@@ -11070,12 +11111,12 @@ else
         
         % Change button style to represent its new function
         set(handles.pushbutton2,'enable','on');
-        set(handles.pushbutton2,'Backgroundcolor',[0.65 0.65 0.65]);
 
         PUNTOS_C = wait(h);
 
         % Reset buttons
-        set(handles.pushbutton2,'String','DRAW OUTLET');
+        icon_label = labelWithIcon('DRAW OUTLET', '/Symbols/pencil.png');
+        set(handles.pushbutton2,'String',icon_label);
         set(handles.pushbutton2,'Backgroundcolor',[0.9 0.9 0.9]);
         set(handles.pushbutton1,'enable','on');
 
@@ -11494,7 +11535,7 @@ else
         view([-34,-51])
 
         answer1 = questdlg(...
-            '¿Which color should be selected as outlet?',...
+            "Which color section contains the vessel's outlet?",...
             'Select Outlet',...
             'Red',...
             'Green',...
