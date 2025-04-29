@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration build-checksum="3594787484" file="D:\Repos\4D-Flow-Release\GUIDE_4D_FLOW.prj" location="D:\Repos\4D-Flow-Release" name="GUIDE_4D_FLOW" preferred-package-location="D:\Repos\4D-Flow-Release\GUIDE_4D_FLOW\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
+  <configuration build-checksum="4152767356" file="D:\Repos\4D-Flow-Matlab-Toolbox\GUIDE_4D_FLOW.prj" location="D:\Repos\4D-Flow-Matlab-Toolbox" name="GUIDE_4D_FLOW" preferred-package-location="D:\Repos\4D-Flow-Matlab-Toolbox\GUIDE_4D_FLOW\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
     <param.appname>APP_4D_FLOW</param.appname>
     <param.icon />
     <param.icons />
@@ -88,7 +88,6 @@
       <file>${PROJECT_ROOT}\Symbols</file>
     </fileset.resources>
     <fileset.package>
-      <file>${PROJECT_ROOT}\iso2mesh</file>
       <file>${PROJECT_ROOT}\Symbols</file>
     </fileset.package>
     <fileset.depfun>
@@ -114,9 +113,9 @@
       <file>${PROJECT_ROOT}\updateMainImageTexts.m</file>
     </fileset.depfun>
     <build-deliverables>
-      <file location="${PROJECT_ROOT}\GUIDE_4D_FLOW\for_testing" name="splash.png" optional="false">D:\Repos\4D-Flow-Release\GUIDE_4D_FLOW\for_testing\splash.png</file>
-      <file location="${PROJECT_ROOT}\GUIDE_4D_FLOW\for_testing" name="APP_4D_FLOW.exe" optional="false">D:\Repos\4D-Flow-Release\GUIDE_4D_FLOW\for_testing\APP_4D_FLOW.exe</file>
-      <file location="${PROJECT_ROOT}\GUIDE_4D_FLOW\for_testing" name="readme.txt" optional="true">D:\Repos\4D-Flow-Release\GUIDE_4D_FLOW\for_testing\readme.txt</file>
+      <file location="${PROJECT_ROOT}\GUIDE_4D_FLOW\for_testing" name="splash.png" optional="false">D:\Repos\4D-Flow-Matlab-Toolbox\GUIDE_4D_FLOW\for_testing\splash.png</file>
+      <file location="${PROJECT_ROOT}\GUIDE_4D_FLOW\for_testing" name="APP_4D_FLOW.exe" optional="false">D:\Repos\4D-Flow-Matlab-Toolbox\GUIDE_4D_FLOW\for_testing\APP_4D_FLOW.exe</file>
+      <file location="${PROJECT_ROOT}\GUIDE_4D_FLOW\for_testing" name="readme.txt" optional="true">D:\Repos\4D-Flow-Matlab-Toolbox\GUIDE_4D_FLOW\for_testing\readme.txt</file>
     </build-deliverables>
     <workflow />
     <matlab>
